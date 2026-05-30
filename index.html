@@ -162,6 +162,15 @@ footer { background:#0a0a0a; padding:40px; display:flex; justify-content:space-b
 
 .highlight-icon { display:flex; align-items:center; }
 .service-icon { margin-bottom:18px; }
+
+.faq-item { border-bottom:1px solid var(--border); padding:16px 0; cursor:pointer; }
+.faq-item:last-child { border-bottom:none; }
+.faq-q { font-family:"Poppins",sans-serif; font-size:14px; font-weight:700; color:var(--dark); display:flex; justify-content:space-between; align-items:flex-start; gap:12px; line-height:1.4; }
+.faq-q::after { content:"▾"; color:var(--gold); flex-shrink:0; font-size:16px; transition:transform 0.2s; }
+.faq-item.open .faq-q::after { transform:rotate(-180deg); }
+.faq-a { font-size:14px; color:var(--mid); line-height:1.75; margin-top:10px; display:none; }
+.faq-item.open .faq-a { display:block; }
+
 </style>
 </head>
 <body>
@@ -318,6 +327,83 @@ footer { background:#0a0a0a; padding:40px; display:flex; justify-content:space-b
   </div>
 </section>
 
+<section class="section faq" id="faq" style="background:var(--paper);">
+  <div class="container">
+    <div class="section-label">Časté otázky</div>
+    <h2 class="section-title">Co vás nejčastěji zajímá</h2>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;">
+
+      <!-- SLOUPEC 1 - O SLUZBACH -->
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--light);margin-bottom:16px;">O spolupráci</div>
+
+        <div class="faq-item">
+          <div class="faq-q">Jak procesní audit probíhá v praxi?</div>
+          <div class="faq-a">Přijedu přímo k vám do provozu - ne na kávu do kanceláře, ale tam kde se reálně pracuje. Půl dne nebo celý den sleduji jak věci fungují, kde se čeká, kde se informace ztrácejí, kde lidé dělají práci navíc. Výsledkem je konkrétní seznam priorit co řešit jako první a proč - bez teorie, rovnou k věci.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Jak poznám že to nebude jen prezentace bez výsledku?</div>
+          <div class="faq-a">Mám za sebou 10 let zavádění změn přímo v provozu jako KAIZEN specialista. Výstup auditu jsou konkrétní kroky které jdou zavést bez nového softwaru a bez dalšího projektu navíc.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Naše firma je specifická, pochopíte rychle jak to u nás funguje?</div>
+          <div class="faq-a">To je přesně důvod proč přijíždím osobně. 6 let jsem řídila sklad se 20 lidmi, dvěma směnami a logistikou 7 vozidel. Specifika provozu jsou pro mě přirozené prostředí, ne překážka. Vždy komunikuji i s pracovníky přímo v provozu - oni znají detaily které nejsou vidět v žádném reportu a jejich pohled je pro pochopení procesů klíčový.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Za jak dlouho uvidím reálné výsledky?</div>
+          <div class="faq-a">Konkrétní doporučení dostanete do týdne od auditu. Část změn jde zavést okamžitě - jen jinak nastavené postupy. Ty jsou vidět do 2 až 4 týdnů.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Kolik to stojí?</div>
+          <div class="faq-a">Cena závisí na rozsahu provozu. Napište mi a domluvíme se na bezplatném úvodním hovoru kde zjistím co řešíte a řeknu vám rovnou jestli a jak vám dokážu pomoct.</div>
+        </div>
+      </div>
+
+      <!-- SLOUPEC 2 - OBAVY -->
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--light);margin-bottom:16px;">O realizaci</div>
+
+        <div class="faq-item">
+          <div class="faq-q">Co když lidi změny nepřijmou a zase to skončí na mně?</div>
+          <div class="faq-a">Přijetí změn má svoji přirozenou křivku - odpor na začátku je normální a očekávaný, ne známka že něco selhalo. Počítám s tím od začátku. Navrhuji jen změny které dávají smysl lidem přímo v provozu a zavádím je postupně. Cílem je aby změna žila v provozu sama, ne aby závisela na vašem každodenním dohledu.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Musíme po auditu kupovat software nebo systém?</div>
+          <div class="faq-a">Většinou ne. Většina ztrát vzniká špatně nastavenými postupy, ne chybějícím softwarem. Automatizaci navrhuji jen tam kde reálně dává smysl a kde se investice vrátí v měřitelném čase.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Musím vám dát přístup k citlivým datům nebo systémům?</div>
+          <div class="faq-a">Ne. Pracuji s tím co vidím v provozu a co mi sami ukážete. Žádné interní systémy, žádné účetnictví, žádné přístupy k firemním datům.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Co si myslíte o AI, má to v reálném provozu smysl?</div>
+          <div class="faq-a">Záleží na tom co konkrétně řešíte. AI nedávám do provozu proto aby tam byla, ale proto aby ušetřila hodiny rutiny každý týden. Pokud to u vás smysl nemá, řeknu to rovnou.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Co se stane po auditu, musím si vás pak platit dál?</div>
+          <div class="faq-a">Audit je samostatná služba s jasným výstupem. Dostanete zprávu s doporučeními a můžete je zavádět sami. Pokud chcete pomoct s implementací, domluvíme se na dalším kroku - ale nic není povinné.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Děláte si při auditu záznamy - fotky nebo video?</div>
+          <div class="faq-a">Ano, při práci v provozu si dělám fotky, krátká videa a poznámky - abych zachytila přesně co vidím a nic podstatného nepřehlédla. Vše slouží výhradně k účelům analýzy a auditu, nesdílím to třetím stranám a po zpracování to mažu. Pokud máte citlivá místa nebo zboží které nechcete dokumentovat, řeknete mi to a respektuji to.</div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section class="cta-banner" id="kontakt">
   <div class="container">
     <div class="cta-inner">
@@ -341,5 +427,29 @@ footer { background:#0a0a0a; padding:40px; display:flex; justify-content:space-b
   </div>
 </footer>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{"@type":"Question","name":"Jak procesní audit probíhá v praxi?","acceptedAnswer":{"@type":"Answer","text":"Přijedu přímo k vám do provozu - ne na kávu do kanceláře, ale tam kde se reálně pracuje. Půl dne nebo celý den sleduji jak věci fungují. Výsledkem je konkrétní seznam priorit co řešit jako první a proč."}},
+{"@type":"Question","name":"Jak poznám že to nebude jen prezentace bez výsledku?","acceptedAnswer":{"@type":"Answer","text":"Mám za sebou 10 let zavádění změn přímo v provozu jako KAIZEN specialista. Výstup auditu jsou konkrétní kroky které jdou zavést bez nového softwaru a bez dalšího projektu navíc."}},
+{"@type":"Question","name":"Za jak dlouho uvidím reálné výsledky?","acceptedAnswer":{"@type":"Answer","text":"Konkrétní doporučení dostanete do týdne od auditu. Část změn jde zavést okamžitě - jen jinak nastavené postupy. Ty jsou vidět do 2 až 4 týdnů."}},
+{"@type":"Question","name":"Musíme po auditu kupovat software nebo systém?","acceptedAnswer":{"@type":"Answer","text":"Většinou ne. Většina ztrát vzniká špatně nastavenými postupy, ne chybějícím softwarem. Automatizaci navrhuji jen tam kde reálně dává smysl."}},
+{"@type":"Question","name":"Co když lidi změny nepřijmou?","acceptedAnswer":{"@type":"Answer","text":"Navrhuji jen změny které jsou jednoduché na zavedení a dávají smysl lidem v provozu. Součástí je vždy předání týmu, ne jen seznam doporučení pro majitele."}},
+{"@type":"Question","name":"Musím vám dát přístup k citlivým datům?","acceptedAnswer":{"@type":"Answer","text":"Ne. Pracuji s tím co vidím v provozu a co mi sami ukážete. Žádné interní systémy, žádné přístupy k firemním datům."}},
+{"@type":"Question","name":"Kolik stojí procesní audit?","acceptedAnswer":{"@type":"Answer","text":"Cena závisí na rozsahu provozu. Napište mi a domluvíme se na bezplatném úvodním hovoru kde zjistím co řešíte."}},
+{"@type":"Question","name":"Co se stane po auditu, musím si vás pak platit dál?","acceptedAnswer":{"@type":"Answer","text":"Audit je samostatná služba s jasným výstupem. Dostanete zprávu s doporučeními a můžete je zavádět sami. Pokud chcete pomoct s implementací, domluvíme se na dalším kroku - ale nic není povinné."}}]
+}
+</script>
+
+<script>
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const jeOtevren = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!jeOtevren) item.classList.add('open');
+  });
+});
+</script>
 </body>
 </html>
