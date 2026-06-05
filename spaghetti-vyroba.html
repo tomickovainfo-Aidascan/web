@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+
+<meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Spaghetti diagram Pro — Výroba | Gabriela Tomíčková</title>
+  <meta name="description" content="Spaghetti diagram Pro pro výrobní haly. Nahrajte půdorys, kreslete trasy pracovníků, označujte zastávky.tečnou chůzi. Výsledek ke stažení jako PNG.">
+  <meta name="keywords" content="spaghetti diagram výroba, měření tras výroba, optimalizace pohybu pracovníků, KAIZENplýtvání pohybem, KAIZEN nástroj výroba">
+  <meta name="author" content="Gabriela Tomíčková">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Spaghetti diagram Pro — měření tras ve výrobě | Gabriela Tomíčková">
+  <meta property="og:description" content="Nahrajte půdorys výrobní haly, kreslete trasy pracovníků a označujte zastávky.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="cs_CZ">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Spaghetti diagram Pro — měření tras ve výrobě | Gabriela Tomíčková">
+  <meta name="twitter:description" content="Nahrajte půdorys výrobní haly, kreslete trasy pracovníků a označujte zastávky.">
+  <link rel="canonical" href="">
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Spaghetti diagram Pro — výroba",
+      "description": "Nástroj pro vizuální mapování pohybu pracovníků ve výrobní hale. Nahrajte půdorys, kreslete trasy, označujte zastávky.ku cesty.",
+      "url": "https://spaghetti.gabrielatomickova.cz",
+      "applicationCategory": "BusinessApplication",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CZK" },
+      "author": { "@type": "Person", "name": "Gabriela Tomíčková" }
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #e9a91b; --gold-dark: #c48e10; --gold-light: #fdf3d9;
+  --black: #000; --dark: #111; --mid: #545454; --light: #a8a6a6;
+  --white: #fff; --paper: #f5f4f0; --border: #e2e2e2;
+  --red: #e03c3c; --green: #2a9d5c;
+}
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+html { scroll-behavior:smooth; }
+body { font-family:"DM Sans",sans-serif; background:var(--paper); color:var(--dark); line-height:1.6; min-height:100vh; }
+
+nav { background:var(--white); border-bottom:2px solid var(--gold); padding:12px 24px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:100; box-shadow:0 2px 10px rgba(0,0,0,0.06); }
+.nav-brand { font-family:"Poppins",sans-serif; font-size:14px; font-weight:800; color:var(--black); }
+.nav-brand span { color:var(--gold); }
+
+.page-header { background:var(--white); border-bottom:1px solid var(--border); padding:24px 24px 20px; }
+.tool-badge { display:inline-block; background:#545454; color:var(--gold); font-size:10px; font-weight:700; letter-spacing:1.8px; text-transform:uppercase; padding:3px 10px; border-radius:2px; margin-bottom:10px; }
+.prihlaseni{max-width:420px;margin:40px auto;padding:0 16px;}
+.prih-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:28px 24px;text-align:center;}
+.prih-card h2{font-family:"Poppins",sans-serif;font-size:18px;font-weight:800;color:var(--dark);margin-bottom:8px;}
+.prih-card p{font-size:13px;color:var(--mid);margin-bottom:20px;line-height:1.7;}
+.prih-input{width:100%;border:2px solid var(--border);border-radius:8px;padding:12px 16px;font-family:"DM Mono",monospace;font-size:16px;text-align:center;letter-spacing:3px;outline:none;transition:border .2s;}
+.prih-input:focus{border-color:var(--gold);}
+.prih-err{font-size:12px;color:#c0392b;margin-top:8px;display:none;}
+.prih-btn{width:100%;background:var(--gold);color:var(--black);border:none;border-radius:8px;padding:13px;font-family:"Poppins",sans-serif;font-size:14px;font-weight:800;cursor:pointer;margin-top:12px;transition:all .2s;}
+.prih-btn:hover{background:var(--gold-dark);}
+.page-header h1 { font-family:"Poppins",sans-serif; font-size:clamp(18px,3vw,26px); font-weight:900; color:var(--black); line-height:1.2; letter-spacing:-0.3px; margin-bottom:6px; }
+.page-header h1 em { color:var(--gold); font-style:normal; }
+.page-header p { font-size:13px; color:var(--mid); max-width:600px; line-height:1.65; }
+
+.main { max-width:1100px; margin:0 auto; padding:20px 20px 60px; }
+
+/* SETUP PANEL */
+.setup-panel { background:var(--white); border:1px solid var(--border); border-radius:12px; padding:20px; margin-bottom:16px; }
+.setup-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; align-items:end; }
+.setup-group label { font-size:12px; font-weight:600; color:var(--mid); display:block; margin-bottom:6px; letter-spacing:0.3px; }
+.setup-input {
+  width:100%; border:1px solid var(--border); border-radius:6px;
+  padding:9px 12px; font-family:"DM Sans",sans-serif;
+  font-size:14px; color:var(--dark); outline:none;
+  background:var(--paper); transition:border 0.2s;
+}
+.setup-input:focus { border-color:var(--gold); background:white; }
+.setup-input[type=number] { -moz-appearance:textfield; }
+
+/* UPLOAD */
+.upload-zone {
+  border:2px dashed var(--border); border-radius:10px;
+  padding:28px 20px; text-align:center; cursor:pointer;
+  transition:all 0.2s; background:var(--paper); margin-bottom:16px;
+}
+.upload-zone:hover { border-color:var(--gold); background:var(--gold-light); }
+.upload-zone.dragover { border-color:var(--gold); background:var(--gold-light); }
+.upload-zone-icon { font-size:32px; margin-bottom:8px; opacity:0.4; }
+.upload-zone p { font-size:14px; color:var(--mid); margin-bottom:4px; }
+.upload-zone small { font-size:12px; color:var(--light); }
+#file-input { display:none; }
+
+/* TOOLBAR */
+.toolbar {
+  background:var(--white); border:1px solid var(--border); border-radius:10px;
+  padding:10px 14px; margin-bottom:12px;
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+}
+.toolbar-group { display:flex; align-items:center; gap:8px; }
+.toolbar-divider { width:1px; height:24px; background:var(--border); }
+.tool-btn {
+  background:var(--paper); border:1px solid var(--border);
+  border-radius:6px; padding:7px 12px;
+  font-family:"DM Sans",sans-serif; font-size:12px; font-weight:600;
+  color:var(--mid); cursor:pointer; transition:all 0.15s;
+  display:flex; align-items:center; gap:6px; white-space:nowrap;
+}
+.tool-btn:hover { border-color:var(--gold); color:var(--dark); background:var(--gold-light); }
+.tool-btn.active { background:var(--gold); border-color:var(--gold); color:var(--black); }
+.tool-btn.danger:hover { border-color:var(--red); color:var(--red); background:#fff0f0; }
+.tool-btn .btn-icon { width:14px; height:9px; background:currentColor; clip-path:polygon(0 0, 62% 0, 100% 50%, 62% 100%, 0 100%); flex-shrink:0; }
+
+/* STATS BAR */
+.stats-bar {
+  display:flex; gap:16px; flex-wrap:wrap;
+  background:var(--dark); border-radius:10px;
+  padding:12px 16px; margin-bottom:12px;
+}
+.stat-item { display:flex; flex-direction:column; gap:2px; }
+.stat-val { font-family:"Poppins",sans-serif; font-size:18px; font-weight:800; color:var(--gold); line-height:1; }
+.stat-lbl { font-size:10px; color:rgba(255,255,255,0.4); letter-spacing:0.5px; text-transform:uppercase; }
+.stats-divider { width:1px; background:rgba(255,255,255,0.1); }
+
+/* CANVAS WRAP */
+.canvas-outer {
+  background:var(--white); border:1px solid var(--border); border-radius:12px;
+  overflow:hidden; position:relative; cursor:crosshair;
+}
+.canvas-outer.no-layout { min-height:300px; display:flex; align-items:center; justify-content:center; }
+.canvas-placeholder { text-align:center; color:var(--light); }
+.canvas-placeholder p { font-size:14px; margin-top:8px; }
+#canvas-outer { overflow:hidden; width:100%; cursor:crosshair; }
+#main-canvas { display:block; transform-origin:0 0; touch-action:none; }
+
+/* ZAKÁZKY */
+.zakazky-panel { background:var(--white); border:1px solid var(--border); border-radius:12px; padding:16px; margin-top:12px; }
+.zakazky-title { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--mid); margin-bottom:12px; }
+.zakazky-list { display:flex; flex-direction:column; gap:6px; max-height:200px; overflow-y:auto; }
+.pracovnik-item {
+  display:flex; align-items:center; gap:10px;
+  padding:8px 12px; border-radius:6px; border:1px solid var(--border);
+  cursor:pointer; transition:all 0.15s; font-size:13px;
+}
+.pracovnik-item:hover { border-color:var(--gold); background:var(--gold-light); }
+.pracovnik-item.active { border-color:var(--gold); background:var(--gold-light); }
+.pracovnik-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+.pracovnik-nazev { flex:1; font-weight:500; }
+.pracovnik-metro { font-family:"DM Mono",monospace; font-size:11px; color:var(--light); }
+.pracovnik-smazat { color:var(--light); font-size:16px; padding:2px 6px; border-radius:4px; transition:all 0.15s; }
+.pracovnik-smazat:hover { color:var(--red); background:#fff0f0; }
+.btn-nova-pracovnik {
+  background:transparent; border:1px dashed var(--border);
+  border-radius:6px; padding:8px 12px; width:100%;
+  font-family:"DM Sans",sans-serif; font-size:12px; font-weight:600;
+  color:var(--light); cursor:pointer; transition:all 0.2s; margin-top:6px;
+}
+.btn-nova-pracovnik:hover { border-color:var(--gold); color:var(--gold-dark); background:var(--gold-light); }
+
+/* TIP BOX */
+.tip-box { background:var(--gold-light); border:1px solid rgba(233,169,27,0.3); border-radius:8px; padding:12px 16px; margin-top:12px; font-size:13px; color:var(--mid); line-height:1.65; }
+.tip-box strong { color:var(--dark); }
+.tip-box a { color:var(--gold-dark); font-weight:600; }
+
+/* EXPORT */
+.export-bar { display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+.btn-export {
+  background:var(--black); color:var(--white);
+  border:none; border-radius:6px; padding:10px 20px;
+  font-family:"DM Sans",sans-serif; font-size:13px; font-weight:700;
+  cursor:pointer; transition:background 0.2s;
+}
+.btn-export:hover { background:var(--gold); color:var(--black); }
+.btn-export-outline {
+  background:transparent; color:var(--mid);
+  border:1px solid var(--border); border-radius:6px; padding:10px 20px;
+  font-family:"DM Sans",sans-serif; font-size:13px; font-weight:500;
+  cursor:pointer; transition:all 0.2s;
+}
+.btn-export-outline:hover { border-color:var(--mid); color:var(--dark); }
+
+/* MODAL */
+.modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:200; align-items:center; justify-content:center; padding:20px; }
+.modal-overlay.visible { display:flex; }
+.modal { background:var(--white); border-radius:12px; padding:28px; max-width:440px; width:100%; }
+.modal h3 { font-family:"Poppins",sans-serif; font-size:17px; font-weight:700; margin-bottom:8px; }
+.modal p { font-size:14px; color:var(--mid); margin-bottom:18px; line-height:1.7; }
+.modal-input { width:100%; border:1px solid var(--border); border-radius:6px; padding:10px 14px; font-family:"DM Sans",sans-serif; font-size:14px; outline:none; margin-bottom:14px; }
+.modal-input:focus { border-color:var(--gold); }
+.modal-btns { display:flex; gap:10px; justify-content:flex-end; }
+.btn-modal-ok { background:var(--gold); color:var(--black); border:none; border-radius:6px; padding:9px 20px; font-family:"DM Sans",sans-serif; font-size:13px; font-weight:700; cursor:pointer; }
+.btn-modal-cancel { background:transparent; color:var(--mid); border:1px solid var(--border); border-radius:6px; padding:9px 16px; font-family:"DM Sans",sans-serif; font-size:13px; cursor:pointer; }
+
+footer { background:#0a0a0a; padding:20px 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-top:40px; }
+.footer-brand { font-family:"Poppins",sans-serif; font-size:12px; font-weight:700; color:rgba(255,255,255,0.35); }
+.footer-brand span { color:var(--gold); }
+.footer-legal { font-size:11px; color:rgba(255,255,255,0.2); }
+.footer-legal a { color:rgba(255,255,255,0.2); text-decoration:none; }
+
+@media (max-width:600px) {
+  .main { padding:12px 12px 40px; }
+  .stats-bar { gap:12px; }
+  nav, .page-header { padding-left:16px; padding-right:16px; }
+  footer { padding:16px; flex-direction:column; text-align:center; }
+}
+</style>
+
+<style id="cookies-css">
+.cookies-bar{position:fixed;bottom:0;left:0;right:0;background:#111;border-top:2px solid #e9a91b;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;z-index:9999;font-family:"DM Sans",sans-serif;}
+.cookies-bar p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.6;margin:0;flex:1;min-width:200px;}
+.cookies-bar a{color:#e9a91b;text-decoration:none;}
+.cookies-bar a:hover{text-decoration:underline;}
+.cookies-btns{display:flex;gap:8px;flex-shrink:0;}
+.cookies-ok{background:#e9a91b;color:#000;border:none;border-radius:4px;padding:8px 18px;font-family:"DM Sans",sans-serif;font-size:13px;font-weight:700;cursor:pointer;}
+.cookies-ok:hover{background:#c48e10;}
+.cookies-no{background:transparent;color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.15);border-radius:4px;padding:8px 14px;font-family:"DM Sans",sans-serif;font-size:13px;cursor:pointer;}
+.cookies-no:hover{color:rgba(255,255,255,.7);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">Gabriela <span>Tomíčková</span></div>
+</nav>
+
+<div class="page-header">
+  <div class="tool-badge">Placený nástroj</div>
+  <h1>Spaghetti diagram <em>Pro</em><br>výrobní hala</h1>
+  <p>Nahrajte půdorys výrobní haly, kreslete trasy pracovníků a označujte zastávky. Aplikace spočítá délky tras a ukáže kde se pohyb kříží nebo zbytečně opakuje.</p>
+</div>
+
+<div class="prihlaseni" id="prihlaseni">
+  <div class="prih-card">
+    <h2>Přístup do nástroje</h2>
+    <p>Spaghetti diagram Pro je součástí ročního balíčku. Zadejte přístupový kód který jste obdrželi po zaplacení.</p>
+    <input type="text" class="prih-input" id="prih-kod" placeholder="VÁŠKÓD" maxlength="20"
+      onkeydown="if(event.key==='Enter')overitKod()">
+    <div class="prih-err" id="prih-err">Kód není platný nebo přístup vypršel.</div>
+    <button class="prih-btn" onclick="overitKod()">Vstoupit do aplikace</button>
+    <p style="margin-top:16px;font-size:12px;color:var(--light);">
+      Nemáte přístup? <a href="meric-plytvani-prodejni-str.html" style="color:var(--gold);text-decoration:none;font-weight:700;">Zjistit více o ročním balíčku</a>
+    </p>
+  </div>
+</div>
+
+<div class="main" id="main-app" style="display:none;">
+
+  <!-- UPLOAD -->
+  <div class="upload-zone" id="upload-zone" onclick="document.getElementById('file-input').click()">
+    <div class="upload-zone-icon">🗺</div>
+    <p><strong>Klikněte nebo přetáhněte půdorys výrobní haly</strong></p>
+    <small>JPG, PNG, PDF - obrázek layoutu nebo fotka plánku</small>
+    <input type="file" id="file-input" accept="image/*" onchange="nahratLayout(this)">
+  </div>
+
+  <!-- SETUP -->
+  <div class="setup-panel" id="setup-panel" style="display:none;">
+    <div class="setup-grid">
+      <div class="setup-group">
+        <label>Délka úseku na plánku (cm)</label>
+        <input type="number" class="setup-input" id="meritko-px" value="10" min="1" placeholder="naměřená délka na obrazovce">
+      </div>
+      <div class="setup-group">
+        <label>Odpovídá reálné délce (m)</label>
+        <input type="number" class="setup-input" id="meritko-m" value="5" min="0.1" step="0.1" placeholder="skutečná vzdálenost">
+      </div>
+      <div class="setup-group">
+        <label>Jméno pracovníka</label>
+        <input type="text" class="setup-input" id="nazev-zakazky" placeholder="např. Pracovník #1" value="Pracovník 1">
+      </div>
+      <div class="setup-group" style="display:flex;align-items:flex-end;">
+        <button class="tool-btn active" style="width:100%;justify-content:center;" onclick="spustitKresleni()">
+          <span class="btn-icon"></span> Začít kreslit trasu
+        </button>
+      </div>
+    </div>
+    <div style="font-size:12px;color:var(--light);margin-top:10px;">
+      Tip: změřte na obrazovce známou vzdálenost (délku stroje, stolu, uličky) a zadejte reálnou délku. Měřítko platí pro všechny výpočty bez ohledu na zoom.
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-bar" id="stats-bar" style="display:none;">
+    <div class="stat-item">
+      <div class="stat-val" id="stat-body">0</div>
+      <div class="stat-lbl">bodů trasy</div>
+    </div>
+    <div class="stats-divider"></div>
+    <div class="stat-item">
+      <div class="stat-val" id="stat-delka">0 m</div>
+      <div class="stat-lbl">délka trasy</div>
+    </div>
+    <div class="stats-divider"></div>
+    <div class="stat-item">
+      <div class="stat-val" id="stat-zakazky">0</div>
+      <div class="stat-lbl">pracovníků</div>
+    </div>
+    <div class="stats-divider"></div>
+    <div class="stat-item">
+      <div class="stat-val" id="stat-zastavky">0</div>
+      <div class="stat-lbl">zastávek</div>
+    </div>
+    <div class="stats-divider"></div>
+    <div class="stat-item">
+      <div class="stat-val" id="stat-celkem">0 m</div>
+      <div class="stat-lbl">celkem všechni</div>
+    </div>
+  </div>
+
+  <!-- VYSVĚTLIVKY -->
+  <div id="vysvetlivky" style="display:none;max-width:700px;margin:0 auto 10px;padding:0 10px;">
+    <div style="background:#fff;border:1px solid #e2e2e2;border-radius:10px;padding:14px 16px;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <div style="display:flex;gap:10px;align-items:flex-start;">
+        <div style="width:14px;height:9px;background:#e9a91b;clip-path:polygon(0 0,62% 0,100% 50%,62% 100%,0 100%);flex-shrink:0;margin-top:3px;"></div>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:#111;margin-bottom:2px;">Kreslit trasu</div>
+          <div style="font-size:11px;color:#a8a6a6;line-height:1.55;">Bodově označujte trasu pracovníka - každou změnu směru, odbočení nebo okruh. Čím víc bodů, tím věrnější spaghetti.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;">
+        <div style="width:16px;height:16px;border-radius:50%;border:2px solid #c0392b;flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:1px;">
+          <div style="font-size:9px;font-weight:700;color:#c0392b;">✕</div>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:#111;margin-bottom:2px;">Zastávka</div>
+          <div style="font-size:11px;color:#a8a6a6;line-height:1.55;">V bodě kde se pracovník zastaví a něco dělá - bere materiál z regálu, sedá k montáži, skenuje kód. Klikněte tlačítko Zastávka - zobrazí se kroužek s X na aktuální pozici.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;">
+        <div style="width:14px;height:9px;background:#545454;clip-path:polygon(0 0,62% 0,100% 50%,62% 100%,0 100%);flex-shrink:0;margin-top:3px;"></div>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:#111;margin-bottom:2px;">Zoom a posun</div>
+          <div style="font-size:11px;color:#a8a6a6;line-height:1.55;">Mapu přibližujte tlačítky + / − nebo kolečkem myši. Zoom nemění měřítko — vzdálenosti se počítají vždy stejně bez ohledu na přiblížení.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;">
+        <div style="display:flex;gap:3px;flex-shrink:0;margin-top:2px;">
+          <div style="width:8px;height:8px;border-radius:50%;background:#e9a91b;"></div>
+          <div style="width:8px;height:8px;border-radius:50%;background:#e03c3c;"></div>
+          <div style="width:8px;height:8px;border-radius:50%;background:#2a9d5c;"></div>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:#111;margin-bottom:2px;">Více pracovníků</div>
+          <div style="font-size:11px;color:#a8a6a6;line-height:1.55;">Do stejného půdorysu nakreslete trasy více lidí v lince nebo na pracovišti. Každý pracovník má svou barvu - přidejte je tlačítkem + Nový pracovník.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOOLBAR -->
+  <div class="toolbar" id="toolbar" style="display:none;">
+    <div class="toolbar-group">
+      <button class="tool-btn active" id="btn-kreslit" onclick="setMod('kreslit')">
+        <span class="btn-icon"></span> Kreslit trasu
+      </button>
+      <button class="tool-btn" id="btn-zastavka" onclick="pridatZastavku()" style="background:#fee2e2;color:#c0392b;border-color:#f5c6c6;">
+        ⏸ Zastávka
+      </button>
+      <button class="tool-btn" id="btn-posouvat" onclick="setMod('posouvat')">
+        Posouvat mapu
+      </button>
+      <button class="tool-btn" onclick="zoomIn()" title="Přiblížit">+ Přiblížit</button>
+      <button class="tool-btn" onclick="zoomOut()" title="Oddálit">− Oddálit</button>
+      <button class="tool-btn" onclick="resetZoom()" title="Původní velikost">Celá mapa</button>
+    </div>
+    <div class="toolbar-divider"></div>
+    <div class="toolbar-group">
+      <button class="tool-btn" onclick="zpetKrok()" title="Vrátit poslední bod">
+        Zpět
+      </button>
+      <button class="tool-btn danger" onclick="smazatAktualniTrasu()">
+        Smazat trasu
+      </button>
+    </div>
+    <div class="toolbar-divider"></div>
+    <div class="toolbar-group">
+      <button class="tool-btn" onclick="novyPracovnik()" style="background:var(--gold-light);border-color:var(--gold);color:var(--gold-dark);">
+        + Nový pracovník
+      </button>
+    </div>
+  </div>
+
+  <!-- CANVAS -->
+  <div class="canvas-outer" id="canvas-outer">
+    <div class="canvas-placeholder" id="canvas-placeholder">
+      <div style="font-size:48px;opacity:0.2;">🏭</div>
+      <p>Nejprve nahrajte půdorys výrobní haly</p>
+    </div>
+    <div id="canvas-outer"><canvas id="main-canvas" style="display:none;"></canvas></div>
+  </div>
+
+  <!-- ZAKÁZKY -->
+  <div class="zakazky-panel" id="zakazky-panel" style="display:none;">
+    <div class="zakazky-title">Pracovníci a trasy</div>
+    <div class="zakazky-list" id="zakazky-list"></div>
+    <button class="btn-nova-pracovnik" onclick="novyPracovnik()">+ Přidat novou zakázku</button>
+  </div>
+
+  <!-- TIP KROKOMERY -->
+  <div class="tip-box" id="tip-krokomery" style="display:none;">
+    <strong>Tip: kombinujte s krokoměrem</strong> pro přesné číslo v metrech.
+    Před vychystáváním si poznačte hodnotu krokoměru a po skončení odečtěte.<br>
+    Stáhněte:
+    <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.fitness" target="_blank">Google Fit (Android)</a>
+    nebo použijte vestavěnou aplikaci <strong>Zdraví</strong> na iPhone.
+  </div>
+
+  <!-- EXPORT -->
+  <div class="export-bar" id="export-bar" style="display:none;">
+    <button class="btn-export" onclick="exportovatObrazek()">Stáhnout diagram</button>
+    <button class="btn-export-outline" onclick="tisknout()">Vytisknout</button>
+    <button class="btn-export-outline" onclick="resetovat()">Začít znovu</button>
+  </div>
+
+</div>
+
+<!-- MODAL NOVA ZAKAZKA -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <h3>Nový pracovník</h3>
+    <p>Pojmenujte zakázku a zvolte barvu trasy. Aktuální trasa bude uložena.</p>
+    <input type="text" class="modal-input" id="modal-nazev" placeholder="např. Pracovník #2">
+    <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;" id="barvy-picker">
+    </div>
+    <div class="modal-btns">
+      <button class="btn-modal-cancel" onclick="zavritModal()">Zrušit</button>
+      <button class="btn-modal-ok" onclick="potvrditNovehoPracovnika()">Vytvořit</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-brand">Gabriela <span>Tomíčková</span>, AI a Procesní konzultant</div>
+  <div class="footer-legal">Příčná 49, Vrchlabí, IČO: 75905311 &nbsp;·&nbsp; <a href="https://gdpr.gabrielatomickova.cz">Zásady ochrany osobních údajů</a></div>
+</footer>
+
+<script>
+// =============================================
+// STAV APLIKACE
+// =============================================
+const BARVY = ['#e9a91b','#e03c3c','#2a9d5c','#3b82f6','#8b5cf6','#f97316','#06b6d4','#ec4899'];
+let layout = null;
+let canvas, ctx;
+let mod = 'kreslit';
+let meritko = 1; // px -> metry
+
+let zakazky = [];
+let aktivniZakazka = 0;
+let zastavky = []; // {pracovnikIdx, x, y, cas}
+let vybranaBarva = BARVY[0];
+
+let zoom = 1;
+let offsetX = 0, offsetY = 0;
+let isPanning = false;
+let panStart = {x:0, y:0};
+let offsetStart = {x:0, y:0};
+
+// =============================================
+// INIT
+// =============================================
+window.addEventListener('DOMContentLoaded', () => {
+  canvas = document.getElementById('main-canvas');
+  ctx = canvas.getContext('2d');
+
+  // Drag & drop
+  const zone = document.getElementById('upload-zone');
+  zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('dragover'); });
+  zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
+  zone.addEventListener('drop', e => {
+    e.preventDefault(); zone.classList.remove('dragover');
+    const file = e.dataTransfer.files[0];
+    if (file) nacistSoubor(file);
+  });
+
+  // Canvas eventy
+  canvas.addEventListener('click', onCanvasClick);
+  canvas.addEventListener('mousedown', onMouseDown);
+  canvas.addEventListener('mousemove', onMouseMove);
+  canvas.addEventListener('mouseup', () => isPanning = false);
+  canvas.addEventListener('wheel', onWheel, {passive:false});
+  canvas.addEventListener('touchstart', onTouchStart, {passive:false});
+  canvas.addEventListener('touchmove', onTouchMove, {passive:false});
+  canvas.addEventListener('touchend', onTouchEnd);
+
+  // Barvy picker
+  const picker = document.getElementById('barvy-picker');
+  BARVY.forEach((b, i) => {
+    const dot = document.createElement('div');
+    dot.style.cssText = `width:28px;height:28px;border-radius:50%;background:${b};cursor:pointer;border:3px solid ${i===0?'#000':'transparent'};transition:border 0.15s;`;
+    dot.onclick = () => {
+      picker.querySelectorAll('div').forEach(d => d.style.border = '3px solid transparent');
+      dot.style.border = '3px solid #000';
+      vybranaBarva = b;
+    };
+    picker.appendChild(dot);
+  });
+});
+
+// =============================================
+// UPLOAD
+// =============================================
+function nahratLayout(input) {
+  if (input.files[0]) nacistSoubor(input.files[0]);
+}
+
+function nacistSoubor(file) {
+  const reader = new FileReader();
+  reader.onload = e => {
+    const img = new Image();
+    img.onload = () => {
+      layout = img;
+      inicializovat();
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function inicializovat() {
+  document.getElementById('upload-zone').style.display = 'none';
+  document.getElementById('setup-panel').style.display = 'block';
+  document.getElementById('canvas-placeholder').style.display = 'none';
+  canvas.style.display = 'block';
+
+  // Nastav canvas
+  const maxW = canvas.parentElement.clientWidth;
+  const scale = Math.min(maxW / layout.naturalWidth, 800 / layout.naturalHeight, 1);
+  canvas.width = layout.naturalWidth * scale;
+  canvas.height = layout.naturalHeight * scale;
+  // Ulozit puvodni rozmery pro spravne kresleni pri zoomu
+  canvas._layoutW = canvas.width;
+  canvas._layoutH = canvas.height;
+  zoom = 1; offsetX = 0; offsetY = 0;
+
+  // Prva pracovník
+  if (zakazky.length === 0) {
+    zakazky.push({ nazev: 'Pracovník 1', barva: BARVY[0], body: [] });
+    aktivniZakazka = 0;
+  }
+  kreslit();
+}
+
+// =============================================
+// SETUP
+// =============================================
+function spustitKresleni() {
+  const pxCm = parseFloat(document.getElementById('meritko-px').value) || 10;
+  const realM = parseFloat(document.getElementById('meritko-m').value) || 5;
+  const nazev = document.getElementById('nazev-zakazky').value || 'Pracovník 1';
+  meritko = realM / (pxCm * (canvas.width / canvas.parentElement.clientWidth) * 37.8);
+  zakazky[0].nazev = nazev;
+
+  document.getElementById('setup-panel').style.display = 'none';
+  document.getElementById('stats-bar').style.display = 'flex';
+  document.getElementById('toolbar').style.display = 'flex';
+  document.getElementById('vysvetlivky').style.display = 'block';
+  document.getElementById('zakazky-panel').style.display = 'block';
+  document.getElementById('tip-krokomery').style.display = 'block';
+  document.getElementById('export-bar').style.display = 'flex';
+  obnovitZakazkyList();
+  updateStats();
+}
+
+// =============================================
+// KRESLENI
+// =============================================
+function aplikovatCssTransform() {
+  canvas.style.transform = 'translate(' + offsetX + 'px,' + offsetY + 'px) scale(' + zoom + ')';
+  canvas.style.transformOrigin = '0 0';
+}
+
+function kreslit() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Layout - kresli se na plnou velikost canvasu, zoom zajistuje CSS transform
+  if (layout) {
+    ctx.drawImage(layout, 0, 0, canvas.width, canvas.height);
+  }
+
+  ctx.save();
+  // Trasy a body se kresli BEZ canvas transformace - CSS transform zajisti zoom
+  // Souradnice jsou v canvas prostoru (0 az canvas.width/height)
+
+  // Trasy
+  zakazky.forEach((z, zi) => {
+    if (z.body.length < 2) return;
+    ctx.beginPath();
+    ctx.strokeStyle = z.barva;
+    ctx.lineWidth = zi === aktivniZakazka ? 2.5 : 1.5;
+    ctx.globalAlpha = zi === aktivniZakazka ? 0.9 : 0.45;
+    ctx.moveTo(z.body[0].x, z.body[0].y);
+    z.body.forEach(b => ctx.lineTo(b.x, b.y));
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+  });
+
+  // Body aktivni zakazky
+  const az = zakazky[aktivniZakazka];
+  if (az) {
+    az.body.forEach((b, i) => {
+      ctx.beginPath();
+      ctx.arc(b.x, b.y, i === 0 ? 6 : 4, 0, Math.PI * 2);
+      ctx.fillStyle = i === 0 ? '#000' : az.barva;
+      ctx.fill();
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+    });
+  }
+
+  // Kresleni zastavek
+  if (typeof zastavky !== 'undefined') {
+    zastavky.forEach(z => {
+      const barva = zakazky[z.pracovnikIdx] ? zakazky[z.pracovnikIdx].barva : '#c0392b';
+      const r = 8;
+      ctx.beginPath();
+      ctx.arc(z.x, z.y, r, 0, Math.PI * 2);
+      ctx.fillStyle = '#fff';
+      ctx.fill();
+      ctx.strokeStyle = barva;
+      ctx.lineWidth = 2.5;
+      ctx.stroke();
+      // X symbol
+      const d = 4;
+      ctx.beginPath();
+      ctx.moveTo(z.x - d, z.y - d);
+      ctx.lineTo(z.x + d, z.y + d);
+      ctx.moveTo(z.x + d, z.y - d);
+      ctx.lineTo(z.x - d, z.y + d);
+      ctx.strokeStyle = barva;
+      ctx.lineWidth = 2;
+      ctx.stroke();
+    });
+  }
+
+  ctx.restore();
+}
+
+function zoomAround(delta) {
+  const cx = canvas.offsetWidth / 2;
+  const cy = canvas.offsetHeight / 2;
+  offsetX = cx - (cx - offsetX) * delta;
+  offsetY = cy - (cy - offsetY) * delta;
+  zoom = Math.min(Math.max(zoom * delta, 0.1), 20);
+  aplikovatCssTransform();
+}
+
+function zoomIn() { zoomAround(1.3); }
+function zoomOut() { zoomAround(1/1.3); }
+
+function resetZoom() {
+  zoom = 1; offsetX = 0; offsetY = 0;
+  aplikovatCssTransform();
+}
+
+function setMod(m) {
+  mod = m;
+  canvas.style.cursor = m === 'kreslit' ? 'crosshair' : 'grab';
+  document.getElementById('btn-kreslit').classList.toggle('active', m === 'kreslit');
+  document.getElementById('btn-posouvat').classList.toggle('active', m === 'posouvat');
+}
+
+// =============================================
+// CANVAS EVENTS
+// =============================================
+function getCanvasPos(e) {
+  // Canvas ma CSS transform translate+scale - prepocitat souradnice
+  const rect = canvas.getBoundingClientRect();
+  // getBoundingClientRect uz vraci transformovanou pozici
+  // Musime ziskat pozici v canvas souradnicovem systemu
+  const outerRect = document.getElementById('canvas-outer').getBoundingClientRect();
+  const x = (e.clientX - outerRect.left - offsetX) / zoom;
+  const y = (e.clientY - outerRect.top - offsetY) / zoom;
+  return {x, y};
+}
+
+function onCanvasClick(e) {
+  if (mod !== 'kreslit' || isPanning) return;
+  const pos = getCanvasPos(e);
+  zakazky[aktivniZakazka].body.push(pos);
+  kreslit();
+  updateStats();
+}
+
+function onMouseDown(e) {
+  if (mod === 'posouvat') {
+    isPanning = true;
+    panStart = {x: e.clientX, y: e.clientY};
+    offsetStart = {x: offsetX, y: offsetY};
+    canvas.style.cursor = 'grabbing';
+  }
+}
+
+function onMouseMove(e) {
+  if (!isPanning) return;
+  offsetX = offsetStart.x + (e.clientX - panStart.x);
+  offsetY = offsetStart.y + (e.clientY - panStart.y);
+  aplikovatCssTransform();
+}
+
+function onWheel(e) {
+  e.preventDefault();
+  const delta = e.deltaY > 0 ? 0.85 : 1.15;
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left;
+  const my = e.clientY - rect.top;
+  offsetX = mx - (mx - offsetX) * delta;
+  offsetY = my - (my - offsetY) * delta;
+  zoom = Math.min(Math.max(zoom * delta, 0.1), 20);
+  aplikovatCssTransform();
+}
+
+let lastTouches = null;
+function onTouchStart(e) {
+  e.preventDefault();
+  if (e.touches.length === 1 && mod === 'kreslit') {
+    const t = e.touches[0];
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    const pos = {
+      x: ((t.clientX - rect.left) * scaleX - offsetX) / zoom,
+      y: ((t.clientY - rect.top) * scaleY - offsetY) / zoom
+    };
+    zakazky[aktivniZakazka].body.push(pos);
+    kreslit();
+    updateStats();
+  } else if (e.touches.length === 2) {
+    lastTouches = e.touches;
+  }
+}
+
+function onTouchMove(e) {
+  e.preventDefault();
+  if (e.touches.length === 2 && lastTouches) {
+    const t1 = e.touches[0], t2 = e.touches[1];
+    const l1 = lastTouches[0], l2 = lastTouches[1];
+    const distNew = Math.hypot(t1.clientX-t2.clientX, t1.clientY-t2.clientY);
+    const distOld = Math.hypot(l1.clientX-l2.clientX, l1.clientY-l2.clientY);
+    const delta = distNew / distOld;
+    zoom = Math.min(Math.max(zoom * delta, 0.3), 5);
+    lastTouches = e.touches;
+    kreslit();
+  }
+}
+
+function onTouchEnd() { lastTouches = null; }
+
+// =============================================
+// OPERACE
+// =============================================
+function zpetKrok() {
+  const z = zakazky[aktivniZakazka];
+  if (z && z.body.length > 0) {
+    z.body.pop();
+    kreslit();
+    updateStats();
+  }
+}
+
+function smazatAktualniTrasu() {
+  if (confirm('Smazat celou trasu aktuální pracovníci?')) {
+    zakazky[aktivniZakazka].body = [];
+    kreslit();
+    updateStats();
+  }
+}
+
+function novyPracovnik() {
+  document.getElementById('modal-nazev').value = 'Pracovník ' + (zakazky.length + 1);
+  document.getElementById('modal').classList.add('visible');
+  // Reset barvy picker
+  const picker = document.getElementById('barvy-picker');
+  const nextBarva = BARVY[zakazky.length % BARVY.length];
+  vybranaBarva = nextBarva;
+  picker.querySelectorAll('div').forEach((d, i) => {
+    d.style.border = BARVY[i] === nextBarva ? '3px solid #000' : '3px solid transparent';
+  });
+}
+
+function zavritModal() { document.getElementById('modal').classList.remove('visible'); }
+
+function potvrditNovehoPracovnika() {
+  const nazev = document.getElementById('modal-nazev').value || ('Pracovník ' + (zakazky.length + 1));
+  zakazky.push({ nazev, barva: vybranaBarva, body: [] });
+  aktivniZakazka = zakazky.length - 1;
+  zavritModal();
+  obnovitZakazkyList();
+  updateStats();
+  kreslit();
+}
+
+function prepnoutZakazku(i) {
+  aktivniZakazka = i;
+  obnovitZakazkyList();
+  updateStats();
+  kreslit();
+}
+
+function smazatZakazku(i, e) {
+  e.stopPropagation();
+  if (zakazky.length === 1) { zakazky[0].body = []; kreslit(); updateStats(); return; }
+  if (confirm('Smazat pracovníka "' + zakazky[i].nazev + '"?')) {
+    zakazky.splice(i, 1);
+    aktivniZakazka = Math.min(aktivniZakazka, zakazky.length - 1);
+    obnovitZakazkyList();
+    updateStats();
+    kreslit();
+  }
+}
+
+function obnovitZakazkyList() {
+  const list = document.getElementById('zakazky-list');
+  list.innerHTML = '';
+  zakazky.forEach((z, i) => {
+    const delka = spocitejDelku(z.body);
+    const item = document.createElement('div');
+    item.className = 'pracovnik-item' + (i === aktivniZakazka ? ' active' : '');
+    item.innerHTML = `
+      <div class="pracovnik-dot" style="background:${z.barva}"></div>
+      <span class="pracovnik-nazev">${z.nazev}</span>
+      <span class="pracovnik-metro">${delka > 0 ? delka.toFixed(0) + ' m' : '-'}</span>
+      <span class="pracovnik-smazat" onclick="smazatZakazku(${i}, event)">×</span>
+    `;
+    item.onclick = () => prepnoutZakazku(i);
+    list.appendChild(item);
+  });
+  document.getElementById('stat-zakazky').textContent = zakazky.length;
+}
+
+function spocitejDelku(body) {
+  if (body.length < 2) return 0;
+  let d = 0;
+  for (let i = 1; i < body.length; i++) {
+    d += Math.hypot(body[i].x - body[i-1].x, body[i].y - body[i-1].y);
+  }
+  return d * meritko;
+}
+
+function pridatZastavku() {
+  // Zastávka se přidá na poslední bod aktivního pracovníka
+  const az = zakazky[aktivniZakazka];
+  if (!az || az.body.length === 0) {
+    alert('Nejdříve nakreslete část trasy pracovníka.');
+    return;
+  }
+  const posledni = az.body[az.body.length - 1];
+  zastavky.push({pracovnikIdx: aktivniZakazka, x: posledni.x, y: posledni.y, cas: new Date().toLocaleTimeString('cs-CZ')});
+  kreslit();
+  updateStats();
+}
+
+function updateStats() {
+  const az = zakazky[aktivniZakazka];
+  document.getElementById('stat-body').textContent = az ? az.body.length : 0;
+  const delkaAkt = az ? spocitejDelku(az.body) : 0;
+  document.getElementById('stat-delka').textContent = delkaAkt.toFixed(0) + ' m';
+  const celkem = zakazky.reduce((sum, z) => sum + spocitejDelku(z.body), 0);
+  document.getElementById('stat-celkem').textContent = celkem.toFixed(0) + ' m';
+  // Počet zastávek aktivního pracovníka
+  const zastAkt = zastavky.filter(z => z.pracovnikIdx === aktivniZakazka).length;
+  document.getElementById('stat-zastavky').textContent = zastAkt;
+  obnovitZakazkyList();
+}
+
+// =============================================
+// EXPORT
+// =============================================
+function kresliNaExportCanvas(expCtx, expW, expH) {
+  // Nakreslit layout
+  if (layout) expCtx.drawImage(layout, 0, 0, expW, expH);
+  // Nakreslit trasy
+  zakazky.forEach((z, zi) => {
+    if (z.body.length < 2) return;
+    expCtx.beginPath();
+    expCtx.strokeStyle = z.barva;
+    expCtx.lineWidth = zi === aktivniZakazka ? 2.5 : 1.5;
+    expCtx.globalAlpha = zi === aktivniZakazka ? 0.9 : 0.6;
+    expCtx.moveTo(z.body[0].x, z.body[0].y);
+    z.body.forEach(b => expCtx.lineTo(b.x, b.y));
+    expCtx.stroke();
+    expCtx.globalAlpha = 1;
+  });
+  // Nakreslit zastávky
+  if (typeof zastavky !== 'undefined') {
+    zastavky.forEach(z => {
+      const barva = zakazky[z.pracovnikIdx] ? zakazky[z.pracovnikIdx].barva : '#c0392b';
+      expCtx.beginPath();
+      expCtx.arc(z.x, z.y, 8, 0, Math.PI * 2);
+      expCtx.fillStyle = '#fff';
+      expCtx.fill();
+      expCtx.strokeStyle = barva;
+      expCtx.lineWidth = 2.5;
+      expCtx.stroke();
+      expCtx.beginPath();
+      expCtx.moveTo(z.x-4, z.y-4); expCtx.lineTo(z.x+4, z.y+4);
+      expCtx.moveTo(z.x+4, z.y-4); expCtx.lineTo(z.x-4, z.y+4);
+      expCtx.strokeStyle = barva; expCtx.lineWidth = 2; expCtx.stroke();
+    });
+  }
+}
+
+function exportovatObrazek() {
+  const legendH = zakazky.length * 22 + 50;
+  const statsH = 36;
+  const expCanvas = document.createElement('canvas');
+  expCanvas.width = canvas.width;
+  expCanvas.height = canvas.height + legendH + statsH;
+  const expCtx = expCanvas.getContext('2d');
+
+  // Pozadi
+  expCtx.fillStyle = '#fff';
+  expCtx.fillRect(0, 0, expCanvas.width, expCanvas.height);
+
+  // Statistiky nahoře
+  expCtx.fillStyle = '#111';
+  expCtx.fillRect(0, 0, expCanvas.width, statsH);
+  expCtx.fillStyle = '#fff';
+  expCtx.font = 'bold 12px Arial, sans-serif';
+  const celkem = zakazky.reduce((s,z) => s + spocitejDelku(z.body), 0);
+  const zastPoc = typeof zastavky !== 'undefined' ? zastavky.length : 0;
+  expCtx.fillText('Spaghetti diagram Pro  |  Celkem: ' + celkem.toFixed(0) + ' m  |  Zastávek: ' + zastPoc + '  |  Pracovníků: ' + zakazky.length + '  |  Měřítko: 1:' + Math.round(1/meritko), 14, 22);
+
+  // Mapa a trasy
+  expCtx.save();
+  expCtx.translate(0, statsH);
+  kresliNaExportCanvas(expCtx, canvas.width, canvas.height);
+  expCtx.restore();
+
+  // Legenda dole
+  expCtx.fillStyle = '#111';
+  expCtx.fillRect(0, canvas.height + statsH, expCanvas.width, legendH);
+  expCtx.fillStyle = '#e9a91b';
+  expCtx.font = 'bold 11px Arial, sans-serif';
+  expCtx.fillText('PRACOVNÍCI A TRASY', 14, canvas.height + statsH + 20);
+  zakazky.forEach((z, i) => {
+    const y = canvas.height + statsH + 36 + i * 22;
+    expCtx.beginPath();
+    expCtx.arc(18, y, 6, 0, Math.PI * 2);
+    expCtx.fillStyle = z.barva;
+    expCtx.fill();
+    expCtx.fillStyle = '#fff';
+    expCtx.font = '11px Arial, sans-serif';
+    const delka = spocitejDelku(z.body);
+    const zastN = typeof zastavky !== 'undefined' ? zastavky.filter(s=>s.pracovnikIdx===i).length : 0;
+    const zastTxt = zastN > 0 ? '  (' + zastN + ' zastávek)' : '';
+    expCtx.fillText(z.nazev + ': ' + delka.toFixed(0) + ' m' + zastTxt, 32, y + 4);
+  });
+
+  const link = document.createElement('a');
+  link.download = 'spaghetti-diagram-vyroba.png';
+  link.href = expCanvas.toDataURL('image/png');
+  link.click();
+}
+
+function tisknout() {
+  // Vytvorit novy canvas pro tisk - bez CSS transformace
+  const printWin = window.open('', '_blank');
+  const expCanvas = document.createElement('canvas');
+  const legendH = zakazky.length * 22 + 50;
+  const statsH = 36;
+  expCanvas.width = canvas.width;
+  expCanvas.height = canvas.height + legendH + statsH;
+  const expCtx = expCanvas.getContext('2d');
+
+  expCtx.fillStyle = '#fff';
+  expCtx.fillRect(0, 0, expCanvas.width, expCanvas.height);
+
+  // Statistiky
+  expCtx.fillStyle = '#111';
+  expCtx.fillRect(0, 0, expCanvas.width, statsH);
+  expCtx.fillStyle = '#fff';
+  expCtx.font = 'bold 12px Arial';
+  const celkem = zakazky.reduce((s,z) => s + spocitejDelku(z.body), 0);
+  const zastPoc = typeof zastavky !== 'undefined' ? zastavky.length : 0;
+  expCtx.fillText('Celkem: ' + celkem.toFixed(0) + ' m  |  Zastávek: ' + zastPoc + '  |  Pracovníků: ' + zakazky.length + '  |  Měřítko 1:' + Math.round(1/meritko), 14, 22);
+
+  // Mapa
+  expCtx.save();
+  expCtx.translate(0, statsH);
+  kresliNaExportCanvas(expCtx, canvas.width, canvas.height);
+  expCtx.restore();
+
+  // Legenda
+  expCtx.fillStyle = '#111';
+  expCtx.fillRect(0, canvas.height + statsH, expCanvas.width, legendH);
+  expCtx.fillStyle = '#e9a91b';
+  expCtx.font = 'bold 11px Arial';
+  expCtx.fillText('PRACOVNÍCI A TRASY', 14, canvas.height + statsH + 20);
+  zakazky.forEach((z, i) => {
+    const y = canvas.height + statsH + 36 + i * 22;
+    expCtx.beginPath();
+    expCtx.arc(18, y, 6, 0, Math.PI * 2);
+    expCtx.fillStyle = z.barva; expCtx.fill();
+    expCtx.fillStyle = '#fff';
+    expCtx.font = '11px Arial';
+    const delka = spocitejDelku(z.body);
+    const zastN = typeof zastavky !== 'undefined' ? zastavky.filter(s=>s.pracovnikIdx===i).length : 0;
+    expCtx.fillText(z.nazev + ': ' + delka.toFixed(0) + ' m' + (zastN > 0 ? ' (' + zastN + ' zastávek)' : ''), 32, y + 4);
+  });
+
+  const img = expCanvas.toDataURL('image/png');
+  printWin.document.write('<html><head><title>Spaghetti diagram Pro</title><style>body{margin:0;padding:0;}img{max-width:100%;display:block;}@media print{body{margin:0;}}</style></head><body><img src="' + img + '"></body></html>');
+  printWin.document.close();
+  printWin.focus();
+  setTimeout(() => printWin.print(), 500);
+}
+
+function resetovat() {
+  if (confirm('Začít úplně znovu? Všechny trasy budou smazány.')) {
+    zakazky = [{ nazev: 'Pracovník 1', barva: BARVY[0], body: [] }];
+    aktivniZakazka = 0;
+    zastavky = [];
+    layout = null;
+    zoom = 1; offsetX = 0; offsetY = 0;
+    canvas.style.display = 'none';
+    document.getElementById('canvas-placeholder').style.display = 'flex';
+    document.getElementById('upload-zone').style.display = 'block';
+    document.getElementById('setup-panel').style.display = 'none';
+    document.getElementById('stats-bar').style.display = 'none';
+    document.getElementById('toolbar').style.display = 'none';
+    document.getElementById('zakazky-panel').style.display = 'none';
+    document.getElementById('export-bar').style.display = 'none';
+    document.getElementById('tip-krokomery').style.display = 'none';
+  }
+}
+</script>
+
+<script>
+// PŘIHLAŠOVÁNÍ
+const KODY_URL = 'https://script.google.com/macros/s/AKfycbxq9mk1F1PYHkbdsaAkLa1wK5Xw1ddgfvP_82jrOnrgE6uW78oiyZ7IRD7PzArZxG2W/exec';
+const STORAGE_KEY = 'spaghetti_pro_kod';
+
+function overitKod() {
+  const kod = document.getElementById('prih-kod').value.trim().toUpperCase();
+  if (!kod) return;
+
+  if (kod === 'DEMO2024') {
+    localStorage.setItem(STORAGE_KEY, kod);
+    vstoupitDoAplikace();
+    return;
+  }
+
+  const btn = document.querySelector('.prih-btn');
+  btn.textContent = 'Ověřuji...';
+  btn.disabled = true;
+  fetch(KODY_URL + '?action=check&kod=' + encodeURIComponent(kod))
+    .then(r => r.json())
+    .then(data => {
+      if (data.ok) {
+        localStorage.setItem(STORAGE_KEY, kod);
+        vstoupitDoAplikace();
+      } else {
+        const err = document.getElementById('prih-err');
+        err.textContent = data.zprava || 'Kód není platný nebo přístup vypršel.';
+        err.style.display = 'block';
+        btn.textContent = 'Vstoupit do aplikace';
+        btn.disabled = false;
+      }
+    })
+    .catch(() => {
+      document.getElementById('prih-err').style.display = 'block';
+      btn.textContent = 'Vstoupit do aplikace';
+      btn.disabled = false;
+    });
+}
+
+function vstoupitDoAplikace() {
+  document.getElementById('prihlaseni').style.display = 'none';
+  document.getElementById('main-app').style.display = 'block';
+}
+
+window.addEventListener('load', () => {
+  const ulozeny = localStorage.getItem(STORAGE_KEY);
+  if (!ulozeny) return;
+  fetch(KODY_URL + '?action=check&kod=' + encodeURIComponent(ulozeny))
+    .then(r => r.json())
+    .then(data => {
+      if (data.ok) {
+        vstoupitDoAplikace();
+      } else {
+        localStorage.removeItem(STORAGE_KEY);
+        const err = document.getElementById('prih-err');
+        err.textContent = data.zprava || 'Váš přístup vypršel. Obnovte předplatné.';
+        err.style.display = 'block';
+      }
+    })
+    .catch(() => { vstoupitDoAplikace(); });
+});
+</script>
+
+<script>
+(function(){
+  var s = localStorage.getItem('cookies_souhlas');
+  if (s === 'ano') {
+    spustitGA();
+  } else if (s === null) {
+    document.getElementById('cookies-bar').style.display = 'flex';
+  }
+})();
+
+function spustitGA() {
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JBFDH4G4VP';
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-JBFDH4G4VP');
+}
+
+function cookiesSouhlasit() {
+  localStorage.setItem('cookies_souhlas', 'ano');
+  document.getElementById('cookies-bar').style.display = 'none';
+  spustitGA();
+}
+
+function cookiesOdmitnout() {
+  localStorage.setItem('cookies_souhlas', 'ne');
+  document.getElementById('cookies-bar').style.display = 'none';
+}
+</script>
+</div><!-- /main-app -->
+</body>
+</html>
