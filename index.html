@@ -204,7 +204,7 @@ footer { background:#0a0a0a; padding:40px; display:flex; justify-content:space-b
 
 <nav>
   <div class="nav-brand">Gabriela <span>Tomíčková</span></div>
-  <a href="#kontakt" class="nav-cta">Napsat</a>
+  <a href="#projekty" class="nav-cta">Kde ztrácíte?</a>
 </nav>
 
 <section class="hero">
@@ -214,7 +214,7 @@ footer { background:#0a0a0a; padding:40px; display:flex; justify-content:space-b
     <p class="hero-sub">Pomáhám firmám z výroby a logistiky <strong>dostat provoz pod kontrolu</strong> bez dalšího náboru, bez složitých systémů. Selský rozum + správná automatizace.</p>
     <div class="hero-btns">
       <a href="mailto:tomickova.info@gmail.com" class="btn-gold">Napište mi</a>
-      <a href="#nabidka" class="btn-outline">Co nabízím</a>
+      <a href="https://calendly.com/tomickova-info/30min" target="_blank" class="btn-outline">Zavoláme si</a>
     </div>
     <div class="hero-stats">
       <div class="stat"><div class="stat-num">16+</div><div class="stat-label">let v provozu</div></div>
@@ -514,28 +514,21 @@ function odeslat() {
   btn.textContent = 'Odesílám...';
   btn.disabled = true;
 
-  const mailto = 'mailto:tomickova.info@gmail.com'
-    + '?subject=' + encodeURIComponent('Poptávka z webu – ' + (oblast || 'obecné') + ' – ' + firma)
-    + '&body=' + encodeURIComponent(
-        'Jméno: ' + jmeno + '
-'
-      + 'Email: ' + email + '
-'
-      + 'Firma: ' + firma + '
-'
-      + 'Oblast: ' + oblast + '
+  const predmet = encodeURIComponent('Poptávka z webu – ' + (oblast || 'obecné') + (firma ? ' – ' + firma : ''));
+  const telo = encodeURIComponent('Jméno: ' + jmeno + '\nEmail: ' + email + '\nFirma: ' + firma + '\nOblast: ' + oblast + '\n\n' + zprava);
 
-'
-      + zprava
-    );
-
-  window.location.href = mailto;
+  const odkaz = document.createElement('a');
+  odkaz.href = 'mailto:tomickova.info@gmail.com?subject=' + predmet + '&body=' + telo;
+  odkaz.target = '_blank';
+  document.body.appendChild(odkaz);
+  odkaz.click();
+  document.body.removeChild(odkaz);
 
   setTimeout(() => {
     document.getElementById('f-success').style.display = 'block';
     btn.textContent = 'Odeslat zprávu';
     btn.disabled = false;
-  }, 1000);
+  }, 800);
 }
 </script>
 
