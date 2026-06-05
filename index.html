@@ -204,7 +204,7 @@ footer { background:#0a0a0a; padding:40px; display:flex; justify-content:space-b
 
 <nav>
   <div class="nav-brand">Gabriela <span>Tomíčková</span></div>
-  <a href="mailto:tomickova.info@gmail.com" class="nav-cta">Napsat email</a>
+  <a href="#kontakt" class="nav-cta">Napsat</a>
 </nav>
 
 <section class="hero">
@@ -263,6 +263,7 @@ footer { background:#0a0a0a; padding:40px; display:flex; justify-content:space-b
           <li>Žádné teorie jen použitelné kroky</li>
           <li>Výrobní i skladová logistika</li>
         </ul>
+        <p style="margin-top:14px;font-size:13px;color:var(--gold);font-weight:600;">Vstupní diagnostika od 9 000 Kč</p>
       </div>
       <div class="service-card">
         <div class="service-icon"><span class="arrow-icon"></span></div>
@@ -459,10 +460,84 @@ footer { background:#0a0a0a; padding:40px; display:flex; justify-content:space-b
       <div class="section-label">Kontakt</div>
       <h2>Řešíte rutinu nebo jste přetížení<br><em>množstvím vlastních úkolů?</em></h2>
       <p>Napište mi. Podíváme se společně na to, co vám bere nejvíc času a jestli se to dá zjednodušit.</p>
-      <a href="mailto:tomickova.info@gmail.com" class="cta-email">tomickova.info@gmail.com</a>
+      <div style="max-width:520px;margin:0 auto;text-align:left;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+          <div>
+            <label style="font-size:11px;font-weight:600;color:rgba(255,255,255,.4);letter-spacing:.5px;display:block;margin-bottom:5px;">JMÉNO</label>
+            <input type="text" id="f-jmeno" placeholder="Jan Novák" style="width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:10px 13px;font-family:'DM Sans',sans-serif;font-size:14px;color:white;outline:none;" onfocus="this.style.borderColor='#e9a91b'" onblur="this.style.borderColor='rgba(255,255,255,.15)'">
+          </div>
+          <div>
+            <label style="font-size:11px;font-weight:600;color:rgba(255,255,255,.4);letter-spacing:.5px;display:block;margin-bottom:5px;">EMAIL</label>
+            <input type="email" id="f-email" placeholder="jan@firma.cz" style="width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:10px 13px;font-family:'DM Sans',sans-serif;font-size:14px;color:white;outline:none;" onfocus="this.style.borderColor='#e9a91b'" onblur="this.style.borderColor='rgba(255,255,255,.15)'">
+          </div>
+        </div>
+        <div style="margin-bottom:12px;">
+          <label style="font-size:11px;font-weight:600;color:rgba(255,255,255,.4);letter-spacing:.5px;display:block;margin-bottom:5px;">FIRMA / PROVOZ</label>
+          <input type="text" id="f-firma" placeholder="název firmy" style="width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:10px 13px;font-family:'DM Sans',sans-serif;font-size:14px;color:white;outline:none;" onfocus="this.style.borderColor='#e9a91b'" onblur="this.style.borderColor='rgba(255,255,255,.15)'">
+        </div>
+        <div style="margin-bottom:12px;">
+          <label style="font-size:11px;font-weight:600;color:rgba(255,255,255,.4);letter-spacing:.5px;display:block;margin-bottom:5px;">CO ŘEŠÍTE</label>
+          <select id="f-oblast" style="width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:10px 13px;font-family:'DM Sans',sans-serif;font-size:14px;color:white;outline:none;appearance:none;" onfocus="this.style.borderColor='#e9a91b'" onblur="this.style.borderColor='rgba(255,255,255,.15)'">
+            <option value="" style="background:#111;">Vyberte oblast</option>
+            <option value="vyroba" style="background:#111;">Výroba</option>
+            <option value="sklad" style="background:#111;">Sklad</option>
+            <option value="logistika" style="background:#111;">Logistika</option>
+            <option value="jine" style="background:#111;">Jiné</option>
+          </select>
+        </div>
+        <div style="margin-bottom:20px;">
+          <label style="font-size:11px;font-weight:600;color:rgba(255,255,255,.4);letter-spacing:.5px;display:block;margin-bottom:5px;">STRUČNÝ POPIS SITUACE</label>
+          <textarea id="f-zprava" rows="4" placeholder="Popište v pár větách co řešíte..." style="width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:10px 13px;font-family:'DM Sans',sans-serif;font-size:14px;color:white;outline:none;resize:vertical;" onfocus="this.style.borderColor='#e9a91b'" onblur="this.style.borderColor='rgba(255,255,255,.15)'"></textarea>
+        </div>
+        <button onclick="odeslat()" id="f-btn" style="width:100%;background:var(--gold);color:var(--black);border:none;border-radius:4px;padding:14px;font-family:'Poppins',sans-serif;font-size:15px;font-weight:800;cursor:pointer;transition:all .2s;" onmouseover="this.style.background='#c48e10'" onmouseout="this.style.background='#e9a91b'">Odeslat zprávu</button>
+        <div id="f-success" style="display:none;margin-top:16px;background:rgba(42,122,79,.2);border:1px solid rgba(42,122,79,.4);border-radius:6px;padding:14px;font-size:14px;color:#6ee7a8;text-align:center;">Zpráva odeslána. Ozvu se vám do 2 pracovních dnů.</div>
+        <div id="f-error" style="display:none;margin-top:16px;background:rgba(192,57,43,.2);border:1px solid rgba(192,57,43,.4);border-radius:6px;padding:14px;font-size:14px;color:#f87171;text-align:center;">Nepodařilo se odeslat. Napište přímo na <a href="mailto:tomickova.info@gmail.com" style="color:var(--gold);">tomickova.info@gmail.com</a></div>
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+function odeslat() {
+  const jmeno = document.getElementById('f-jmeno').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const firma = document.getElementById('f-firma').value.trim();
+  const oblast = document.getElementById('f-oblast').value;
+  const zprava = document.getElementById('f-zprava').value.trim();
+  const btn = document.getElementById('f-btn');
+
+  if (!jmeno || !email || !zprava) {
+    alert('Vyplňte prosím jméno, email a popis situace.');
+    return;
+  }
+
+  btn.textContent = 'Odesílám...';
+  btn.disabled = true;
+
+  const mailto = 'mailto:tomickova.info@gmail.com'
+    + '?subject=' + encodeURIComponent('Poptávka z webu – ' + (oblast || 'obecné') + ' – ' + firma)
+    + '&body=' + encodeURIComponent(
+        'Jméno: ' + jmeno + '
+'
+      + 'Email: ' + email + '
+'
+      + 'Firma: ' + firma + '
+'
+      + 'Oblast: ' + oblast + '
+
+'
+      + zprava
+    );
+
+  window.location.href = mailto;
+
+  setTimeout(() => {
+    document.getElementById('f-success').style.display = 'block';
+    btn.textContent = 'Odeslat zprávu';
+    btn.disabled = false;
+  }, 1000);
+}
+</script>
 
 <footer>
   <div class="footer-brand">Gabriela <span>Tomíčková</span> · AI & Procesní konzultant</div>
