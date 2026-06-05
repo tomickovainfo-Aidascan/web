@@ -101,7 +101,7 @@ nav{background:var(--black);border-bottom:2px solid var(--gold);padding:12px 20p
 /* CENY */
 .ceny-sekce{background:var(--paper);}
 .ceny-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;}
-.cena-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:24px 22px;}
+.cena-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:24px 22px;display:flex;flex-direction:column;}
 .cena-card.doporuceno{border-color:var(--gold);position:relative;}
 .doporuceno-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--black);font-family:"Poppins",sans-serif;font-size:10px;font-weight:800;padding:3px 12px;border-radius:20px;white-space:nowrap;letter-spacing:.5px;}
 .cena-nazev{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--light);margin-bottom:8px;}
@@ -370,6 +370,7 @@ footer{background:#0a0a0a;padding:16px 20px;display:flex;justify-content:space-b
           <li><div class="arr"></div>Výpočet ztráty v Kč ročně</li>
         </ul>
         <div class="cena-kalkulace" style="margin-top:12px;">Pokud aplikace odhalí plýtvání jen u dvou pracovníků na jednom procesu, řekněme 10 % z osmihodinové směny při 300 Kč/hod, ušetříte přes 14 000 Kč ročně. Nástroj se zaplatí z první analýzy.</div>
+        <div style="flex:1;"></div>
         <a href="objednavka-meric.html?varianta=mesic" class="btn-objednat" style="margin-top:16px;">Chci měsíční přístup</a>
       </div>
 
@@ -380,10 +381,11 @@ footer{background:#0a0a0a;padding:16px 20px;display:flex;justify-content:space-b
         <div class="cena-period">za rok</div>
         <ul class="feature-list" style="margin-top:12px;">
           <li><div class="arr"></div>Vše z měsíčního přístupu</li>
-          <li><div class="arr"></div>Měřič plýtvání Pro — hodnota 17 880 Kč/rok</li>
-          <li><div class="arr"></div>Spaghetti diagram Pro — hodnota 8 000 Kč</li>
+          <li><div class="arr"></div>Měřič plýtvání Pro<br><span style="font-size:11px;color:var(--light);font-weight:400;">hodnota 17 880 Kč/rok</span></li>
+          <li><div class="arr"></div>Spaghetti diagram Pro<br><span style="font-size:11px;color:var(--light);font-weight:400;">hodnota 8 000 Kč</span></li>
           <li><div class="arr"></div>Celková hodnota 25 880 Kč</li>
         </ul>
+        <div style="flex:1;"></div>
         <a href="objednavka-meric.html?varianta=rocni" class="btn-objednat gold" style="margin-top:16px;">Chci roční balíček se Spaghetti diagramem</a>
       </div>
 
