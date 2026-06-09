@@ -153,7 +153,7 @@ footer{background:#0a0a0a;padding:18px 24px;display:flex;justify-content:space-b
 <div class="main">
 
   <!-- VARIANTY -->
-  <div class="varianty">
+  <div class="varianty" style="grid-template-columns:1fr 1fr 1fr;">
     <div class="varianta" id="v-mesic" onclick="vybrateVariantu('mesic')">
       <div class="varianta-check"></div>
       <div class="varianta-badge" style="background:#e8f5ee;color:#2a7a4f;">Měsíční přístup</div>
@@ -189,7 +189,22 @@ footer{background:#0a0a0a;padding:18px 24px;display:flex;justify-content:space-b
         <span>Měření délky tras a nachozených metrů</span>
         <span>Přístup na 12 měsíců</span>
       </div>
-      <div class="uspor">Ušetříte 4 980 Kč oproti měsíčnímu</div>
+      <div class="uspor">Hodnota 25 880 Kč, ušetříte 12 980 Kč</div>
+    </div>
+    <div class="varianta rocni" id="v-komplet" onclick="vybrateVariantu('komplet')">
+      <div class="varianta-check"></div>
+      <div class="varianta-badge" style="background:var(--pro-light);color:var(--pro);">Rozšířený roční balíček</div>
+      <div class="varianta-nazev">Měřič + Spaghetti + Provoz pod kontrolou</div>
+      <div class="varianta-cena pro-cena">14 900 Kč</div>
+      <div class="varianta-per">/ rok</div>
+      <div class="varianta-features">
+        <span>Vše z ročního balíčku</span>
+        <span>5S pro každého smrtelníka</span>
+        <span>5x Proč AI kouč</span>
+        <span>Časová studie mého dne</span>
+        <span>Přístup na 12 měsíců</span>
+      </div>
+      <div class="uspor">Hodnota 31 450 Kč, ušetříte 16 550 Kč</div>
     </div>
   </div>
 
@@ -298,8 +313,13 @@ function vybrateVariantu(v) {
   vybranaVarianta = v;
   document.getElementById('v-mesic').classList.toggle('selected', v === 'mesic');
   document.getElementById('v-rok').classList.toggle('selected', v === 'rok');
-  const nazev = v === 'mesic' ? 'Měřič plýtvání Pro - měsíční' : 'Roční balíček Pro + Spaghetti';
-  const cena = v === 'mesic' ? '1 490 Kč' : '12 900 Kč';
+  document.getElementById('v-komplet').classList.toggle('selected', v === 'komplet');
+  const nazev = v === 'mesic' ? 'Měřič plýtvání Pro, měsíční'
+              : v === 'rok'   ? 'Roční balíček Pro + Spaghetti'
+                              : 'Rozšířený roční balíček';
+  const cena  = v === 'mesic' ? '1 490 Kč'
+              : v === 'rok'   ? '12 900 Kč'
+                              : '14 900 Kč';
   document.getElementById('sh-nazev').textContent = nazev;
   document.getElementById('sh-cena').textContent = cena;
   document.getElementById('sh-celkem').textContent = cena;
@@ -330,8 +350,12 @@ async function odeslat() {
   btn.textContent = 'Odesílám...';
 
   const vs = generujVS();
-  const castka = vybranaVarianta === 'mesic' ? '1 490 Kč' : '12 900 Kč';
-  const varianta = vybranaVarianta === 'mesic' ? 'Meric_Pro_V' : 'Meric_Pro_Spaghetti_V';
+  const castka = vybranaVarianta === 'mesic'   ? '1 490 Kč'
+               : vybranaVarianta === 'rok'     ? '12 900 Kč'
+                                               : '14 900 Kč';
+  const varianta = vybranaVarianta === 'mesic'   ? 'Meric_Pro_V'
+                 : vybranaVarianta === 'rok'     ? 'Meric_Pro_Spaghetti_V'
+                                                 : 'Meric_Pro_Komplet_V';
 
   const data = {
     jmeno: document.getElementById('f-jmeno').value.trim(),
@@ -376,6 +400,8 @@ const params = new URLSearchParams(window.location.search);
 const vParam = params.get('varianta');
 if (vParam === 'rocni' || vParam === 'rok') {
   vybrateVariantu('rok');
+} else if (vParam === 'komplet') {
+  vybrateVariantu('komplet');
 } else {
   vybrateVariantu('mesic');
 }
