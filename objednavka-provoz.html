@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Objednávka - Měřič plýtvání Pro | Gabriela Tomíčková</title>
+<title>Objednávka - Provoz pod kontrolou | Gabriela Tomíčková</title>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -33,27 +33,16 @@ nav{background:var(--white);border-bottom:2px solid var(--gold);padding:12px 24p
 
 .main{max-width:600px;margin:0 auto;padding:28px 20px 80px;}
 
-/* VARIANTY */
-.varianty{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}
-.varianta{background:var(--white);border:2px solid var(--border);border-radius:12px;padding:18px 16px;cursor:pointer;transition:all .2s;position:relative;}
-.varianta:hover{border-color:var(--gold);}
-.varianta.selected{border-color:var(--gold);background:var(--gold-light);}
-.varianta.selected.rocni{border-color:var(--pro);background:var(--pro-light);}
-.varianta-badge{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:10px;display:inline-block;margin-bottom:8px;}
-.varianta-nazev{font-family:"Poppins",sans-serif;font-size:13px;font-weight:700;color:var(--dark);margin-bottom:6px;line-height:1.3;}
-.varianta-cena{font-family:"DM Mono",monospace;font-size:20px;font-weight:500;color:var(--gold);margin-bottom:4px;}
-.varianta-cena.pro-cena{color:var(--pro);}
-.varianta-per{font-size:11px;color:var(--light);}
-.varianta-features{margin-top:10px;display:flex;flex-direction:column;gap:4px;}
-.varianta-features span{font-size:11px;color:var(--mid);display:flex;gap:6px;align-items:flex-start;line-height:1.4;}
+/* VARIANTA */
+.varianta-single{background:var(--white);border:2px solid var(--gold);border-radius:12px;padding:20px 18px;margin-bottom:24px;position:relative;}
+.varianta-badge{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:10px;display:inline-block;margin-bottom:8px;background:var(--gold-light);color:var(--gold-dark);}
+.varianta-nazev{font-family:"Poppins",sans-serif;font-size:15px;font-weight:800;color:var(--dark);margin-bottom:6px;}
+.varianta-cena{font-family:"DM Mono",monospace;font-size:24px;font-weight:500;color:var(--gold);margin-bottom:4px;}
+.varianta-per{font-size:11px;color:var(--light);margin-bottom:12px;}
+.varianta-features{display:flex;flex-direction:column;gap:4px;margin-bottom:10px;}
+.varianta-features span{font-size:12px;color:var(--mid);display:flex;gap:6px;align-items:flex-start;line-height:1.4;}
 .varianta-features span::before{content:"";width:12px;height:8px;background:var(--gold);clip-path:polygon(0 0,62% 0,100% 50%,62% 100%,0 100%);flex-shrink:0;margin-top:3px;}
-.varianta.selected.rocni .varianta-features span::before{background:var(--pro);}
-.varianta-check{position:absolute;top:12px;right:12px;width:20px;height:20px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all .2s;}
-.varianta.selected .varianta-check{background:var(--gold);border-color:var(--gold);}
-.varianta.selected.rocni .varianta-check{background:var(--pro);border-color:var(--pro);}
-.varianta-check::after{content:"✓";color:white;font-size:11px;font-weight:700;display:none;}
-.varianta.selected .varianta-check::after{display:block;}
-.uspor{background:var(--pro);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:3px;display:inline-block;margin-top:6px;}
+.uspor{background:var(--pro);color:white;font-size:10px;font-weight:700;padding:3px 10px;border-radius:3px;display:inline-block;}
 
 /* FORMULAR */
 .form-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:22px 20px;margin-bottom:16px;}
@@ -61,7 +50,7 @@ nav{background:var(--white);border-bottom:2px solid var(--gold);padding:12px 24p
 .field{margin-bottom:14px;}
 .field label{font-size:12px;font-weight:600;color:var(--mid);display:block;margin-bottom:5px;letter-spacing:.3px;}
 .field input,.field textarea,.field select{width:100%;border:1px solid var(--border);border-radius:6px;padding:10px 14px;font-family:"DM Sans",sans-serif;font-size:14px;color:var(--dark);outline:none;background:var(--paper);transition:border .2s;}
-.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--gold);background:white;}
+.field input:focus,.field textarea:focus{border-color:var(--gold);background:white;}
 .field textarea{resize:vertical;min-height:80px;}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 
@@ -101,6 +90,14 @@ nav{background:var(--white);border-bottom:2px solid var(--gold);padding:12px 24p
 
 .err{font-size:12px;color:#c0392b;margin-top:4px;display:none;}
 
+/* REKAPITULACE */
+.rekap{margin-top:32px;border-top:1px solid var(--border);padding-top:28px;}
+.rekap-title{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--light);margin-bottom:16px;}
+.rekap-item{margin-bottom:16px;}
+.rekap-item:last-child{margin-bottom:0;}
+.rekap-nazev{font-family:"Poppins",sans-serif;font-size:13px;font-weight:700;color:var(--dark);margin-bottom:4px;}
+.rekap-popis{font-size:12px;color:var(--mid);line-height:1.7;}
+
 footer{background:#0a0a0a;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-top:40px;}
 .footer-brand{font-family:"Poppins",sans-serif;font-size:11px;font-weight:700;color:rgba(255,255,255,.3);}
 .footer-brand span{color:var(--gold);}
@@ -108,7 +105,6 @@ footer{background:#0a0a0a;padding:18px 24px;display:flex;justify-content:space-b
 .footer-legal a{color:rgba(255,255,255,.15);text-decoration:none;}
 
 @media(max-width:560px){
-  .varianty{grid-template-columns:1fr;}
   .field-row{grid-template-columns:1fr;}
   nav,.hero,.main{padding-left:16px;padding-right:16px;}
 }
@@ -138,74 +134,33 @@ footer{background:#0a0a0a;padding:18px 24px;display:flex;justify-content:space-b
 
 <nav>
   <div class="nav-brand">Gabriela <span>Tomíčková</span></div>
-  <a href="https://gabrielatomickova.cz" class="nav-back">← Zpět na web</a>
+  <a href="provoz-pod-kontrolou.html" class="nav-back">← Zpět na popis balíčku</a>
 </nav>
 
 <div class="hero">
   <div class="hero-inner">
     <div class="badge">Objednávka</div>
-    <h1>Měřič plýtvání <em>Pro</em></h1>
-    <p>Vyplňte objednávku. Po přijetí platby vám zašleme přístupový kód a fakturu.</p>
-    <p style="margin-top:8px;font-size:12px;opacity:.7;">Chcete si nejdřív prohlédnout co dostanete? <a href="meric-plytvani-prodejni-str.html" style="color:var(--gold);text-decoration:none;font-weight:700;">Zpět na popis nástroje</a></p>
+    <h1>Provoz pod <em>kontrolou</em></h1>
+    <p>Vyplňte objednávku. Po přijetí platby vám zašleme přístupové kódy a fakturu.</p>
+    <p style="margin-top:8px;font-size:12px;opacity:.7;">Chcete si nejdřív prohlédnout co dostanete? <a href="provoz-pod-kontrolou.html" style="color:var(--gold);text-decoration:none;font-weight:700;">Zpět na popis balíčku</a></p>
   </div>
 </div>
 
 <div class="main">
 
-  <!-- VARIANTY -->
-  <div class="varianty" style="grid-template-columns:1fr 1fr 1fr;">
-    <div class="varianta" id="v-mesic" onclick="vybrateVariantu('mesic')">
-      <div class="varianta-check"></div>
-      <div class="varianta-badge" style="background:#e8f5ee;color:#2a7a4f;">Měsíční přístup</div>
-      <div class="varianta-nazev">Měřič plýtvání Pro</div>
-      <div class="varianta-cena">1 490 Kč</div>
-      <div class="varianta-per">/ měsíc</div>
-      <div class="varianta-features">
-        <span>Vlastní operace pro váš proces</span>
-        <span>Neomezený počet cyklů</span>
-        <span>Porovnání cyklů mezi sebou</span>
-        <span>Export výsledků do CSV</span>
-        <span>Odeslání výsledků na Gmail</span>
-        <span>Výpočet dle délky směny</span>
-        <span>Výpočet plýtvání v Kč ročně</span>
-      </div>
+  <!-- VARIANTA -->
+  <div class="varianta-single">
+    <div class="varianta-badge">Jednorázový přístup</div>
+    <div class="varianta-nazev">Balíček Provoz pod kontrolou</div>
+    <div class="varianta-cena">3 900 Kč</div>
+    <div class="varianta-per">jednorázová platba, přístup na 12 měsíců</div>
+    <div class="varianta-features">
+      <span>5S pro každého smrtelníka</span>
+      <span>5x Proč AI kouč</span>
+      <span>Časová studie mého dne</span>
+      <span>Přístupové kódy ke všem třem aplikacím</span>
     </div>
-    <div class="varianta rocni" id="v-rok" onclick="vybrateVariantu('rok')">
-      <div class="varianta-check"></div>
-      <div class="varianta-badge" style="background:var(--pro-light);color:var(--pro);">Roční balíček</div>
-      <div class="varianta-nazev">Měřič plýtvání Pro + Spaghetti diagram</div>
-      <div class="varianta-cena pro-cena">12 900 Kč</div>
-      <div class="varianta-per">/ rok</div>
-      <div class="varianta-features">
-        <span>Vlastní operace pro váš proces</span>
-        <span>Neomezený počet cyklů</span>
-        <span>Porovnání cyklů mezi sebou</span>
-        <span>Export výsledků do CSV</span>
-        <span>Odeslání výsledků na Gmail</span>
-        <span>Výpočet dle délky směny</span>
-        <span>Výpočet plýtvání v Kč ročně</span>
-        <span>Spaghetti diagram Pro</span>
-        <span>Mapování pohybu v provozu</span>
-        <span>Měření délky tras a nachozených metrů</span>
-        <span>Přístup na 12 měsíců</span>
-      </div>
-      <div class="uspor">Hodnota 25 880 Kč, ušetříte 12 980 Kč</div>
-    </div>
-    <div class="varianta rocni" id="v-komplet" onclick="vybrateVariantu('komplet')">
-      <div class="varianta-check"></div>
-      <div class="varianta-badge" style="background:var(--pro-light);color:var(--pro);">Rozšířený roční balíček</div>
-      <div class="varianta-nazev">Měřič + Spaghetti + Provoz pod kontrolou</div>
-      <div class="varianta-cena pro-cena">14 900 Kč</div>
-      <div class="varianta-per">/ rok</div>
-      <div class="varianta-features">
-        <span>Vše z ročního balíčku</span>
-        <span>5S pro každého smrtelníka</span>
-        <span>5x Proč AI kouč</span>
-        <span>Časová studie mého dne</span>
-        <span>Přístup na 12 měsíců</span>
-      </div>
-      <div class="uspor">Hodnota 31 450 Kč, ušetříte 16 550 Kč</div>
-    </div>
+    <div class="uspor">Hodnota 5 570 Kč, ušetříte 1 670 Kč</div>
   </div>
 
   <!-- FORMULAR -->
@@ -250,21 +205,21 @@ footer{background:#0a0a0a;padding:18px 24px;display:flex;justify-content:space-b
   </div>
 
   <!-- SHRNUTI -->
-  <div class="shrnuti" id="shrnuti">
+  <div class="shrnuti">
     <div class="shrnuti-title">Shrnutí objednávky</div>
-    <div class="shrnuti-row"><span id="sh-nazev">Vyberte variantu</span><span id="sh-cena">-</span></div>
+    <div class="shrnuti-row"><span>Balíček Provoz pod kontrolou</span><span>3 900 Kč</span></div>
     <div class="shrnuti-row"><span>Způsob platby</span><span>Bankovní převod</span></div>
-    <div class="shrnuti-row"><span>Celkem</span><span id="sh-celkem">-</span></div>
+    <div class="shrnuti-row"><span>Celkem</span><span>3 900 Kč</span></div>
   </div>
 
   <!-- JAK TO FUNGUJE -->
   <div class="platba-info">
     <div class="platba-title">Jak to funguje</div>
     <div class="platba-kroky">
-      <div class="platba-krok"><div class="platba-krok-num">1</div>Odešlete objednávku - přijde vám potvrzení na email s platebními údaji</div>
+      <div class="platba-krok"><div class="platba-krok-num">1</div>Odešlete objednávku, přijde vám potvrzení na email s platebními údaji</div>
       <div class="platba-krok"><div class="platba-krok-num">2</div>Zaplatíte bankovním převodem na účet uvedený v emailu</div>
-      <div class="platba-krok"><div class="platba-krok-num">3</div>Po přijetí platby (do 24 hodin) dostanete přístupový kód a fakturu</div>
-      <div class="platba-krok"><div class="platba-krok-num">4</div>Zadáte kód v aplikaci a začnete měřit</div>
+      <div class="platba-krok"><div class="platba-krok-num">3</div>Po přijetí platby (do 24 hodin) dostanete přístupové kódy a fakturu</div>
+      <div class="platba-krok"><div class="platba-krok-num">4</div>Zadáte kód v každé aplikaci a začnete pracovat</div>
     </div>
   </div>
 
@@ -278,44 +233,14 @@ footer{background:#0a0a0a;padding:18px 24px;display:flex;justify-content:space-b
     <span class="arr"></span> Odeslat objednávku
   </button>
 
-  <!-- REKAPITULACE -->
-  <div style="margin-top:32px;border-top:1px solid var(--border);padding-top:28px;">
-    <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--light);margin-bottom:16px;">Co je v jednotlivých variantách</div>
-
-    <div style="margin-bottom:16px;">
-      <div style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;color:var(--dark);margin-bottom:6px;">Měřič plýtvání Pro</div>
-      <div style="font-size:12px;color:var(--mid);line-height:1.7;">Časová studie přímo v provozu. Vlastní operace, porovnání cyklů, výpočet ztráty v Kč ročně, export CSV a PDF.</div>
-    </div>
-
-    <div style="margin-bottom:16px;">
-      <div style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;color:var(--dark);margin-bottom:6px;">Spaghetti diagram Pro</div>
-      <div style="font-size:12px;color:var(--mid);line-height:1.7;">Vizuální mapa pohybu v provozu. Nahrajete půdorys, zakreslíte trasy pracovníků, aplikace spočítá celkové metry za směnu. Více pracovníků najednou, každý jinou barvou.</div>
-    </div>
-
-    <div style="margin-bottom:16px;">
-      <div style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;color:var(--dark);margin-bottom:6px;">5S pro každého smrtelníka</div>
-      <div style="font-size:12px;color:var(--mid);line-height:1.7;">Krok po kroku uspořádáte jakékoliv pracoviště. Fotodokumentace před a po, report co se změnilo.</div>
-    </div>
-
-    <div style="margin-bottom:16px;">
-      <div style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;color:var(--dark);margin-bottom:6px;">5x Proč AI kouč</div>
-      <div style="font-size:12px;color:var(--mid);line-height:1.7;">AI kouč vás provede rozhovorem a dovede ke kořenu problému. Strukturovaný výstup s příčinou a prvním krokem.</div>
-    </div>
-
-    <div style="margin-bottom:0;">
-      <div style="font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;color:var(--dark);margin-bottom:6px;">Časová studie mého dne</div>
-      <div style="font-size:12px;color:var(--mid);line-height:1.7;">Skutečný přehled vašeho dne s činnostmi a intervaly. Podklad pro delegování nebo automatizaci, export do CSV.</div>
-    </div>
-  </div>
-
   <!-- STAV - uspech -->
   <div class="stav" id="stav-ok">
     <div class="stav-icon">✓</div>
     <h2>Objednávka přijata</h2>
-    <p>Na váš email přijde potvrzení s platebními údaji. Po přijetí platby vám zašleme přístupový kód a fakturu.</p>
+    <p>Na váš email přijde potvrzení s platebními údaji. Po přijetí platby vám zašleme přístupové kódy a fakturu.</p>
     <div class="platebni-udaje">
       <p>Variabilní symbol: <strong id="vs-cislo">---</strong></p>
-      <p>Částka: <strong id="vs-castka">---</strong></p>
+      <p>Částka: <strong>3 900 Kč</strong></p>
       <p style="margin-top:8px;font-size:12px;color:var(--mid);">Číslo účtu a platební údaje vám přijdou na email.</p>
     </div>
   </div>
@@ -325,6 +250,23 @@ footer{background:#0a0a0a;padding:18px 24px;display:flex;justify-content:space-b
     <div class="stav-icon">!</div>
     <h2>Něco se nepovedlo</h2>
     <p>Zkuste to prosím znovu nebo napište na <a href="mailto:tomickova.info@gmail.com" style="color:var(--gold-dark);">tomickova.info@gmail.com</a>.</p>
+  </div>
+
+  <!-- REKAPITULACE -->
+  <div class="rekap">
+    <div class="rekap-title">Co je v balíčku</div>
+    <div class="rekap-item">
+      <div class="rekap-nazev">5S pro každého smrtelníka</div>
+      <div class="rekap-popis">Krok po kroku uspořádáte jakékoliv pracoviště. Fotodokumentace před a po, report co se změnilo.</div>
+    </div>
+    <div class="rekap-item">
+      <div class="rekap-nazev">5x Proč AI kouč</div>
+      <div class="rekap-popis">AI kouč vás provede rozhovorem a dovede ke kořenu problému. Strukturovaný výstup s příčinou a prvním krokem.</div>
+    </div>
+    <div class="rekap-item">
+      <div class="rekap-nazev">Časová studie mého dne</div>
+      <div class="rekap-popis">Skutečný přehled vašeho dne s činnostmi a intervaly. Podklad pro delegování nebo automatizaci, export do CSV.</div>
+    </div>
   </div>
 
 </div>
@@ -337,24 +279,6 @@ footer{background:#0a0a0a;padding:18px 24px;display:flex;justify-content:space-b
 <script>
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyP2l58OvGi5mzk-PXMaGNRZoMj4E8C3vn7o4Ib89DVhqdePdj90OWUUHXC1hYiQ5pC/exec';
 
-let vybranaVarianta = null;
-
-function vybrateVariantu(v) {
-  vybranaVarianta = v;
-  document.getElementById('v-mesic').classList.toggle('selected', v === 'mesic');
-  document.getElementById('v-rok').classList.toggle('selected', v === 'rok');
-  document.getElementById('v-komplet').classList.toggle('selected', v === 'komplet');
-  const nazev = v === 'mesic' ? 'Měřič plýtvání Pro, měsíční'
-              : v === 'rok'   ? 'Roční balíček Pro + Spaghetti'
-                              : 'Rozšířený roční balíček';
-  const cena  = v === 'mesic' ? '1 490 Kč'
-              : v === 'rok'   ? '12 900 Kč'
-                              : '14 900 Kč';
-  document.getElementById('sh-nazev').textContent = nazev;
-  document.getElementById('sh-cena').textContent = cena;
-  document.getElementById('sh-celkem').textContent = cena;
-}
-
 function validovat() {
   let ok = true;
   const pole = ['jmeno','email','firma','ico'];
@@ -364,89 +288,58 @@ function validovat() {
     if (!val) { err.style.display = 'block'; ok = false; }
     else err.style.display = 'none';
   });
-  if (!vybranaVarianta) { alert('Vyberte variantu.'); ok = false; }
   if (!document.getElementById('f-gdpr').checked) { alert('Potvrďte souhlas se zpracováním osobních údajů.'); ok = false; }
   return ok;
-}
-
-function generujVS() {
-  return Math.floor(100000 + Math.random() * 900000).toString();
 }
 
 async function odeslat() {
   if (!validovat()) return;
   const btn = document.getElementById('btn-objednat');
   btn.disabled = true;
-  btn.textContent = 'Odesílám...';
+  btn.innerHTML = 'Odesílám...';
 
-  const vs = generujVS();
-  const castka = vybranaVarianta === 'mesic'   ? '1 490 Kč'
-               : vybranaVarianta === 'rok'     ? '12 900 Kč'
-                                               : '14 900 Kč';
-  const varianta = vybranaVarianta === 'mesic'   ? 'Meric_Pro_V'
-                 : vybranaVarianta === 'rok'     ? 'Meric_Pro_Spaghetti_V'
-                                                 : 'Meric_Pro_Komplet_V';
-
+  const vs = Date.now().toString().slice(-6);
   const data = {
-    jmeno: document.getElementById('f-jmeno').value.trim(),
-    email: document.getElementById('f-email').value.trim(),
-    firma: document.getElementById('f-firma').value.trim(),
-    varianta: varianta,
-    vs: vs,
-    castka: castka,
-    ico: document.getElementById('f-ico').value.trim(),
-    dic: document.getElementById('f-dic').value.trim(),
-    adresa: document.getElementById('f-adresa').value.trim(),
-    poznamka: document.getElementById('f-poznamka').value.trim()
+    jmeno:    document.getElementById('f-jmeno').value.trim(),
+    email:    document.getElementById('f-email').value.trim(),
+    firma:    document.getElementById('f-firma').value.trim(),
+    ico:      document.getElementById('f-ico').value.trim(),
+    dic:      document.getElementById('f-dic').value.trim(),
+    adresa:   document.getElementById('f-adresa').value.trim(),
+    poznamka: document.getElementById('f-poznamka').value.trim(),
+    varianta: 'Provoz_Pod_Kontrolou_V',
+    castka:   '3 900 Kč',
+    vs:       vs,
   };
 
   try {
     await fetch(SCRIPT_URL, {
       method: 'POST',
-      body: JSON.stringify(data)
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
     });
-
     document.getElementById('formular').style.display = 'none';
-    document.getElementById('shrnuti').style.display = 'none';
+    document.querySelector('.varianta-single').style.display = 'none';
+    document.querySelector('.shrnuti').style.display = 'none';
     document.querySelector('.platba-info').style.display = 'none';
     document.querySelector('.gdpr-check').style.display = 'none';
     btn.style.display = 'none';
-    document.querySelector('.varianty').style.display = 'none';
-
+    document.querySelector('.rekap').style.display = 'none';
     document.getElementById('vs-cislo').textContent = vs;
-    document.getElementById('vs-castka').textContent = castka;
     document.getElementById('stav-ok').style.display = 'block';
-    window.scrollTo({top:0,behavior:'smooth'});
-
-  } catch(err) {
+  } catch(e) {
+    document.getElementById('stav-err').style.display = 'block';
     btn.disabled = false;
     btn.innerHTML = '<span class="arr"></span> Odeslat objednávku';
-    document.getElementById('stav-err').style.display = 'block';
   }
 }
 
-// Predvybrat mesicni variantu
-const params = new URLSearchParams(window.location.search);
-const vParam = params.get('varianta');
-if (vParam === 'rocni' || vParam === 'rok') {
-  vybrateVariantu('rok');
-} else if (vParam === 'komplet') {
-  vybrateVariantu('komplet');
-} else {
-  vybrateVariantu('mesic');
-}
-</script>
-
-<script>
 (function(){
   var s = localStorage.getItem('cookies_souhlas');
-  if (s === 'ano') {
-    spustitGA();
-  } else if (s === null) {
-    document.getElementById('cookies-bar').style.display = 'flex';
-  }
+  if (s === 'ano') { spustitGA(); }
+  else if (s === null) { document.getElementById('cookies-bar').style.display = 'flex'; }
 })();
-
 function spustitGA() {
   var s = document.createElement('script');
   s.async = true;
@@ -458,17 +351,16 @@ function spustitGA() {
   gtag('js', new Date());
   gtag('config', 'G-JBFDH4G4VP');
 }
-
 function cookiesSouhlasit() {
   localStorage.setItem('cookies_souhlas', 'ano');
   document.getElementById('cookies-bar').style.display = 'none';
   spustitGA();
 }
-
 function cookiesOdmitnout() {
   localStorage.setItem('cookies_souhlas', 'ne');
   document.getElementById('cookies-bar').style.display = 'none';
 }
 </script>
+
 </body>
 </html>
