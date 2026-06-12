@@ -20,9 +20,12 @@
   <meta name="twitter:description" content="Pomáhám firmám z výroby a logistiky dostat provoz pod kontrolu. Procesní audit, optimalizace skladu, AI automatizace. 16 let praxe, KAIZEN specialista.">
   <link rel="canonical" href="https://gabrielatomickova.cz/">
   <script type="application/ld+json">
-  {
-      "@context": "https://schema.org",
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
       "@type": "Person",
+      "@id": "https://gabrielatomickova.cz/#person",
       "name": "Gabriela Tomíčková",
       "jobTitle": "Procesní konzultant a AI specialista",
       "description": "Pomáhám firmám z výroby a logistiky dostat provoz pod kontrolu pomocí KAIZEN metod a AI automatizace.",
@@ -40,15 +43,61 @@
         {"@type": "AdministrativeArea", "name": "Královéhradecký kraj"},
         {"@type": "AdministrativeArea", "name": "Pardubický kraj"},
         {"@type": "AdministrativeArea", "name": "Liberecký kraj"},
-        {"@type": "AdministrativeArea", "name": "Mladoboleslavsko"},
-        {"@type": "AdministrativeArea", "name": "Nymbursko"},
-        {"@type": "AdministrativeArea", "name": "Kolínsko"},
         {"@type": "Country", "name": "Česká republika"}
       ],
       "hasCredential": "10 let KAIZEN specialista, 6 let manažer skladu",
+      "worksFor": {"@id": "https://gabrielatomickova.cz/#business"},
       "sameAs": ["https://www.linkedin.com/in/gabriela-tom%C3%AD%C4%8Dkov%C3%A1/"]
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://gabrielatomickova.cz/#business",
+      "name": "Gabriela Tomíčková — procesní poradenství",
+      "url": "https://gabrielatomickova.cz",
+      "telephone": "+420608221039",
+      "vatID": "75905311",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Příčná 49",
+        "addressLocality": "Vrchlabí",
+        "addressCountry": "CZ"
+      },
+      "areaServed": "CZ",
+      "description": "Procesní audit, optimalizace skladu a AI automatizace pro výrobní a logistické firmy. Bez dalšího náboru, bez složitých systémů.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Služby",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Procesní audit",
+              "description": "Audit výrobních a logistických procesů s identifikací ztrát a konkrétním akčním plánem."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Optimalizace skladu",
+              "description": "Zvýšení produktivity skladu pomocí KAIZEN metod. Výsledky viditelné do 4 týdnů."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI automatizace",
+              "description": "Implementace AI nástrojů a automatizace procesů ve výrobních a logistických firmách."
+            }
+          }
+        ]
+      }
     }
-  </script>
+  ]
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
 <style>
 :root {
