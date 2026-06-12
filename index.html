@@ -114,6 +114,8 @@ nav { background:var(--white); border-bottom:2px solid var(--gold); padding:14px
 .nav-brand span { color:var(--gold); }
 .nav-cta { background:var(--gold); color:var(--black); font-family:'DM Sans',sans-serif; font-size:13px; font-weight:600; padding:9px 22px; border-radius:4px; text-decoration:none; transition:background 0.2s; }
 .nav-cta:hover { background:var(--gold-dark); color:white; }
+.nav-link { font-family:'DM Sans',sans-serif; font-size:13px; font-weight:600; color:var(--black); text-decoration:none; padding:9px 16px; border-radius:4px; transition:color 0.2s; }
+.nav-link:hover { color:var(--gold); }
 
 .hero { background:var(--black); color:var(--white); min-height:92vh; display:grid; grid-template-columns:1fr 420px; align-items:center; position:relative; overflow:hidden; }
 .hero::before { content:''; position:absolute; top:-100px; left:-100px; width:500px; height:500px; border-radius:50%; border:80px solid rgba(233,169,27,0.08); pointer-events:none; }
@@ -253,7 +255,10 @@ footer { background:#0a0a0a; padding:40px; display:flex; justify-content:space-b
 
 <nav>
   <div class="nav-brand">Gabriela <span>Tomíčková</span></div>
-  <a href="#projekty" class="nav-cta">Kde ztrácíte?</a>
+  <div style="display:flex;align-items:center;gap:8px;">
+    <a href="/o-mne.html" class="nav-link">O mně</a>
+    <a href="#projekty" class="nav-cta">Kde ztrácíte?</a>
+  </div>
 </nav>
 
 <section class="hero">
