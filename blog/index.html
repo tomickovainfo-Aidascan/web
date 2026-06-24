@@ -1,113 +1,80 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>blog | Gabriela Tomíčková</title>
-  <meta name="description" content="Konkrétní příklady z výroby a skladu. Co fungovalo, co ne a proč. Žádná teorie, jen čísla a příběhy z praxe.">
-  <meta name="author" content="Gabriela Tomíčková">
-  <link rel="canonical" href="https://gabrielatomickova.cz/blog/">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --gold: #e9a91b; --gold-dark: #c48e10; --gold-light: #fdf3d9;
-      --black: #000000; --dark: #111111; --mid: #545454;
-      --white: #ffffff; --paper: #fafaf8; --border: #e8e8e8;
-    }
-    body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--dark); line-height: 1.7; font-size: 16px; }
-    nav { background: var(--white); border-bottom: 2px solid var(--gold); padding: 14px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
-    .nav-brand { font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 800; color: var(--black); text-decoration: none; }
-    .nav-brand span { color: var(--gold); }
-    .nav-links { display: flex; align-items: center; gap: 8px; }
-    .nav-link { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; color: var(--black); text-decoration: none; padding: 9px 16px; border-radius: 4px; transition: color 0.2s; }
-    .nav-link:hover { color: var(--gold); }
-    .nav-cta { background: var(--gold); color: var(--black); font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; padding: 9px 22px; border-radius: 4px; text-decoration: none; transition: background 0.2s; }
-    .nav-cta:hover { background: var(--gold-dark); color: white; }
-
-    .blog-header { background: var(--white); border-bottom: 1px solid var(--border); padding: 64px 40px 48px; }
-    .blog-header-inner { max-width: 760px; margin: 0 auto; }
-    .blog-header h1 { font-family: 'Poppins', sans-serif; font-size: clamp(28px, 3vw, 42px); font-weight: 900; line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 16px; }
-    .blog-header p { font-size: 17px; color: var(--mid); max-width: 520px; }
-
-    .blog-list { padding: 56px 40px 80px; }
-    .blog-list-inner { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
-
-    .article-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 32px; text-decoration: none; color: inherit; display: block; transition: border-color 0.2s, box-shadow 0.2s; }
-    .article-card:hover { border-color: var(--gold); box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
-    .article-card-tag { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-    .article-card h2 { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 800; line-height: 1.25; letter-spacing: -0.3px; margin-bottom: 12px; color: var(--dark); }
-    .article-card p { font-size: 15px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
-    .article-card-meta { font-size: 13px; color: var(--mid); display: flex; align-items: center; gap: 6px; }
-    .article-card-link { font-size: 13px; font-weight: 700; color: var(--gold); display: inline-flex; align-items: center; gap: 6px; }
-    .article-card-link::after { content: '→'; }
-
-    footer { background: #0a0a0a; padding: 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-    .footer-brand { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.5); }
-    .footer-brand span { color: var(--gold); }
-    .footer-links { display: flex; gap: 24px; }
-    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--gold); }
-    @media (max-width: 768px) {
-      nav { padding: 12px 24px; }
-      .blog-header { padding: 40px 24px 36px; }
-      .blog-list { padding: 40px 24px 60px; }
-      footer { padding: 28px 24px; flex-direction: column; text-align: center; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>blog | Gabriela Tomíčková</title>
+<meta name="description" content="Konkrétní příklady z výroby a skladu. Co fungovalo, co ne a proč. Žádná teorie, jen čísla a příběhy z praxe.">
+<meta name="author" content="Gabriela Tomíčková">
+<link rel="canonical" href="https://gabrielatomickova.cz/blog/">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+--gold: #e9a91b; --gold-dark: #c48e10; --gold-light: #fdf3d9;
+--black: #000000; --dark: #111111; --mid: #545454;
+--white: #ffffff; --paper: #fafaf8; --border: #e8e8e8;
+}
+body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--dark); line-height: 1.7; font-size: 16px; }
+nav { background: var(--white); border-bottom: 2px solid var(--gold); padding: 14px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+.nav-brand { font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 800; color: var(--black); text-decoration: none; }
+.nav-brand span { color: var(--gold); }
+.nav-links { display: flex; align-items: center; gap: 8px; }
+.nav-link { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; color: var(--black); text-decoration: none; padding: 9px 16px; border-radius: 4px; transition: color 0.2s; }
+.nav-link:hover { color: var(--gold); }
+.nav-cta { background: var(--gold); color: var(--black); font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; padding: 9px 22px; border-radius: 4px; text-decoration: none; transition: background 0.2s; }
+.nav-cta:hover { background: var(--gold-dark); color: white; }
+.blog-header { background: var(--white); border-bottom: 1px solid var(--border); padding: 64px 40px 48px; }
+.blog-header-inner { max-width: 760px; margin: 0 auto; }
+.blog-header h1 { font-family: 'Poppins', sans-serif; font-size: clamp(28px, 3vw, 42px); font-weight: 900; line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 16px; }
+.blog-header p { font-size: 17px; color: var(--mid); max-width: 520px; }
+.blog-list { padding: 56px 40px 80px; }
+.blog-list-inner { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
+.article-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 32px; text-decoration: none; color: inherit; display: block; transition: border-color 0.2s, box-shadow 0.2s; }
+.article-card:hover { border-color: var(--gold); box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.article-card-tag { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.article-card h2 { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 800; line-height: 1.25; letter-spacing: -0.3px; margin-bottom: 12px; color: var(--dark); }
+.article-card p { font-size: 15px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+.article-card-link { font-size: 13px; font-weight: 700; color: var(--gold); display: inline-flex; align-items: center; gap: 6px; }
+.article-card-link::after { content: '→'; }
+footer { background: #0a0a0a; padding: 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-brand { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.5); }
+.footer-brand span { color: var(--gold); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold); }
+@media (max-width: 768px) {
+nav { padding: 12px 24px; }
+.blog-header { padding: 40px 24px 36px; }
+.blog-list { padding: 40px 24px 60px; }
+footer { padding: 28px 24px; flex-direction: column; text-align: center; }
+}
+</style>
 </head>
 <body>
 
 <nav>
-  <a href="https://gabrielatomickova.cz" class="nav-brand">Gabriela <span>Tomíčková</span></a>
-  <div class="nav-links">
-    <a href="https://gabrielatomickova.cz/o-mne.html" class="nav-link">O mně</a>
-    <a href="https://gabrielatomickova.cz#kontakt" class="nav-cta">Napište mi</a>
-  </div>
+<a href="https://gabrielatomickova.cz" class="nav-brand">Gabriela <span>Tomíčková</span></a>
+<div class="nav-links">
+<a href="https://gabrielatomickova.cz/o-mne.html" class="nav-link">O mně</a>
+<a href="https://gabrielatomickova.cz#kontakt" class="nav-cta">Napište mi</a>
+</div>
 </nav>
 
 <div class="blog-header">
-  <div class="blog-header-inner">
-    <h1>Blog</h1>
-    <p>Konkrétní příklady z výroby a skladu. Co fungovalo, co ne a proč. Žádná teorie, jen čísla a příběhy z praxe.</p>
-  </div>
+<div class="blog-header-inner">
+<h1>Blog</h1>
+<p>Konkrétní příklady z výroby a skladu. Co fungovalo, co ne a proč. Žádná teorie, jen čísla a příběhy z praxe.</p>
+</div>
 </div>
 
 <div class="blog-list">
-  <div class="blog-list-inner">
-
-    <a href="https://gabrielatomickova.cz/blog/andula-chodila-75-km-za-smenu.html" class="article-card">
-<div class="article-card-tag">Ze skladu</div>
-<h2>7,5 km za směnu. Pak 4,2 km. A změnila se jen taková blbost.</h2>
-<p>Andula si stěžovala že ji bolí nohy. Každý den, po každé směně. Vytáhly jsme krokoměr. 7,5 km za směnu jen na výdeji. Přesunuli jsme šest položek v regálu. To bylo celé.</p>
-<span class="article-card-link">Číst článek</span>
-</a>
+<div class="blog-list-inner">
 
 <a href="https://gabrielatomickova.cz/blog/andula-chodila-75-km-za-smenu.html" class="article-card">
 <div class="article-card-tag">Ze skladu</div>
 <h2>7,5 km za směnu. Pak 4,2 km. A změnila se jen taková blbost.</h2>
 <p>Andula si stěžovala že ji bolí nohy. Každý den, po každé směně. Vytáhly jsme krokoměr. 7,5 km za směnu jen na výdeji. Přesunuli jsme šest položek v regálu. To bylo celé.</p>
-<span class="article-card-link">Číst článek</span>
-</a>
-
-<a href="https://gabrielatomickova.cz/blog/andula-chodila-75-km-za-smenu.html" class="article-card">
-<div class="article-card-tag">Ze skladu</div>
-<h2>7,5 km za směnu. Pak 4,2 km. A změnila se jen taková blbost.</h2>
-<p>Andula si stěžovala že ji bolí nohy. Každý den, po každé směně. Vytáhly jsme krokoměr. 7,5 km za směnu jen na výdeji. Přesunuli jsme šest položek v regálu. To bylo celé.</p>
-<span class="article-card-link">Číst článek</span>
-</a>
-
-<a href="https://gabrielatomickova.cz/blog/5-ztrat-ktere-vas-provoz-brzdi-kazdy-den.html" class="article-card">
-<div class="article-card-tag">Z praxe</div>
-<h2>5 ztrát které váš provoz brzdí každý den – a vy je ani nevidíte</h2>
-<p>Majitelé firem je přehlíží. Ne proto že by byli slepí, ale proto že jsou každý den uvnitř toho chaosu. Hledání, čekání, přepisování, přerušování, nejasné předávání informací.</p>
-<span class="article-card-link">Číst článek</span>
-</a>
-
-<a href="https://gabrielatomickova.cz/blog/5-ztrat-ktere-vas-provoz-brzdi-kazdy-den.html" class="article-card">
-<div class="article-card-tag">Z praxe</div>
-<h2>5 ztrát které váš provoz brzdí každý den – a vy je ani nevidíte</h2>
-<p>Majitelé firem je přehlíží. Ne proto že by byli slepí, ale proto že jsou každý den uvnitř toho chaosu. Hledání, čekání, přepisování, přerušování, nejasné předávání informací.</p>
 <span class="article-card-link">Číst článek</span>
 </a>
 
@@ -119,42 +86,42 @@
 </a>
 
 <a href="https://gabrielatomickova.cz/blog/jak-jedno-pravidlo-usetrilo-35-hodin-tydne.html" class="article-card">
-      <div class="article-card-tag">Ze skladu</div>
-      <h2>Jak jedno pravidlo ušetřilo 35 hodin týdně ve skladu</h2>
-      <p>Každý den 100 palet s vrácenými obaly. Pět skladníků trávilo přes dvě hodiny denně tříděním pivních lahví. Zákazníci je házeli dohromady. Nikdo to neřešil, protože tady to tak prostě chodí.</p>
-      <span class="article-card-link">Číst článek</span>
-    </a>
+<div class="article-card-tag">Ze skladu</div>
+<h2>Jak jedno pravidlo ušetřilo 35 hodin týdně ve skladu</h2>
+<p>Každý den 100 palet s vrácenými obaly. Pět skladníků trávilo přes dvě hodiny denně tříděním pivních lahví. Zákazníci je házeli dohromady. Nikdo to neřešil, protože tady to tak prostě chodí.</p>
+<span class="article-card-link">Číst článek</span>
+</a>
 
-    <a href="https://gabrielatomickova.cz/blog/presun-ctecky-100-kusu-navic.html" class="article-card">
-      <div class="article-card-tag">Z výroby</div>
-      <h2>Přesun čtečky o 30 cm: 100 kusů navíc bez jediné koruny</h2>
-      <p>Na výrobní lince sedadlových senzorů dělaly operátorky jeden pohyb navíc při každém kusu. Dvě vteřiny. Stokrát za směnu. Nikdo to neměřil.</p>
-      <span class="article-card-link">Číst článek</span>
-    </a>
+<a href="https://gabrielatomickova.cz/blog/presun-ctecky-100-kusu-navic.html" class="article-card">
+<div class="article-card-tag">Z výroby</div>
+<h2>Přesun čtečky o 30 cm: 100 kusů navíc bez jediné koruny</h2>
+<p>Na výrobní lince sedadlových senzorů dělaly operátorky jeden pohyb navíc při každém kusu. Dvě vteřiny. Stokrát za směnu. Nikdo to neměřil.</p>
+<span class="article-card-link">Číst článek</span>
+</a>
 
-    <a href="https://gabrielatomickova.cz/blog/dverní-kartac-misto-druhe-operatorky.html" class="article-card">
-      <div class="article-card-tag">Z výroby</div>
-      <h2>Dveřní kartáč za 200 Kč místo druhé operátorky</h2>
-      <p>U zatavovací pece pracovaly dvě operátorky. Jedna svazky zatavovala. Druhá jen stála vedle a držela je, aby nespadly z pásu. Celou směnu. Každý den.</p>
-      <span class="article-card-link">Číst článek</span>
-    </a>
+<a href="https://gabrielatomickova.cz/blog/dverní-kartac-misto-druhe-operatorky.html" class="article-card">
+<div class="article-card-tag">Z výroby</div>
+<h2>Dveřní kartáč za 200 Kč místo druhé operátorky</h2>
+<p>U zatavovací pece pracovaly dvě operátorky. Jedna svazky zatavovala. Druhá jen stála vedle a držela je, aby nespadly z pásu. Celou směnu. Každý den.</p>
+<span class="article-card-link">Číst článek</span>
+</a>
 
-    <a href="https://gabrielatomickova.cz/blog/prestavba-linky-operatorky-chodily-45-metru.html" class="article-card">
-      <div class="article-card-tag">Z výroby</div>
-      <h2>Operátorky chodily 45,5 metrů. Po přestavbě linky 23 metrů.</h2>
-      <p>Na lince sedadlových senzorů operátorky denně procházely zbytečné metry kvůli tomu, jak byl materiál rozmístěn. Ne proto, že by to tak muselo být. Prostě proto, že linka tak vznikla.</p>
-      <span class="article-card-link">Číst článek</span>
-    </a>
+<a href="https://gabrielatomickova.cz/blog/prestavba-linky-operatorky-chodily-45-metru.html" class="article-card">
+<div class="article-card-tag">Z výroby</div>
+<h2>Operátorky chodily 45,5 metrů. Po přestavbě linky 23 metrů.</h2>
+<p>Na lince sedadlových senzorů operátorky denně procházely zbytečné metry kvůli tomu, jak byl materiál rozmístěn. Ne proto, že by to tak muselo být. Prostě proto, že linka tak vznikla.</p>
+<span class="article-card-link">Číst článek</span>
+</a>
 
-  </div>
+</div>
 </div>
 
 <footer>
-  <div class="footer-brand">Gabriela <span>Tomíčková</span> · AI & Procesní konzultant</div>
-  <div class="footer-links">
-    <a href="https://gabrielatomickova.cz">Zpět na web</a>
-    <a href="https://gdpr.gabrielatomickova.cz">Zásady ochrany osobních údajů</a>
-  </div>
+<div class="footer-brand">Gabriela <span>Tomíčková</span> · AI & Procesní konzultant</div>
+<div class="footer-links">
+<a href="https://gabrielatomickova.cz">Zpět na web</a>
+<a href="https://gdpr.gabrielatomickova.cz">Zásady ochrany osobních údajů</a>
+</div>
 </footer>
 
 </body>
