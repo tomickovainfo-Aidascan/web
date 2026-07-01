@@ -14,13 +14,61 @@
   </url>
 
   <url>
+    <loc>https://gabrielatomickova.cz/meric-plytvani-prodejni-str.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://kalkulacka.gabrielatomickova.cz/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://audit.gabrielatomickova.cz/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://kviz.gabrielatomickova.cz/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://meric-plytvani-free.gabrielatomickova.cz/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://meric-plytvani-pro.gabrielatomickova.cz/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://montaz.gabrielatomickova.cz/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://aidoklad-agent.gabrielatomickova.cz/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://gabrielatomickova.cz/blog/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://gabrielatomickova.cz/blog/jak-jedno-pravidlo-usetrilo-35-hodin-tyydne.html</loc>
+    <loc>https://gabrielatomickova.cz/blog/jak-jedno-pravidlo-usetrilo-35-hodin-tydne.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -39,6 +87,24 @@
 
   <url>
     <loc>https://gabrielatomickova.cz/blog/prestavba-linky-operatorky-chodily-45-metru.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://gabrielatomickova.cz/blog/andula-chodila-75-km-za-smenu.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://gabrielatomickova.cz/blog/jesterka-stala-vzadu.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://gabrielatomickova.cz/blog/5-ztrat-ktere-vas-provoz-brzdi-kazdy-den.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
