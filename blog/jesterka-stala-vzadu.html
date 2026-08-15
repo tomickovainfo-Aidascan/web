@@ -1,100 +1,276 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ještěrka stála vzadu. Chlapi nakládali ručně hodinu a půl. | Gabriela Tomíčková</title>
-  <meta name="author" content="Gabriela Tomíčková">
-  <meta name="description" content="Přijela jsem na pobočku na jeden den. Našla jsem proces který stál firmu hodiny denně. Přitom řešení bylo 3 minuty daleko. Reálný příklad zbytečných ztrát ve skladu.">
-  <meta property="og:title" content="Ještěrka stála vzadu. Chlapi nakládali ručně hodinu a půl.">
-  <meta property="og:description" content="Přijela jsem na pobočku na jeden den. Našla jsem proces který stál firmu hodiny denně. Přitom řešení bylo 3 minuty daleko.">
-  <meta property="og:type" content="article">
-  <link rel="canonical" href="https://gabrielatomickova.cz/blog/jesterka-stala-vzadu.html">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --gold: #e9a91b; --gold-dark: #c48e10; --gold-light: #fdf3d9; --black: #000000; --dark: #111111; --mid: #545454; --white: #ffffff; --paper: #fafaf8; --border: #e8e8e8; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--dark); line-height: 1.7; font-size: 17px; }
-    nav { background: var(--white); border-bottom: 2px solid var(--gold); padding: 14px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
-    .nav-brand { font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 800; color: var(--black); text-decoration: none; }
-    .nav-brand span { color: var(--gold); }
-    .nav-links { display: flex; align-items: center; gap: 8px; }
-    .nav-link { font-size: 13px; font-weight: 600; color: var(--black); text-decoration: none; padding: 9px 16px; border-radius: 4px; transition: color 0.2s; }
-    .nav-link:hover { color: var(--gold); }
-    .nav-cta { background: var(--gold); color: var(--black); font-size: 13px; font-weight: 600; padding: 9px 22px; border-radius: 4px; text-decoration: none; transition: background 0.2s; }
-    .nav-cta:hover { background: var(--gold-dark); color: white; }
-    .hero { background: var(--paper); border-bottom: 1px solid var(--border); padding: 64px 40px 48px; }
-    .hero-inner { max-width: 760px; margin: 0 auto; }
-    .tag { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: block; }
-    h1 { font-family: 'Poppins', sans-serif; font-size: clamp(26px, 3.5vw, 42px); font-weight: 900; line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 20px; }
-    .hero-perex { font-size: 18px; color: var(--mid); max-width: 600px; line-height: 1.65; margin-bottom: 28px; }
-    .meta { font-size: 13px; color: #aaa; }
-    .meta strong { color: var(--mid); font-weight: 600; }
-    .back-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 24px; font-size: 13px; font-weight: 600; color: var(--mid); text-decoration: none; }
-    .back-link::before { content: "←"; }
-    .back-link:hover { color: var(--dark); }
-    .foto-wrap { width: 100%; max-height: 480px; overflow: hidden; }
-    .foto-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .article-wrap { max-width: 760px; margin: 0 auto; padding: 56px 40px 80px; }
-    p { margin-bottom: 22px; color: var(--mid); line-height: 1.75; }
-    h2 { font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 800; color: var(--dark); margin: 48px 0 16px; letter-spacing: -0.3px; line-height: 1.3; }
-    .dialog { background: var(--paper); border-left: 3px solid var(--border); padding: 20px 24px; margin: 32px 0; border-radius: 0 8px 8px 0; }
-    .dialog p { margin-bottom: 8px; color: var(--dark); font-size: 16px; }
-    .dialog p:last-child { margin-bottom: 0; }
-    .dialog em { color: var(--mid); font-style: normal; }
-    .cisla { background: var(--paper); border: 1px solid var(--border); border-radius: 10px; padding: 28px 32px; margin: 32px 0; }
-    .cisla-row { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px dashed var(--border); font-size: 15px; }
-    .cisla-row:last-child { border-bottom: none; padding-bottom: 0; }
-    .cisla-label { color: var(--mid); }
-    .cisla-hodnota { font-family: 'Poppins', sans-serif; font-weight: 800; color: var(--dark); font-size: 17px; }
-    .cisla-hodnota.zluty { color: var(--gold-dark); }
-    .pullquote { border-left: 3px solid var(--gold); padding: 16px 24px; margin: 32px 0; background: var(--gold-light); border-radius: 0 8px 8px 0; }
-    .pullquote p { font-size: 18px; font-weight: 600; color: var(--dark); margin-bottom: 0; }
-    .cta-block { margin-top: 56px; padding: 40px 32px; background: #000; border-radius: 12px; text-align: center; }
-    .cta-block h3 { font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 800; color: var(--white); margin-bottom: 12px; letter-spacing: -0.3px; }
-    .cta-block p { color: rgba(255,255,255,0.55); font-size: 15px; margin-bottom: 28px; }
-    .btn-gold { display: inline-block; background: var(--gold); color: #000; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; padding: 14px 28px; border-radius: 6px; text-decoration: none; transition: background 0.2s; }
-    .btn-gold:hover { background: var(--gold-dark); }
-    footer { background: #0a0a0a; padding: 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-    .footer-brand { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.5); }
-    .footer-brand span { color: var(--gold); }
-    .footer-links { display: flex; gap: 24px; }
-    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.35); text-decoration: none; }
-    .footer-links a:hover { color: var(--gold); }
-    @media (max-width: 768px) {
-      nav { padding: 12px 24px; } .hero { padding: 40px 24px 36px; } .article-wrap { padding: 40px 24px 60px; }
-      .cisla-row { flex-direction: column; gap: 4px; } .cta-block { padding: 32px 20px; }
-      footer { padding: 28px 24px; flex-direction: column; text-align: center; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ztráty ve skladu: příběh z praxe | Gabriela Tomíčková</title>
+<meta name="description" content="Skryté ztráty ve skladu: reálný příklad z praxe, kde ruční nakládání stálo firmu 1,5 hodiny denně. Spočítejte si své ztráty zdarma.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Gabriela Tomíčková">
+<link rel="canonical" href="https://gabrielatomickova.cz/blog/jesterka-stala-vzadu.html">
+
+<meta property="og:title" content="Ještěrka stála vzadu. Chlapi nakládali ručně hodinu a půl.">
+<meta property="og:description" content="Přijela jsem na pobočku na jeden den. Našla jsem proces, který stál firmu hodiny denně. Přitom řešení bylo 3 minuty daleko.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://gabrielatomickova.cz/blog/jesterka-sklad-foto.jpg">
+<meta property="og:url" content="https://gabrielatomickova.cz/blog/jesterka-stala-vzadu.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Ještěrka stála vzadu. Chlapi nakládali ručně hodinu a půl.",
+      "description": "Skryté ztráty ve skladu: reálný příklad z praxe, kde ruční nakládání stálo firmu 1,5 hodiny denně.",
+      "image": "https://gabrielatomickova.cz/blog/jesterka-sklad-foto.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Gabriela Tomíčková",
+        "url": "https://gabrielatomickova.cz/o-mne.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Gabriela Tomíčková"
+      },
+      "datePublished": "2026-08-15",
+      "dateModified": "2026-08-15",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://gabrielatomickova.cz/blog/jesterka-stala-vzadu.html"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Jak poznám, že sklad ztrácí čas na zbytečných procesech?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nejčastější signál je jednoduchý. Vezměte jeden konkrétní úkon, například nakládání, a změřte ho stopkami. Pokud vám vyjde číslo, které vás překvapí, máte to. Skryté ztráty se neschovávají v datech, schovávají se v tom, že se na ně nikdo nezeptal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kolik stojí firmu ruční nakládání místo použití vozíku nebo ještěrky?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Záleží na počtu dodávek a směn, ale i jeden neefektivní úkon v délce 20 minut denně na jednoho člověka vychází na přes 35 000 Kč ročně. Při více lidech nebo více směnách se číslo násobí."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Proč se podobné neefektivní procesy ve skladu neopraví samy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Protože je nikdo neměří a nikdo za ně nenese jasnou odpovědnost. Ředitel věří, že to řeší vedoucí, vedoucí věří, že to tak prostě chodí. Bez vnějšího pohledu se provoz tiše vrátí do starých kolejí i po sebelepší opravě."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jak rychle se dá podobný problém ve skladu odhalit a opravit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Odhalit takový problém stačí jeden den přímo na pobočce. Samotná oprava jednoho procesu, třeba přesun na existující ještěrku, je pak otázka dní, ne měsíců. Složitější změny, kde se mění zavedené postupy lidí, chtějí týdny a někoho, kdo to bude hlídat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jak si spočítám vlastní ztráty ve skladu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nejrychlejší cesta je zadat si vlastní čísla do kalkulačky ztrát. Je zdarma a bez registrace a uvidíte konkrétní částku za rok pro váš provoz."
+          }
+        }
+      ]
     }
-  </style>
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --gold:#e9a91b;
+    --black:#000;
+    --paper:#f5f4f0;
+    --white:#fff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--black);
+    font-family:'DM Sans', sans-serif;
+    line-height:1.65;
+  }
+  h1,h2,h3{
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+  }
+  a{color:inherit;}
+  nav.site-nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    max-width:1040px;
+    margin:0 auto;
+    padding:22px 24px;
+    font-size:14px;
+  }
+  nav.site-nav .logo{font-weight:700; text-decoration:none;}
+  nav.site-nav .links a{margin-left:22px; text-decoration:none;}
+  .hero{
+    background:var(--black);
+    color:var(--white);
+    padding:44px 24px 56px;
+  }
+  .hero-inner{max-width:1040px; margin:0 auto;}
+  .category{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    font-size:13px;
+    font-weight:700;
+  }
+  .hero h1{
+    font-size:clamp(28px,4vw,40px);
+    line-height:1.28;
+    margin:18px 0 22px;
+  }
+  .byline{color:#cfcfcf; font-size:14px;}
+  .back-link{
+    display:inline-block;
+    margin-top:26px;
+    color:#cfcfcf;
+    font-size:14px;
+    text-decoration:none;
+  }
+  .tldr{
+    max-width:1040px;
+    margin:32px auto 0;
+    padding:22px 26px;
+    background:rgba(233,169,27,0.10);
+    border-left:4px solid var(--gold);
+    border-radius:4px;
+    font-size:16px;
+  }
+  .tldr b{font-family:'Poppins', sans-serif;}
+  img.hero-img{
+    width:100%;
+    max-width:1040px;
+    display:block;
+    margin:36px auto 0;
+    border-radius:6px;
+  }
+  article{
+    max-width:1040px;
+    margin:0 auto;
+    padding:30px 24px 10px;
+  }
+  article p{font-size:17px; margin:0 0 18px;}
+  article h2{font-size:27px; margin:52px 0 18px;}
+  article h3{font-size:19px; margin:26px 0 10px;}
+  em{color:#555;}
+  table.data-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:24px 0 30px;
+  }
+  table.data-table th, table.data-table td{
+    border:1px solid #ddd;
+    padding:12px 16px;
+    text-align:left;
+    font-size:15px;
+  }
+  table.data-table th{
+    background:var(--black);
+    color:var(--white);
+    font-family:'DM Sans', sans-serif;
+    font-weight:700;
+  }
+  table.data-table td.num{font-family:'DM Mono', monospace;}
+  .stat-box{
+    background:var(--black);
+    color:var(--white);
+    text-align:center;
+    padding:34px 24px;
+    border-radius:8px;
+    margin:34px 0;
+  }
+  .stat-box .number{
+    font-family:'DM Mono', monospace;
+    font-size:42px;
+    font-weight:700;
+    color:var(--gold);
+    display:block;
+  }
+  .stat-box .caption{color:#cfcfcf; font-size:14px; margin-top:8px;}
+  .cta-block{
+    background:var(--white);
+    border:2px solid var(--gold);
+    border-radius:8px;
+    padding:34px 28px;
+    text-align:center;
+    margin:44px 0;
+  }
+  .cta-block h3{margin-top:0;}
+  .cta-button{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--black);
+    padding:14px 30px;
+    border-radius:4px;
+    text-decoration:none;
+    font-weight:700;
+    margin-top:14px;
+  }
+  .faq h3{color:var(--black);}
+  .faq p{color:#333;}
+  footer{
+    background:var(--black);
+    color:#cfcfcf;
+    text-align:center;
+    padding:36px 24px;
+    font-size:14px;
+    margin-top:40px;
+  }
+  footer a{color:var(--white); text-decoration:none; margin:0 12px;}
+</style>
 </head>
 <body>
 
-<nav>
-  <a href="https://gabrielatomickova.cz" class="nav-brand">Gabriela <span>Tomíčková</span></a>
-  <div class="nav-links">
-    <a href="https://gabrielatomickova.cz/o-mne.html" class="nav-link">O mně</a>
-    <a href="https://gabrielatomickova.cz#kontakt" class="nav-cta">Napište mi</a>
-  </div>
+<nav class="site-nav">
+  <a class="logo" href="https://gabrielatomickova.cz">Gabriela Tomíčková</a>
+  <span class="links">
+    <a href="https://gabrielatomickova.cz/o-mne.html">O mně</a>
+    <a href="https://gabrielatomickova.cz#kontakt">Napište mi</a>
+  </span>
 </nav>
 
-<div class="hero">
+<header class="hero">
   <div class="hero-inner">
-    <span class="tag">Ze skladu</span>
+    <span class="category">Ze skladu</span>
     <h1>Ještěrka stála vzadu.<br>Chlapi nakládali ručně hodinu a půl.</h1>
-    <p class="hero-perex">Ředitel zavolal. Nezajela byste se podívat na pobočku? Žádné zadání. Jen "máme tam trochu nepořádek." Dorazila jsem ráno. Odjela v noci. Jeden den.</p>
-    <div class="meta"><strong>Gabriela Tomíčková</strong> · Sklad</div>
-    <a href="https://gabrielatomickova.cz/blog" class="back-link">Zpět na blog</a>
+    <div class="byline">Gabriela Tomíčková &middot; Sklad &middot; Publikováno 15. 8. 2026</div>
+    <a class="back-link" href="https://gabrielatomickova.cz/blog">&larr; Zpět na blog</a>
   </div>
+</header>
+
+<div class="tldr">
+  <b>Rychle:</b> Sklad ztrácel čas ručním nakládáním dodávek, hodinu a půl na jednu, protože nikdo neřekl, že vzadu je sjezd i pro ještěrku. Skryté ztráty ve skladu tak stály přes 35 000 Kč ročně na jediném místě. Řešení bylo 3 minuty cesty daleko.
 </div>
 
-<div class="foto-wrap">
-  <img src="jesterka-sklad-foto.jpg" alt="Nakládání dodávky na rampě skladu">
-</div>
+<img class="hero-img" src="https://gabrielatomickova.cz/blog/jesterka-sklad-foto.jpg" alt="Skladníci ručně nakládají dodávku na rampě, příklad zbytečné ztráty ve skladu">
 
-<div class="article-wrap">
+<article>
 
-  <p>Za ten jeden den jsem našla věci, co tam jedou setrvačností pravděpodobně roky. Drobnosti, co vyřešíte za odpoledne. A pak věci větší, kde nestačí říct "tak to změňte." Kde se musí přenastavit postupy, vysvětlit proč, a pak hlídat a vydržet.</p>
+  <p>Ředitel zavolal. Nezajela byste se podívat na pobočku? Žádné zadání. Jen &bdquo;máme tam trochu nepořádek.&ldquo; Dorazila jsem ráno. Odjela v noci. Jeden den.</p>
+
+  <p>Za ten jeden den jsem našla věci, co tam jedou setrvačností pravděpodobně roky. Drobnosti, co vyřešíte za odpoledne. A pak věci větší, kde nestačí říct &bdquo;tak to změňte.&ldquo; Kde se musí přenastavit postupy, vysvětlit proč, a pak hlídat a vydržet.</p>
 
   <h2>Stála jsem na rampě a nechápala</h2>
 
@@ -102,64 +278,87 @@
 
   <p>Chlapi ručně nakládali dodávky z palet. Jeden po druhém. Balíček po balíčku.</p>
 
-  <div class="dialog">
-    <p>"Proč to nenakládáte ještěrkou?" ptám se.</p>
-    <p><em>"Nemáme venkovní ještěrku."</em></p>
-    <p>"Vždyť máte vzadu sjezd ze skladu?"</p>
-    <p><em>Ticho.</em></p>
-  </div>
+  <p>&bdquo;Proč to nenakládáte ještěrkou?&ldquo; ptám se.</p>
 
-  <h2>Čísla která nikdo nepočítal</h2>
+  <p><em>&bdquo;Nemáme venkovní ještěrku.&ldquo;</em></p>
 
-  <div class="cisla">
-    <div class="cisla-row">
-      <span class="cisla-label">Objet barák ještěrkou</span>
-      <span class="cisla-hodnota">3 minuty</span>
-    </div>
-    <div class="cisla-row">
-      <span class="cisla-label">Naložit ještěrkou</span>
-      <span class="cisla-hodnota">10 minut</span>
-    </div>
-    <div class="cisla-row">
-      <span class="cisla-label">Ručně z palety</span>
-      <span class="cisla-hodnota zluty">1 až 1,5 hodiny</span>
-    </div>
-  </div>
+  <p>&bdquo;Vždyť máte vzadu sjezd ze skladu?&ldquo;</p>
 
-  <p>5 dodávek na pobočce. Každá dělá i 3 točky za směnu.</p>
+  <p><em>Ticho.</em></p>
 
-  <p>Spočítejte si to sami.</p>
+  <h2>Čísla, která nikdo nepočítal</h2>
 
-  <div class="pullquote">
-    <p>Nikdo to nevidí. Nikdo se neptá proč. Ředitel věří, že to vedoucí řeší. Vedoucí věří, že to tak prostě chodí. A chlapi nakládají dál ručně.</p>
-  </div>
+  <table class="data-table">
+    <thead>
+      <tr><th>Způsob nakládání</th><th>Čas</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Objet barák ještěrkou</td><td class="num">3 minuty</td></tr>
+      <tr><td>Naložit ještěrkou</td><td class="num">10 minut</td></tr>
+      <tr><td>Ručně z palety</td><td class="num">1 až 1,5 hodiny</td></tr>
+    </tbody>
+  </table>
+
+  <p>5 dodávek na pobočce. Každá dělá i 3 točky za směnu. Spočítejte si to sami.</p>
+
+  <p>Nikdo to nevidí. Nikdo se neptá proč. Ředitel věří, že to vedoucí řeší. Vedoucí věří, že to tak prostě chodí. A chlapi nakládají dál ručně.</p>
 
   <p>Žádný problém s lidmi. Žádný problém se strojem. Jen nikdo nepočítal.</p>
 
   <h2>Proč se tohle děje ve většině provozů</h2>
 
+  <p>Za deset let v KAIZENu jsem viděla desítky podobných případů. Různé provozy, stejný vzorec. Nikdy to není o líných lidech. Je to o procesu, který nikdo nezpochybnil.</p>
+
+  <p>Někdy je to sjezd, o kterém nikdo neví. Jindy tiskárna na špatném konci haly. Nebo formulář, který se vyplňuje dvakrát, protože se kdysi sloučily dva systémy a nikdo to nedořešil.</p>
+
+  <p>Zvenku to vidíte za hodiny. Zevnitř provozu to nevidí nikdo, protože tam chodíte každý den a mozek si na to zvykne. To je přesně důvod, proč se podobné věci neopraví samy. Ne protože by lidi nechtěli. Ale protože je nikdo nepožádal, aby se zastavili a zeptali se proč.</p>
+
   <p>Není to lenost. Není to špatná vůle. Je to setrvačnost. Věci se dělají určitým způsobem, protože se tak vždy dělaly. A nikdo zvenku se nezeptal proč.</p>
 
-  <p>Změna navíc není jednoduchá. Lidi nesouhlasí, vymyslí sto důvodů proč to nejde, musí změnit věci na které jsou zvyklí. Když nikdo neměří a nikdo netlačí, tiše se to vrátí do starého.</p>
+  <p>Změna navíc není jednoduchá. Lidi nesouhlasí, vymyslí sto důvodů proč to nejde, musí změnit věci, na které jsou zvyklí. Když nikdo neměří a nikdo netlačí, tiše se to vrátí do starého.</p>
 
-  <p>Přitom 1 člověk, 20 minut zbytečností denně. To je přes 35 000 Kč ročně. A to je střízlivý odhad.</p>
+  <div class="stat-box">
+    <span class="number">35 000 Kč</span>
+    <span class="caption">jen 1 člověk, 20 minut zbytečností denně, jeden rok. Střízlivý odhad.</span>
+  </div>
+
+  <p>Nejste v tom sami. Kaizen Institute, mezinárodní poradenská síť s více než 40 lety zkušeností a pobočkou i v Česku, uvádí, že podobná zlepšení skladových a distribučních procesů typicky přinášejí 20 až 30&nbsp;% nárůst produktivity a 15 až 20&nbsp;% snížení nákladů na provoz (zdroj: <a href="https://kaizen.com/consulting/warehousing-distribution/" target="_blank" rel="noopener">Kaizen Institute</a>).</p>
+
+  <p>Pokud netušíte, kde přesně ve vašem provozu podobné ztráty jsou, zkuste <a href="https://audit.gabrielatomickova.cz/">mini audit skladu</a>. Zabere to pár minut. Další podobné případy z praxe najdete i na stránce <a href="https://gabrielatomickova.cz/o-mne.html">O mně</a>.</p>
 
   <h2>Kolik takových ještěrek máte ve svém provozu?</h2>
 
   <div class="cta-block">
     <h3>Spočítejte si to sami</h3>
-    <p>Zadejte svá čísla a uvidíte kolik vás zbytečné ztráty reálně stojí. Kalkulačka zdarma, bez registrace.</p>
-    <a href="https://kalkulacka.gabrielatomickova.cz/" class="btn-gold">Chci kalkulačku ztrát zdarma</a>
+    <p>Zadejte svá čísla a uvidíte, kolik vás zbytečné ztráty reálně stojí. Kalkulačka zdarma, bez registrace.</p>
+    <a class="cta-button" href="https://kalkulacka.gabrielatomickova.cz/">Chci kalkulačku ztrát zdarma</a>
   </div>
 
-</div>
+  <h2>Časté otázky o ztrátách ve skladu</h2>
+
+  <div class="faq">
+    <h3>Jak poznám, že sklad ztrácí čas na zbytečných procesech?</h3>
+    <p>Nejčastější signál je jednoduchý. Vezměte jeden konkrétní úkon, například nakládání, a změřte ho stopkami. Pokud vám vyjde číslo, které vás překvapí, máte to. Skryté ztráty se neschovávají v datech, schovávají se v tom, že se na ně nikdo nezeptal.</p>
+
+    <h3>Kolik stojí firmu ruční nakládání místo použití vozíku nebo ještěrky?</h3>
+    <p>Záleží na počtu dodávek a směn, ale i jeden neefektivní úkon v délce 20 minut denně na jednoho člověka vychází na přes 35 000 Kč ročně. Při více lidech nebo více směnách se číslo násobí.</p>
+
+    <h3>Proč se podobné neefektivní procesy ve skladu neopraví samy?</h3>
+    <p>Protože je nikdo neměří a nikdo za ně nenese jasnou odpovědnost. Ředitel věří, že to řeší vedoucí, vedoucí věří, že to tak prostě chodí. Bez vnějšího pohledu se provoz tiše vrátí do starých kolejí i po sebelepší opravě.</p>
+
+    <h3>Jak rychle se dá podobný problém ve skladu odhalit a opravit?</h3>
+    <p>Odhalit takový problém stačí jeden den přímo na pobočce. Samotná oprava jednoho procesu, třeba přesun na existující ještěrku, je pak otázka dní, ne měsíců. Složitější změny, kde se mění zavedené postupy lidí, chtějí týdny a někoho, kdo to bude hlídat.</p>
+
+    <h3>Jak si spočítám vlastní ztráty ve skladu?</h3>
+    <p>Nejrychlejší cesta je zadat si vlastní čísla do kalkulačky ztrát. Je zdarma a bez registrace a uvidíte konkrétní částku za rok pro váš provoz.</p>
+  </div>
+
+</article>
 
 <footer>
-  <div class="footer-brand">Gabriela <span>Tomíčková</span> · AI & Procesní konzultant</div>
-  <div class="footer-links">
-    <a href="https://gabrielatomickova.cz">Zpět na web</a>
-    <a href="https://gdpr.gabrielatomickova.cz">Zásady ochrany osobních údajů</a>
-  </div>
+  <a href="https://gabrielatomickova.cz">Zpět na web</a>
+  <a href="https://gabrielatomickova.cz#kontakt">Napište mi</a>
+  <a href="https://gdpr.gabrielatomickova.cz">Zásady ochrany osobních údajů</a>
 </footer>
 
 </body>
