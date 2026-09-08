@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zlepšování bez KAIZEN žargonu | Gabriela Tomíčková</title>
+<meta name="description" content="Zlepšování bez znalosti KAIZEN: jak vznikla appka Tokva, co vás provede od problému k ověřené změně. Podívejte se, jak to funguje.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Gabriela Tomíčková">
+<link rel="canonical" href="https://gabrielatomickova.cz/blog/zlepsovani-bez-kaizen-tokva.html">
+
+<meta property="og:title" content="Chtěla jsem jim dát kalkulačku. Nakonec potřebovali průvodce.">
+<meta property="og:description" content="Stavěla jsem appky, co lidem bez znalosti KAIZEN ukážou, kde ve firmě ztrácí čas a peníze. Zjistila jsem, že číslo samo nestačí. Tak vznikla Tokva.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://gabrielatomickova.cz/blog/zlepsovani-bez-kaizen-tokva-foto.jpg">
+<meta property="og:url" content="https://gabrielatomickova.cz/blog/zlepsovani-bez-kaizen-tokva.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Chtěla jsem jim dát kalkulačku. Nakonec potřebovali průvodce.",
+      "description": "Zlepšování bez znalosti KAIZEN: jak vznikla appka Tokva, co vás provede od problému k ověřené změně.",
+      "image": "https://gabrielatomickova.cz/blog/zlepsovani-bez-kaizen-tokva-foto.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Gabriela Tomíčková",
+        "url": "https://gabrielatomickova.cz/o-mne.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Gabriela Tomíčková"
+      },
+      "datePublished": "2026-09-08",
+      "dateModified": "2026-09-08",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://gabrielatomickova.cz/blog/zlepsovani-bez-kaizen-tokva.html"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Musím znát KAIZEN nebo Lean, abych mohl/a Tokvu používat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ne. Tokva je postavená přesně pro lidi, co metodiku studovat nechtějí nebo na to nemají čas. Provede vás krok za krokem, i když nevíte, který nástroj hledáte."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Je Tokva zdarma?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Diagnostické nástroje ano - první výsledek dostanete během pár minut bez registrace. Tokva Pro navíc propojuje výsledky do akčního plánu a je placená verze."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Čím se Tokva liší od jednotlivých appek jako kalkulačka nebo audit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Appky odpoví na jednu otázku. Tokva vás provede celou cestou - od zjištění problému přes měření a nalezení příčiny až po ověření, že změna fungovala."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kde Tokvu najdu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Na tokva.cz."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --gold:#e9a91b;
+    --black:#000;
+    --paper:#f5f4f0;
+    --white:#fff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--black);
+    font-family:'DM Sans', sans-serif;
+    line-height:1.65;
+  }
+  h1,h2,h3{
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+  }
+  a{color:inherit;}
+  nav.site-nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    max-width:1040px;
+    margin:0 auto;
+    padding:22px 24px;
+    font-size:14px;
+  }
+  nav.site-nav .logo{font-weight:700; text-decoration:none;}
+  nav.site-nav .links a{margin-left:22px; text-decoration:none;}
+  .hero{
+    background:var(--black);
+    color:var(--white);
+    padding:44px 24px 56px;
+  }
+  .hero-inner{max-width:1040px; margin:0 auto;}
+  .category{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    font-size:13px;
+    font-weight:700;
+  }
+  .hero h1{
+    font-size:clamp(28px,4vw,40px);
+    line-height:1.28;
+    margin:18px 0 22px;
+  }
+  .byline{color:#cfcfcf; font-size:14px;}
+  .back-link{
+    display:inline-block;
+    margin-top:26px;
+    color:#cfcfcf;
+    font-size:14px;
+    text-decoration:none;
+  }
+  .tldr{
+    max-width:1040px;
+    margin:32px auto 0;
+    padding:22px 26px;
+    background:rgba(233,169,27,0.10);
+    border-left:4px solid var(--gold);
+    border-radius:4px;
+    font-size:16px;
+  }
+  .tldr b{font-family:'Poppins', sans-serif;}
+  img.hero-img{
+    width:100%;
+    max-width:1040px;
+    display:block;
+    margin:36px auto 0;
+    border-radius:6px;
+  }
+  article{
+    max-width:1040px;
+    margin:0 auto;
+    padding:30px 24px 10px;
+  }
+  article p{font-size:17px; margin:0 0 18px;}
+  article h2{font-size:27px; margin:52px 0 18px;}
+  article h3{font-size:19px; margin:26px 0 10px;}
+  table.data-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:24px 0 30px;
+  }
+  table.data-table th, table.data-table td{
+    border:1px solid #ddd;
+    padding:12px 16px;
+    text-align:left;
+    font-size:15px;
+  }
+  table.data-table th{
+    background:var(--black);
+    color:var(--white);
+    font-family:'DM Sans', sans-serif;
+    font-weight:700;
+  }
+  .cta-block{
+    background:var(--white);
+    border:2px solid var(--gold);
+    border-radius:8px;
+    padding:34px 28px;
+    text-align:center;
+    margin:44px 0;
+  }
+  .cta-block h3{margin-top:0;}
+  .cta-button{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--black);
+    padding:14px 30px;
+    border-radius:4px;
+    text-decoration:none;
+    font-weight:700;
+    margin-top:14px;
+  }
+  .faq h3{color:var(--black); font-size:19px;}
+  .faq p{color:#333;}
+  footer{
+    background:var(--black);
+    color:#cfcfcf;
+    text-align:center;
+    padding:36px 24px;
+    font-size:14px;
+    margin-top:40px;
+  }
+  footer a{color:var(--white); text-decoration:none; margin:0 12px;}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="logo" href="https://gabrielatomickova.cz">Gabriela Tomíčková</a>
+  <span class="links">
+    <a href="https://gabrielatomickova.cz/o-mne.html">O mně</a>
+    <a href="https://gabrielatomickova.cz#kontakt">Napište mi</a>
+  </span>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="category">Z praxe</span>
+    <h1>Chtěla jsem jim dát kalkulačku.<br>Nakonec potřebovali průvodce.</h1>
+    <div class="byline">Gabriela Tomíčková &middot; Zlepšování &middot; Publikováno 8. 9. 2026</div>
+    <a class="back-link" href="https://gabrielatomickova.cz/blog">&larr; Zpět na blog</a>
+  </div>
+</header>
+
+<div class="tldr">
+  <b>Rychle:</b> Stavěla jsem jednoduché appky, co lidem bez znalosti KAIZEN ukážou, kde ve firmě ztrácí čas a peníze. Zjistila jsem, že samotné číslo nestačí – lidi ho dostanou a neví co s tím dál. Tak z toho vznikla Tokva: prostředí, které vás provede od problému až po ověřenou změnu.
+</div>
+
+<img class="hero-img" src="https://gabrielatomickova.cz/blog/zlepsovani-bez-kaizen-tokva-foto.jpg" alt="Rozcestník appky Tokva pro zlepšování bez znalosti KAIZEN">
+
+<article>
+
+  <p>Nejdřív jsem chtěla postavit jednu kalkulačku. Něco jednoduchého, co lidem bez znalosti KAIZEN ukáže, kde ve firmě zbytečně utíkají peníze.</p>
+
+  <p>Věděli, co je bolí. Neuměli dojít k tomu, co s tím dál.</p>
+
+  <p>Tuhle mezeru vidím u klientů roky. Udělat audit je jedna věc. Dotáhnout ho přes celý cyklus, až po ověřený výsledek, je věc úplně jiná.</p>
+
+  <p>Jenže dřív jsem u toho byla osobně. Teď jsem potřebovala, aby ta mezera nebyla, i když u toho nejsem.</p>
+
+  <p>Takhle vznikla Tokva.</p>
+
+  <h2>Jak to začalo: appky, co ukážou, kde to bolí</h2>
+
+  <p>Postupně jich přibývalo. Kalkulačka neviditelných ztrát. Mini audit skladu. Kvíz, co o svém skladu vlastně víte, versus realita. <a href="https://tokva.cz/nastroje/kalkulacka-ztrat/">Kalkulačka ztrát výroby a skladu zdarma</a>, <a href="https://tokva.cz/nastroje/mini-audit-skladu/">mini audit skladu zdarma</a> a <a href="https://tokva.cz/nastroje/kviz-jak-znate-svuj-sklad/">kvíz, jak dobře znáte svůj sklad</a>.</p>
+
+  <p>Každá appka odpovídala na jednu konkrétní otázku. Kolik vás to stojí. Kde je problém. Jak na tom reálně jste.</p>
+
+  <p>Z velkých firem to znám dobře. Problém tam většinou není žádné tajemství. Ví o něm vedoucí, ví o něm ředitel, občas o něm padne řeč i na poradě.</p>
+
+  <p>Visí to ve vzduchu roky.</p>
+
+  <p>Jenže ho nikdo nevlastní. Nikdo neřekne &bdquo;tohle je moje&ldquo; a nikdo pak nejde za konkrétním výsledkem. Zůstane to u řečí.</p>
+
+  <h2>Proč jsem šla dál</h2>
+
+  <p>Lidi viděli, kde ztrácí. A pak nic. Nevěděli co s tím.</p>
+
+  <p>Ne proto, že by nechtěli. Podle habilitační práce Ing. Martina Pecha, Ph.D. z Ekonomické fakulty Jihočeské univerzity většina malých a středních firem nemá na zavádění zlepšování dost peněz ani času – chybí prostor na vzdělávání lidí i na najmutí specialisty, který by to vedl (zdroj: <a href="https://www.jcu.cz/images/veda-a-vyzkum/habilitacni-prace/habilitacni-prace-ing_-martin-pech-ph_d_.pdf" target="_blank" rel="noopener">habilitační práce, Jihočeská univerzita</a>).</p>
+
+  <h2>Z měření se vyklubal celý plán</h2>
+
+  <p>Vzpomínám si na tu návštěvu skladu, s <a href="https://gabrielatomickova.cz/blog/jesterka-stala-vzadu.html">ještěrkou a ručním nakládáním</a>. Vytvořila jsem akční plán. Domluvila termíny s vedoucím skladu.</p>
+
+  <p>O pár měsíců později bylo hotové skoro nic.</p>
+
+  <p>Třicet palet s bednami stálo v regále pět let. Nikdo se jich nedotkl.</p>
+
+  <p>Jako by to byla zeď, ne regál.</p>
+
+  <p>A sklad si přitom stěžoval, že nemá místo.</p>
+
+  <p>Nebyla to lenost. Byla to otázka zodpovědnosti – kdo to ohlídá, když v tom nemá osobní podíl.</p>
+
+  <p>Majitel malé firmy je jiný případ. Osobní podíl má vždycky. Když uvidí, kolik může ušetřit na čase, kapacitě nebo penězích, dotáhne to sám. Nebo si to aspoň ohlídá.</p>
+
+  <p>Tehdy mi došlo, co vlastně dělám pořád dokola. Znám problém. Změřím, jak je velký. Zjistím detaily. Vymýšlím, jak ho zmírnit. Zavedu řešení a musím ho ohlídat – zkontrolovat, jestli zabralo, a ověřit to i po čase, ne jen hned.</p>
+
+  <p>Na tomhle jsem postavila celý projekt.</p>
+
+  <h2>Tokva: cesta od problému ke změně</h2>
+
+  <p>Tokva vás provede čtyřmi kroky:</p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Krok</th><th>Co v něm uděláte</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1. Najděte, kde to bolí</td><td>Rychlá diagnostika, i když nevíte přesně, co hledáte</td></tr>
+      <tr><td>2. Změřte, jak velký problém je</td><td>Čas, pohyb, kapacita nebo peníze – z pocitu uděláte číslo</td></tr>
+      <tr><td>3. Najděte příčinu a rozhodněte</td><td>Neřešíte jen příznak, ale co má reálně smysl změnit</td></tr>
+      <tr><td>4. Ověřte, že změna zabrala</td><td>Zopakujete měření a porovnáte stav před a po</td></tr>
+    </tbody>
+  </table>
+
+  <p>Zdarma zůstávají jednotlivé diagnostické nástroje – to, co appky dělaly od začátku. V Tokva Pro se navíc výsledky ukládají, propojují s konkrétním problémem a mění se v akční plán: co změnit, kdo to udělá a do kdy.</p>
+
+  <div class="cta-block">
+    <h3>Chcete vidět, kde vaše firma ztrácí?</h3>
+    <p>Vyzkoušejte diagnostické nástroje zdarma, bez registrace.</p>
+    <a class="cta-button" href="https://tokva.cz">Přejít na Tokvu</a>
+  </div>
+
+  <h2>Pro koho Tokva je</h2>
+
+  <p>Tokva není prioritně pro lidi, co už umí Lean nebo KAIZEN nazpaměť.</p>
+
+  <p>Je pro vedoucího skladu. Mistra ve výrobě. Majitele malé firmy. Člověka, co řeší svůj vlastní pracovní den a nemá čas ani chuť nejdřív číst učebnici, než něco zlepší.</p>
+
+  <p>Viděla jsem už několik nástrojů, co pomůžou. Ale pomůžou člověku, který KAIZEN a Lean terminologii rozumí. Kdo zná postupy a jednotlivé nástroje. Komu je zlepšování zaběhnutá věc.</p>
+
+  <p>Já tvořím nástroj pro obyčejné lidi. V češtině, bez korporátního žargonu. Co lidskou řečí řekne, co máte udělat a co máte udělat potom.</p>
+
+  <h2>Časté otázky o zlepšování bez znalosti KAIZEN</h2>
+
+  <div class="faq">
+    <h3>Musím znát KAIZEN nebo Lean, abych mohl/a Tokvu používat?</h3>
+    <p>Ne. Tokva je postavená přesně pro lidi, co metodiku studovat nechtějí nebo na to nemají čas. Provede vás krok za krokem, i když nevíte, který nástroj hledáte.</p>
+
+    <h3>Je Tokva zdarma?</h3>
+    <p>Diagnostické nástroje ano – první výsledek dostanete během pár minut bez registrace. Tokva Pro navíc propojuje výsledky do akčního plánu a je placená verze.</p>
+
+    <h3>Čím se Tokva liší od jednotlivých appek jako kalkulačka nebo audit?</h3>
+    <p>Appky odpoví na jednu otázku. Tokva vás provede celou cestou – od zjištění problému přes měření a nalezení příčiny až po ověření, že změna fungovala.</p>
+
+    <h3>Kde Tokvu najdu?</h3>
+    <p>Na <a href="https://tokva.cz">tokva.cz</a>.</p>
+  </div>
+
+</article>
+
+<footer>
+  <a href="https://gabrielatomickova.cz">Zpět na web</a>
+  <a href="https://gabrielatomickova.cz#kontakt">Napište mi</a>
+  <a href="https://gdpr.gabrielatomickova.cz">Zásady ochrany osobních údajů</a>
+</footer>
+
+</body>
+</html>
