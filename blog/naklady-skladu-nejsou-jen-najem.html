@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Náklady skladu nejsou jen nájem | Gabriela Tomíčková</title>
+<meta name="description" content="Náklady skladování nejsou jen nájem. Energie, pojištění, revize, odpisy budovy i vybavení. Spočítejte si to pořádně, ne od oka.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Gabriela Tomíčková">
+<link rel="canonical" href="https://gabrielatomickova.cz/blog/naklady-skladu-nejsou-jen-najem.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+<meta property="og:title" content="Náklady skladu nejsou jen nájem.">
+<meta property="og:description" content="Ve výrobě jsem kalkulaci úspor uměla od ruky. Ve skladu jsem zjistila, že bez podkladů to nejde. Nájem je jen špička ledovce.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://gabrielatomickova.cz/blog/naklady-skladu-foto.jpg">
+<meta property="og:url" content="https://gabrielatomickova.cz/blog/naklady-skladu-nejsou-jen-najem.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Náklady skladu nejsou jen nájem.",
+      "description": "Náklady skladování nejsou jen nájem. Energie, pojištění, revize, odpisy budovy i vybavení. Spočítejte si to pořádně, ne od oka.",
+      "image": "https://gabrielatomickova.cz/blog/naklady-skladu-foto.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Gabriela Tomíčková",
+        "url": "https://gabrielatomickova.cz/o-mne"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Gabriela Tomíčková"
+      },
+      "datePublished": "2026-09-23",
+      "dateModified": "2026-09-23",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://gabrielatomickova.cz/blog/naklady-skladu-nejsou-jen-najem.html"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Co všechno patří do nákladů na skladování?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zdaleka nejen nájem. Patří tam i odpisy budovy, náklad spojený s pozemkem, energie, daně a pojištění, údržba a povinné revize, provozní služby jako úklid a ostraha, odpisy vybavení jako regály nebo dokovací technika, a rezerva na nepředvídané náklady."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Proč se náklady na sklad počítají jinak než náklady ve výrobě?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ve výrobě stačí znát průměrný náklad na člověka a čas cyklu před a po změně. U skladu jde hlavně o náklad prostoru, který se skládá z desítek dílčích položek, ne z jednoho čísla jako nájem."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kdo potřebuje mít náklady na skladování spočítané úplně přesně?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hlavně firmy, které skladové pozice pronajímají nebo nabízí fulfillment, protože z toho skládají cenu za paletové místo nebo m² s marží. Pro interní orientaci stačí zjednodušená verze."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Počítá se do nákladů na sklad i mzda skladníků?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ne vždy. Náklad prostoru a náklad práce jsou dvě různé věci. Kalkulačka nákladů skladu počítá náklad prostoru a vybavení, mzdy skladníků do toho záměrně nezahrnuje."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --gold:#e9a91b;
+    --black:#000;
+    --paper:#f5f4f0;
+    --white:#fff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--black);
+    font-family:'DM Sans', sans-serif;
+    line-height:1.65;
+  }
+  h1,h2,h3{
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+  }
+  a{color:inherit;}
+  nav.site-nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    max-width:1040px;
+    margin:0 auto;
+    padding:22px 24px;
+    font-size:14px;
+  }
+  nav.site-nav .logo{font-weight:700; text-decoration:none;}
+  nav.site-nav .links a{margin-left:22px; text-decoration:none;}
+  .hero{
+    background:var(--black);
+    color:var(--white);
+    padding:44px 24px 56px;
+  }
+  .hero-inner{max-width:1040px; margin:0 auto;}
+  .category{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    font-size:13px;
+    font-weight:700;
+  }
+  .hero h1{
+    font-size:clamp(28px,4vw,40px);
+    line-height:1.28;
+    margin:18px 0 22px;
+  }
+  .byline{color:#cfcfcf; font-size:14px;}
+  .back-link{
+    display:inline-block;
+    margin-top:26px;
+    color:#cfcfcf;
+    font-size:14px;
+    text-decoration:none;
+  }
+  .tldr{
+    max-width:1040px;
+    margin:32px auto 0;
+    padding:22px 26px;
+    background:rgba(233,169,27,0.10);
+    border-left:4px solid var(--gold);
+    border-radius:4px;
+    font-size:16px;
+  }
+  .tldr b{font-family:'Poppins', sans-serif;}
+  img.hero-img{
+    width:100%;
+    max-width:1040px;
+    display:block;
+    margin:36px auto 0;
+    border-radius:6px;
+  }
+  article{
+    max-width:1040px;
+    margin:0 auto;
+    padding:30px 24px 10px;
+  }
+  article p{font-size:17px; margin:0 0 18px;}
+  article h2{font-size:27px; margin:52px 0 18px;}
+  article h3{font-size:19px; margin:26px 0 10px;}
+  em{color:#555;}
+  table.data-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:24px 0 30px;
+  }
+  table.data-table th, table.data-table td{
+    border:1px solid #ddd;
+    padding:12px 16px;
+    text-align:left;
+    font-size:15px;
+  }
+  table.data-table th{
+    background:var(--black);
+    color:var(--white);
+    font-family:'DM Sans', sans-serif;
+    font-weight:700;
+  }
+  table.data-table td.num{font-family:'DM Mono', monospace;}
+  .stat-box{
+    background:var(--black);
+    color:var(--white);
+    text-align:center;
+    padding:34px 24px;
+    border-radius:8px;
+    margin:34px 0;
+  }
+  .stat-box .number{
+    font-family:'DM Mono', monospace;
+    font-size:42px;
+    font-weight:700;
+    color:var(--gold);
+    display:block;
+  }
+  .stat-box .caption{color:#cfcfcf; font-size:14px; margin-top:8px;}
+  .cta-block{
+    background:var(--white);
+    border:2px solid var(--gold);
+    border-radius:8px;
+    padding:34px 28px;
+    text-align:center;
+    margin:44px 0;
+  }
+  .cta-block h3{margin-top:0;}
+  .cta-button{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--black);
+    padding:14px 30px;
+    border-radius:4px;
+    text-decoration:none;
+    font-weight:700;
+    margin-top:14px;
+  }
+  .faq h3{color:var(--black);}
+  .faq p{color:#333;}
+  .note-box{
+    background:#fff;
+    border:1px dashed #c9c9c9;
+    border-radius:6px;
+    padding:16px 20px;
+    margin:0 0 22px;
+    font-size:14px;
+    color:#777;
+  }
+  footer{
+    background:var(--black);
+    color:#cfcfcf;
+    text-align:center;
+    padding:36px 24px;
+    font-size:14px;
+    margin-top:40px;
+  }
+  footer a{color:var(--white); text-decoration:none; margin:0 12px;}
+
+.cookies-bar{position:fixed;bottom:0;left:0;right:0;background:#111;border-top:2px solid #e9a91b;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;z-index:9999;font-family:"DM Sans",sans-serif;}
+.cookies-bar p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.6;margin:0;flex:1;min-width:200px;}
+.cookies-bar a{color:#e9a91b;text-decoration:none;}
+.cookies-bar a:hover{text-decoration:underline;}
+.cookies-btns{display:flex;gap:8px;flex-shrink:0;}
+.cookies-ok{background:#e9a91b;color:#000;border:none;border-radius:4px;padding:8px 18px;font-family:"DM Sans",sans-serif;font-size:13px;font-weight:700;cursor:pointer;}
+.cookies-ok:hover{background:#c48e10;}
+.cookies-no{background:transparent;color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.15);border-radius:4px;padding:8px 14px;font-family:"DM Sans",sans-serif;font-size:13px;cursor:pointer;}
+.cookies-no:hover{color:rgba(255,255,255,.7);}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="logo" href="https://gabrielatomickova.cz">Gabriela Tomíčková</a>
+  <span class="links">
+    <a href="https://gabrielatomickova.cz/o-mne">O mně</a>
+    <a href="https://gabrielatomickova.cz#kontakt">Napište mi</a>
+  </span>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="category">Ze skladu</span>
+    <h1>Náklady skladu<br>nejsou jen nájem.</h1>
+    <div class="byline">Gabriela Tomíčková &middot; Sklad &middot; Publikováno 23. 9. 2026</div>
+    <a class="back-link" href="https://gabrielatomickova.cz/blog">&larr; Zpět na blog</a>
+  </div>
+</header>
+
+<div class="tldr">
+  <b>Rychle:</b> Nájem je jen špička ledovce. Skutečný náklad skladu se skládá z desítek položek, energie, daně, pojištění, revize, odpisy budovy i vybavení, úklid, ostraha. Kdo to počítá jen podle nájmu, počítá špatně. Na konci je odkaz na kalkulačku, kde si to spočítáte za pár minut.
+</div>
+
+<img class="hero-img" src="https://gabrielatomickova.cz/blog/naklady-skladu-foto.jpg" alt="Skladové regály s označenými pozicemi plné palet a beden, příklad skladového prostoru, jehož náklad je víc než jen nájem">
+
+<article>
+
+  <h2>Proč se úspory na skladování počítají jinak než úspory ve výrobě?</h2>
+
+  <p>Když jsem měla kalkulovat úspory ve výrobě, bylo to docela snadné. Všechna práce se přepočítávala na lidi. Znala jsem průměrné náklady na člověka a znala jsem časy cyklu před a po změně. Pár čísel, sečíst, odečíst, vynásobit, vydělit, hotovo.</p>
+
+  <p>Ale když jsem přišla do skladu a měla spočítat třeba úsporu místa, rychle jsem zjistila, že nemám dostatečné podklady ke kalkulaci. Nejde totiž jenom o nájemné. Je toho mnohem víc, co se počítá jako náklad, a bez nich je jakékoli číslo jen odhad od oka.</p>
+
+  <h2>Co všechno patří do nákladů na skladování?</h2>
+
+  <p>Nájem je jen jedna položka z celé řady. Reálný náklad skladu se skládá z tohohle:</p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Kategorie</th><th>Co do ní patří</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Prostor</td><td>nájem nebo odpisy budovy, hodnota pozemku, oportunitní náklad kapitálu</td></tr>
+      <tr><td>Energie</td><td>elektřina, vytápění nebo chlazení, voda a kanalizace</td></tr>
+      <tr><td>Daně a pojištění</td><td>daň z nemovitosti, pojištění budovy, pojištění odpovědnosti</td></tr>
+      <tr><td>Údržba a revize</td><td>běžná údržba, elektrorevize, EPS, EZS, zdvihací zařízení, hasicí přístroje, plynová zařízení</td></tr>
+      <tr><td>Provozní služby</td><td>úklid, ostraha, odvoz odpadu, facility management, deratizace</td></tr>
+      <tr><td>Vybavení</td><td>regálový systém, dokovací technika, osvětlení, vrata a dveře, ostatní fixní vybavení</td></tr>
+      <tr><td>Ostatní</td><td>internet a telekomunikace, certifikace a licence, rezerva na nepředvídané náklady</td></tr>
+    </tbody>
+  </table>
+
+  <p>Pro interní orientační výpočty to dejme tomu není úplně kritické. I když, pokud už něco měníte, chcete znát reálná čísla a chlubit se reálnou úsporou, ne odhadem. Ale firmy, které nabízí třeba pronájem skladových pozic, tohle musí mít spočítané přesně.</p>
+
+  <h2>Jak se počítá cena skladové pozice, když sklad pronajímáte?</h2>
+
+  <p>Firmy typu fulfillment centra nebo 3PL skládají cenu za paletové místo na den, nebo za m² na měsíc, přesně z položek výše. Fixní náklady prostoru a vybavení rozpočítají na počet pozic nebo m², přidají náklad na obsluhu té plochy a přidají marži. Kdo tohle nemá spočítané pořádně, nastavuje ceny podle pocitu. Jinak buď proděláte na ceně, nebo odrbete zákazníky a přijdete o ně.</p>
+
+  <h2>Počítá se do toho i mzda skladníků?</h2>
+
+  <p>Tady je potřeba být férová. Náklad prostoru a náklad práce jsou dvě různé věci. Kalkulačka nákladů skladu, kterou najdete na Tokvě, počítá náklad prostoru a vybavení, tedy všechno z tabulky výše. Mzdy skladníků do toho záměrně nezahrnuje, protože ty se odvíjí od toho, jak sklad provozujete, ne od toho, kolik stojí ta plocha sama o sobě. Stejně tak nepočítá s náklady vázanými v zásobách, jako je vázaný kapitál nebo škody a manka. To jsou jiná čísla, na jiný účel.</p>
+
+  <div class="cta-block">
+    <h3>Spočítejte si to sami</h3>
+    <p>Zadejte svá čísla a uvidíte celkový náklad na m² i za rok, se vším, na co se normálně zapomíná.</p>
+    <a class="cta-button" href="https://tokva.cz/nastroje/kalkulacka-nakladu-skladu/">Chci kalkulačku nákladů skladu zdarma</a>
+  </div>
+
+  <h2>Co bych ještě měl o svém skladu vědět?</h2>
+
+  <p>Náklady na m² jsou jedna věc, ale nejsou to jediné, co byste o svém skladu měli znát. Kvíz <a href="https://tokva.cz/nastroje/kviz-jak-znate-svuj-sklad/">Jak znáte svůj sklad</a> vám za pár minut ukáže, kde máte slepá místa, náklady na chyby, fluktuaci, přesnost stavů a další věci, na které se běžně nikdo neptá.</p>
+
+  <h2>Časté otázky k nákladům na skladování</h2>
+
+  <div class="faq">
+    <h3>Co všechno patří do nákladů na skladování?</h3>
+    <p>Zdaleka nejen nájem. Patří tam i odpisy budovy, náklad spojený s pozemkem, energie, daně a pojištění, údržba a povinné revize, provozní služby jako úklid a ostraha, odpisy vybavení jako regály nebo dokovací technika, a rezerva na nepředvídané náklady.</p>
+
+    <h3>Proč se náklady na sklad počítají jinak než náklady ve výrobě?</h3>
+    <p>Ve výrobě stačí znát průměrný náklad na člověka a čas cyklu před a po změně. U skladu jde hlavně o náklad prostoru, který se skládá z desítek dílčích položek, ne z jednoho čísla jako nájem.</p>
+
+    <h3>Kdo potřebuje mít náklady na skladování spočítané úplně přesně?</h3>
+    <p>Hlavně firmy, které skladové pozice pronajímají nebo nabízí fulfillment, protože z toho skládají cenu za paletové místo nebo m² s marží. Pro interní orientaci stačí zjednodušená verze.</p>
+
+    <h3>Počítá se do nákladů na sklad i mzda skladníků?</h3>
+    <p>Ne vždy. Náklad prostoru a náklad práce jsou dvě různé věci. Kalkulačka nákladů skladu počítá náklad prostoru a vybavení, mzdy skladníků do toho záměrně nezahrnuje.</p>
+  </div>
+
+</article>
+
+<footer>
+  <a href="https://gabrielatomickova.cz">Zpět na web</a>
+  <a href="https://gabrielatomickova.cz#kontakt">Napište mi</a>
+  <a href="https://gdpr.gabrielatomickova.cz">Zásady ochrany osobních údajů</a>
+</footer>
+
+<div class="cookies-bar" id="cookies-bar" style="display:none;">
+  <p>Tento web používá analytické cookies (Google Analytics) pro měření návštěvnosti. <a href="https://gdpr.gabrielatomickova.cz">Zásady ochrany osobních údajů</a></p>
+  <div class="cookies-btns">
+    <button class="cookies-no" onclick="cookiesOdmitnout()">Odmítnout</button>
+    <button class="cookies-ok" onclick="cookiesSouhlasit()">Souhlasím</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var s = localStorage.getItem('cookies_souhlas');
+  if (s === 'ano') {
+    spustitGA();
+  } else if (s === null) {
+    document.getElementById('cookies-bar').style.display = 'flex';
+  }
+})();
+
+function spustitGA() {
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JBFDH4G4VP';
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-JBFDH4G4VP');
+}
+
+function cookiesSouhlasit() {
+  localStorage.setItem('cookies_souhlas', 'ano');
+  document.getElementById('cookies-bar').style.display = 'none';
+  spustitGA();
+}
+
+function cookiesOdmitnout() {
+  localStorage.setItem('cookies_souhlas', 'ne');
+  document.getElementById('cookies-bar').style.display = 'none';
+}
+</script>
+</body>
+</html>

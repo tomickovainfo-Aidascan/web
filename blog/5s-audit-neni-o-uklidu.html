@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5S není úklid: proč snižuje poruchy a zvedá produktivitu | Gabriela Tomíčková</title>
+<meta name="description" content="5S není úklid. Je to systém, který odhalí, co na pracovišti chybí, kde se skrývají závady strojů a proč lidé ztrácí čas. Reálné příklady z praxe.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Gabriela Tomíčková">
+<link rel="canonical" href="https://gabrielatomickova.cz/blog/5s-audit-neni-o-uklidu.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+<meta property="og:title" content="5S není úklid. Je to systém, jak najít to, co vás brzdí.">
+<meta property="og:description" content="Pět kroků, co odhalí ztracené vteřiny, chybějící pomůcky i skrytou poruchu stroje dřív, než se z ní stane odstávka.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://gabrielatomickova.cz/blog/5s-audit-hero-foto.jpg">
+<meta property="og:url" content="https://gabrielatomickova.cz/blog/5s-audit-neni-o-uklidu.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "5S není úklid. Je to systém, jak najít to, co vás brzdí.",
+      "description": "5S není úklid. Je to systém, který odhalí, co na pracovišti chybí, kde se skrývají závady strojů a proč lidé ztrácí čas.",
+      "image": "https://gabrielatomickova.cz/blog/5s-audit-hero-foto.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Gabriela Tomíčková",
+        "url": "https://gabrielatomickova.cz/o-mne"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Gabriela Tomíčková"
+      },
+      "datePublished": "2026-09-23",
+      "dateModified": "2026-09-23",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://gabrielatomickova.cz/blog/5s-audit-neni-o-uklidu.html"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Je 5S vhodné i pro malou firmu nebo sklad?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ano. Princip funguje stejně na lince o 50 lidech i na skladu o třech. Rozsah se přizpůsobí velikosti provozu, metoda ne."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jak dlouho trvá zavedení 5S?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Záleží na velikosti provozu, ale první viditelné výsledky, přerozdělené pracoviště a jasný standard, jde často vidět do pár týdnů."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Musím na zavedení 5S koupit nové vybavení?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ne nutně. Většina zlepšení je o přerovnání toho, co už ve firmě máte, ne o nákupu nového vybavení."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jak poznám, že mi 5S ve firmě chybí?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pokud lidé opakovaně hledají nástroje, materiál nebo informace, nebo se pořád řeší stejné maličkosti a nikdo neví, čí je to úkol, je to jasný signál. Podobné věci se ptá i mini audit výroby na tokva.cz, kde si rovnou zjistíte, na čem jste."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Čím se 5S liší od obyčejného úklidu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Úklid je jednorázová akce, po týdnu je nepořádek zase zpátky. 5S je systém, který zajistí, že věc, kterou potřebujete, je vždy tam, kde ji čekáte, a že je hned vidět, když něco chybí nebo je špatně."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --gold:#e9a91b;
+    --black:#000;
+    --paper:#f5f4f0;
+    --white:#fff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--black);
+    font-family:'DM Sans', sans-serif;
+    line-height:1.65;
+  }
+  h1,h2,h3{
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+  }
+  a{color:inherit;}
+  nav.site-nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    max-width:1040px;
+    margin:0 auto;
+    padding:22px 24px;
+    font-size:14px;
+  }
+  nav.site-nav .logo{font-weight:700; text-decoration:none;}
+  nav.site-nav .links a{margin-left:22px; text-decoration:none;}
+  .hero{
+    background:var(--black);
+    color:var(--white);
+    padding:44px 24px 56px;
+  }
+  .hero-inner{max-width:1040px; margin:0 auto;}
+  .category{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    font-size:13px;
+    font-weight:700;
+  }
+  .hero h1{
+    font-size:clamp(28px,4vw,40px);
+    line-height:1.28;
+    margin:18px 0 22px;
+  }
+  .byline{color:#cfcfcf; font-size:14px;}
+  .back-link{
+    display:inline-block;
+    margin-top:26px;
+    color:#cfcfcf;
+    font-size:14px;
+    text-decoration:none;
+  }
+  .tldr{
+    max-width:1040px;
+    margin:32px auto 0;
+    padding:22px 26px;
+    background:rgba(233,169,27,0.10);
+    border-left:4px solid var(--gold);
+    border-radius:4px;
+    font-size:16px;
+  }
+  .tldr b{font-family:'Poppins', sans-serif;}
+  img.hero-img{
+    width:100%;
+    max-width:1040px;
+    display:block;
+    margin:36px auto 0;
+    border-radius:6px;
+  }
+  article{
+    max-width:1040px;
+    margin:0 auto;
+    padding:30px 24px 10px;
+  }
+  article p{font-size:17px; margin:0 0 18px;}
+  article h2{font-size:27px; margin:52px 0 18px;}
+  article h3{font-size:19px; margin:26px 0 10px;}
+  em{color:#555;}
+  table.data-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:24px 0 30px;
+  }
+  table.data-table th, table.data-table td{
+    border:1px solid #ddd;
+    padding:12px 16px;
+    text-align:left;
+    font-size:15px;
+  }
+  table.data-table th{
+    background:var(--black);
+    color:var(--white);
+    font-family:'DM Sans', sans-serif;
+    font-weight:700;
+  }
+  table.data-table td.num{font-family:'DM Mono', monospace;}
+  .stat-box{
+    background:var(--black);
+    color:var(--white);
+    text-align:center;
+    padding:34px 24px;
+    border-radius:8px;
+    margin:34px 0;
+  }
+  .stat-box .number{
+    font-family:'DM Mono', monospace;
+    font-size:42px;
+    font-weight:700;
+    color:var(--gold);
+    display:block;
+  }
+  .stat-box .caption{color:#cfcfcf; font-size:14px; margin-top:8px;}
+  .cta-block{
+    background:var(--white);
+    border:2px solid var(--gold);
+    border-radius:8px;
+    padding:34px 28px;
+    text-align:center;
+    margin:44px 0;
+  }
+  .cta-block h3{margin-top:0;}
+  .cta-button{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--black);
+    padding:14px 30px;
+    border-radius:4px;
+    text-decoration:none;
+    font-weight:700;
+    margin-top:14px;
+  }
+  .faq h3{color:var(--black);}
+  .faq p{color:#333;}
+  .note-box{
+    background:#fff;
+    border:1px dashed #c9c9c9;
+    border-radius:6px;
+    padding:16px 20px;
+    margin:0 0 22px;
+    font-size:14px;
+    color:#777;
+  }
+  footer{
+    background:var(--black);
+    color:#cfcfcf;
+    text-align:center;
+    padding:36px 24px;
+    font-size:14px;
+    margin-top:40px;
+  }
+  footer a{color:var(--white); text-decoration:none; margin:0 12px;}
+
+.cookies-bar{position:fixed;bottom:0;left:0;right:0;background:#111;border-top:2px solid #e9a91b;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;z-index:9999;font-family:"DM Sans",sans-serif;}
+.cookies-bar p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.6;margin:0;flex:1;min-width:200px;}
+.cookies-bar a{color:#e9a91b;text-decoration:none;}
+.cookies-bar a:hover{text-decoration:underline;}
+.cookies-btns{display:flex;gap:8px;flex-shrink:0;}
+.cookies-ok{background:#e9a91b;color:#000;border:none;border-radius:4px;padding:8px 18px;font-family:"DM Sans",sans-serif;font-size:13px;font-weight:700;cursor:pointer;}
+.cookies-ok:hover{background:#c48e10;}
+.cookies-no{background:transparent;color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.15);border-radius:4px;padding:8px 14px;font-family:"DM Sans",sans-serif;font-size:13px;cursor:pointer;}
+.cookies-no:hover{color:rgba(255,255,255,.7);}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="logo" href="https://gabrielatomickova.cz">Gabriela Tomíčková</a>
+  <span class="links">
+    <a href="https://gabrielatomickova.cz/o-mne">O mně</a>
+    <a href="https://gabrielatomickova.cz#kontakt">Napište mi</a>
+  </span>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="category">Z výroby</span>
+    <h1>5S není úklid.<br>Je to systém, jak najít to, co vás brzdí.</h1>
+    <div class="byline">Gabriela Tomíčková &middot; Výroba &middot; Publikováno 23. 9. 2026</div>
+    <a class="back-link" href="https://gabrielatomickova.cz/blog">&larr; Zpět na blog</a>
+  </div>
+</header>
+
+<div class="tldr">
+  <b>Rychle:</b> 5S není úklid pracoviště. Je to systém, jak najít to, co na výkonu firmy skutečně škrábe, ztracené vteřiny, skryté závady, chaos, který nikdo nepojmenoval. Pět kroků (vytřídit, uspořádat, uklidit, udržet pořádek a udržovat disciplínu) odhalí, co vám na pracovišti chybí, kde ztrácíte čas i kde se schovává začínající porucha stroje.
+</div>
+
+<img class="hero-img" src="https://gabrielatomickova.cz/blog/5s-audit-hero-foto.jpg" alt="Montážní pracoviště s vizuálním standardem, roztříděným materiálem v boxech a vším na svém místě – příklad 5S">
+
+<article>
+
+  <h2>Co je 5S a proč se plete s úklidem?</h2>
+
+  <p>5S je metoda z výroby. Pět kroků: vytřídit, uspořádat, uklidit, udržet pořádek a udržovat disciplínu. Ne úklid, který uděláte, když je tu chaos a musíte tomu dát řád. Skutečný smysl je jinde.</p>
+
+  <p>Úklid je jednorázová akce, uklidíte a za týden je tam nepořádek zase. 5S je systém, který zajistí, že věc, kterou potřebujete, je vždy tam, kde ji čekáte, a že je hned vidět, když něco chybí nebo je špatně. A naopak zabrání, aby na pracovišti bylo dalších dvacet předmětů, které kradou prostor a přehlednost a vlastně je nepotřebujete.</p>
+
+  <p>Montážní stoly na lince, kde jsem působila, byly jednoduché, klasické. Přesto po odchodu jednotlivých pracovnic vypadalo místo pokaždé jinak. Nástroje ležely na poličce, jindy hozené v šuplíku, a někdy tam vůbec nebyly. Zásobníky na &bdquo;domečky&ldquo;, pouzdra, do kterých se strkaly nakonektorované kabely, byly prázdné, plné nebo poloprázdné. Náhradní kotouček do tiskárny štítků chyběl, nebo tam ležely tři. Pokaždé jinak.</p>
+
+  <p>Pracovnice, která pečlivě vše doplnila a pracoviště připravila pro kolegyni po sobě, pak zpravidla sama přišla na směnu k prázdnému stolu. A to člověka po čase přestane bavit. Přesně v tomhle je rozdíl mezi &bdquo;uklizeno&ldquo; a &bdquo;5S funguje&ldquo;: uklizeno je stav, který někdo jednou vytvořil. 5S je stav, který se udrží i bez ohledu na to, kdo zrovna stojí u stolu.</p>
+
+  <h2>Jak 5S zvyšuje produktivitu práce?</h2>
+
+  <p>Když má každá věc své pevné místo, pracovník po ní nemusí pátrat. To zní jako maličkost, ale sečtěte si to za směnu, za měsíc, za rok.</p>
+
+  <p>Součástí čtvrtého kroku, udržet pořádek, je i to, že pomůcky a nástroje jsou umístěné podle toho, co pracovník potřebuje nejčastěji. Má je hned po ruce. Tím se krátí i ty vteřiny, kdy pracovník sahá pro nástroj, a ty vteřinky se násobí počtem kusů. Zkrátí se tím celý výrobní cyklus, ne jen ten jeden pohyb.</p>
+
+  <p>Z firmy pro kterou jsem pracovala mám konkrétní příklad: na pracovištích se zavedl fotografický standard, fotka toho, jak má uklizené a připravené pracoviště vypadat, místo slovního popisu. Proč zrovna fotka a ne text? Protože vizuální zobrazení je mnohem rychlejší a jednoznačnější než slovní popis. Slovo si každý vyloží trochu jinak, fotku ne, tam je vidět přesně, co kam patří a jak to má vypadat.</p>
+
+  <h3>5S odhalí, co na pracovišti chybí (nebo je špatně)</h3>
+
+  <p>Když si systematicky rozmístíte pracoviště podle toho, co skutečně potřebujete, a to v průběhu práce, vyjde najevo i to, co vám tam chybí, nebo co tam sice je, ale na špatném místě. Typický příklad z výroby: čtečka čárového kódu stála o 30 cm dál, než musela. Operátorka k ní natahovala ruku při každém kusu. Dvě vteřiny navíc, x krát denně. Po přesunu čtečky o pár centimetrů blíž ušetřila linka 12 minut za směnu a vyrobila o 10 kusů víc. Bez investice, jen díky tomu, že si někdo dal tu práci a pracoviště si systematicky prohlédl. <a href="https://gabrielatomickova.cz/blog/presun-ctecky-100-kusu-navic.html">Celý příklad z Takaty</a></p>
+
+  <p>5S vás donutí položit si otázku, jestli má každá věc své místo a jestli je to místo to nejlepší možné. Často zjistíte, že vám chybí jednoduchá pomůcka, držák, značení, polička, nebo že věc, kterou máte, je jen špatně umístěná.</p>
+
+  <p>Chcete vědět, kolik vás podobné ztráty reálně stojí? <a href="https://tokva.cz/nastroje/kalkulacka-ztrat/">Změřte si to v kalkulačce ztrát zdarma</a>.</p>
+
+  <h2>Jak 5S souvisí s poruchami strojů a údržbou?</h2>
+
+  <p>Špinavý stroj skryje závady stejně jako špinavý talíř skryje prasklinu. Dokud je talíř od jídla, prasklinu nevidíte. Umyjete ho a je jasné, že je poškozený.</p>
+
+  <p>U stroje je to stejné. Vrstva oleje, prachu a nečistoty zakryje unikající olej, prasklý kryt nebo uvolněný šroub. Když se stroj pravidelně čistí, což je součástí třetího kroku, uklidit, dřív si všimnete, že něco netěsní nebo že se objevila vada, než z toho bude odstávka.</p>
+
+  <p>Čištění tak není jen o hezkém vzhledu pracoviště. Je to způsob, jak stroj pravidelně prohlédnout a odhalit problém dřív, než se z malé závady stane velká porucha.</p>
+
+  <h2>Jak 5S pomáhá s hlášením a řešením poruch?</h2>
+
+  <p>Typický problém z výroby: stroj se porouchá a obsluha musí fyzicky běhat po hale a hledat seřizovače. Někdy to trvá jen pár minut, jindy déle. K tomu často chybí náhradní díl na skladě, a stroj tak může stát i několik dní.</p>
+
+  <p>Řešení, které z 5S přirozeně vychází, je jednoduché: vizuální hlášení poruchy, aby bylo hned vidět, že stroj stojí a proč, evidence náhradních dílů, aby se vědělo, co je skladem a co ne, a preventivní údržba místo čekání, až se něco porouchá.</p>
+
+  <p><em>Tohle je identifikovaný potenciál, ne měřený výsledek, u nás se to jen navrhlo, ne reálně nasadilo a přeměřilo. I tak to ukazuje, jak souvisí 5S, viditelnost, standard, s tím, jak rychle firma na poruchu zareaguje.</em></p>
+
+  <h2>Jak 5S udržuje klid v kolektivu?</h2>
+
+  <p>Když má každá věc své místo a každý ví, jak má pracoviště vypadat, mizí i zbytečné tření mezi lidmi, kdo co odložil špatně, kdo si co &bdquo;půjčil&ldquo; a nevrátil. Standard není o kontrole, je o tom, že se lidé nemusí dohadovat. Je to dané.</p>
+
+  <div class="cta-block">
+    <h3>Chcete si vytvořit svoje první standardizované pracoviště?</h3>
+    <p>Projděte si 5S audit zdarma a uvidíte, kde přesně na tom vašem pracovišti začít.</p>
+    <a class="cta-button" href="https://tokva.cz/nastroje/5S_audit/">Chci 5S audit zdarma</a>
+  </div>
+
+  <h2>Časté otázky k metodě 5S</h2>
+
+  <div class="faq">
+    <h3>Je 5S vhodné i pro malou firmu nebo sklad?</h3>
+    <p>Ano. Princip funguje stejně na lince o 50 lidech i na skladu o třech. Rozsah se přizpůsobí velikosti provozu, metoda ne.</p>
+
+    <h3>Jak dlouho trvá zavedení 5S?</h3>
+    <p>Záleží na velikosti provozu, ale první viditelné výsledky, přerozdělené pracoviště a jasný standard, jde často vidět do pár týdnů.</p>
+
+    <h3>Musím na zavedení 5S koupit nové vybavení?</h3>
+    <p>Ne nutně. Většina zlepšení je o přerovnání toho, co už ve firmě máte, ne o nákupu nového vybavení.</p>
+
+    <h3>Jak poznám, že mi 5S ve firmě chybí?</h3>
+    <p>Pokud lidé opakovaně hledají nástroje, materiál nebo informace, nebo se pořád řeší stejné maličkosti a nikdo neví, čí je to úkol, je to jasný signál. Podobné věci se ptá i <a href="https://tokva.cz/nastroje/mini-audit-vyroby/">mini audit výroby</a>, můžete si tam rovnou zkusit, na čem jste.</p>
+
+    <h3>Čím se 5S liší od obyčejného úklidu?</h3>
+    <p>Úklid je jednorázová akce, po týdnu je nepořádek zase zpátky. 5S je systém, který zajistí, že věc, kterou potřebujete, je vždy tam, kde ji čekáte, a že je hned vidět, když něco chybí nebo je špatně.</p>
+  </div>
+
+</article>
+
+<footer>
+  <a href="https://gabrielatomickova.cz">Zpět na web</a>
+  <a href="https://gabrielatomickova.cz#kontakt">Napište mi</a>
+  <a href="https://gdpr.gabrielatomickova.cz">Zásady ochrany osobních údajů</a>
+</footer>
+
+<div class="cookies-bar" id="cookies-bar" style="display:none;">
+  <p>Tento web používá analytické cookies (Google Analytics) pro měření návštěvnosti. <a href="https://gdpr.gabrielatomickova.cz">Zásady ochrany osobních údajů</a></p>
+  <div class="cookies-btns">
+    <button class="cookies-no" onclick="cookiesOdmitnout()">Odmítnout</button>
+    <button class="cookies-ok" onclick="cookiesSouhlasit()">Souhlasím</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var s = localStorage.getItem('cookies_souhlas');
+  if (s === 'ano') {
+    spustitGA();
+  } else if (s === null) {
+    document.getElementById('cookies-bar').style.display = 'flex';
+  }
+})();
+
+function spustitGA() {
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JBFDH4G4VP';
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-JBFDH4G4VP');
+}
+
+function cookiesSouhlasit() {
+  localStorage.setItem('cookies_souhlas', 'ano');
+  document.getElementById('cookies-bar').style.display = 'none';
+  spustitGA();
+}
+
+function cookiesOdmitnout() {
+  localStorage.setItem('cookies_souhlas', 'ne');
+  document.getElementById('cookies-bar').style.display = 'none';
+}
+</script>
+</body>
+</html>
