@@ -151,4 +151,16 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://gabrielatomickova.cz/blog/5s-audit-neni-o-uklidu.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://gabrielatomickova.cz/blog/naklady-skladu-nejsou-jen-najem.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
