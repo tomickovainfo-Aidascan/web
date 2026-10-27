@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Křivka změny: proč lidi nejdřív nevěří | Gabriela Tomíčková</title>
+<meta name="description" content="Co je křivka změny, odkud se vzala a jak jsem ji zažila jako nová vedoucí skladu. Konkrétní příběhy, ne učebnicové poučky.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Gabriela Tomíčková">
+<link rel="canonical" href="https://gabrielatomickova.cz/blog/krivka-zmeny.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+<meta property="og:title" content="Křivka změny: proč lidi nejdřív nevěří">
+<meta property="og:description" content="Co je křivka změny, odkud se vzala a jak jsem ji zažila jako nová vedoucí skladu. Dva skutečné příběhy z praxe.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://gabrielatomickova.cz/blog/krivka-zmeny-graf.png">
+<meta property="og:url" content="https://gabrielatomickova.cz/blog/krivka-zmeny.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Křivka změny: proč lidi nejdřív nevěří",
+      "description": "Co je křivka změny, odkud se vzala a jak jsem ji zažila jako nová vedoucí skladu.",
+      "image": "https://gabrielatomickova.cz/blog/krivka-zmeny-graf.png",
+      "author": {
+        "@type": "Person",
+        "name": "Gabriela Tomíčková",
+        "url": "https://gabrielatomickova.cz/o-mne"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Gabriela Tomíčková"
+      },
+      "datePublished": "2026-10-27",
+      "dateModified": "2026-10-27",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://gabrielatomickova.cz/blog/krivka-zmeny.html"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Jak dlouho trvá, než lidé změnu přijmou?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Záleží na velikosti změny a na tom, kolik důvěry už mezi vedoucím a týmem je. Malá změna může projít fázemi za pár dní, velká reorganizace klidně za měsíce."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Je křivka změny totéž jako Kübler-Rossova křivka smutku?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vychází ze stejného modelu, ale ve firmách se používá upravená, zjednodušená verze zaměřená na práci, ne na smrt a nemoc."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dá se odpor ke změně úplně vyhnout?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ne. Odpor je přirozená součást procesu, ne znak, že něco děláte špatně. Jde ho jen zkrátit a nebrat osobně."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Platí křivka změny i pro malé firmy, ne jen korporace?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Platí stejně, jen se v menší firmě projevuje rychleji a je vidět na méně lidech, což ji dělá o to citelnější."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --gold:#e9a91b;
+    --black:#000;
+    --paper:#f5f4f0;
+    --white:#fff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--black);
+    font-family:'DM Sans', sans-serif;
+    line-height:1.65;
+  }
+  h1,h2,h3{
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+  }
+  a{color:inherit;}
+  nav.site-nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    max-width:1040px;
+    margin:0 auto;
+    padding:22px 24px;
+    font-size:14px;
+  }
+  nav.site-nav .logo{font-weight:700; text-decoration:none;}
+  nav.site-nav .links a{margin-left:22px; text-decoration:none;}
+  .hero{
+    background:var(--black);
+    color:var(--white);
+    padding:44px 24px 56px;
+  }
+  .hero-inner{max-width:1040px; margin:0 auto;}
+  .category{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    font-size:13px;
+    font-weight:700;
+  }
+  .hero h1{
+    font-size:clamp(28px,4vw,40px);
+    line-height:1.28;
+    margin:18px 0 22px;
+  }
+  .byline{color:#cfcfcf; font-size:14px;}
+  .back-link{
+    display:inline-block;
+    margin-top:26px;
+    color:#cfcfcf;
+    font-size:14px;
+    text-decoration:none;
+  }
+  .tldr{
+    max-width:1040px;
+    margin:32px auto 0;
+    padding:22px 26px;
+    background:rgba(233,169,27,0.10);
+    border-left:4px solid var(--gold);
+    border-radius:4px;
+    font-size:16px;
+  }
+  .tldr b{font-family:'Poppins', sans-serif;}
+  img.hero-img{
+    width:100%;
+    max-width:1040px;
+    display:block;
+    margin:36px auto 0;
+    border-radius:6px;
+  }
+  article{
+    max-width:1040px;
+    margin:0 auto;
+    padding:30px 24px 10px;
+  }
+  article p{font-size:17px; margin:0 0 18px;}
+  article h2{font-size:27px; margin:52px 0 18px;}
+  article h3{font-size:19px; margin:26px 0 10px;}
+  em{color:#555;}
+  table.data-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:24px 0 30px;
+  }
+  table.data-table th, table.data-table td{
+    border:1px solid #ddd;
+    padding:12px 16px;
+    text-align:left;
+    font-size:15px;
+  }
+  table.data-table th{
+    background:var(--black);
+    color:var(--white);
+    font-family:'DM Sans', sans-serif;
+    font-weight:700;
+  }
+  table.data-table td.num{font-family:'DM Mono', monospace;}
+  .stat-box{
+    background:var(--black);
+    color:var(--white);
+    text-align:center;
+    padding:34px 24px;
+    border-radius:8px;
+    margin:34px 0;
+  }
+  .stat-box .number{
+    font-family:'DM Mono', monospace;
+    font-size:42px;
+    font-weight:700;
+    color:var(--gold);
+    display:block;
+  }
+  .stat-box .caption{color:#cfcfcf; font-size:14px; margin-top:8px;}
+  .cta-block{
+    background:var(--white);
+    border:2px solid var(--gold);
+    border-radius:8px;
+    padding:34px 28px;
+    text-align:center;
+    margin:44px 0;
+  }
+  .cta-block h3{margin-top:0;}
+  .cta-button{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--black);
+    padding:14px 30px;
+    border-radius:4px;
+    text-decoration:none;
+    font-weight:700;
+    margin-top:14px;
+  }
+  .faq h3{color:var(--black);}
+  .faq p{color:#333;}
+  footer{
+    background:var(--black);
+    color:#cfcfcf;
+    text-align:center;
+    padding:36px 24px;
+    font-size:14px;
+    margin-top:40px;
+  }
+  footer a{color:var(--white); text-decoration:none; margin:0 12px;}
+
+.cookies-bar{position:fixed;bottom:0;left:0;right:0;background:#111;border-top:2px solid #e9a91b;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;z-index:9999;font-family:"DM Sans",sans-serif;}
+.cookies-bar p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.6;margin:0;flex:1;min-width:200px;}
+.cookies-bar a{color:#e9a91b;text-decoration:none;}
+.cookies-bar a:hover{text-decoration:underline;}
+.cookies-btns{display:flex;gap:8px;flex-shrink:0;}
+.cookies-ok{background:#e9a91b;color:#000;border:none;border-radius:4px;padding:8px 18px;font-family:"DM Sans",sans-serif;font-size:13px;font-weight:700;cursor:pointer;}
+.cookies-ok:hover{background:#c48e10;}
+.cookies-no{background:transparent;color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.15);border-radius:4px;padding:8px 14px;font-family:"DM Sans",sans-serif;font-size:13px;cursor:pointer;}
+.cookies-no:hover{color:rgba(255,255,255,.7);}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="logo" href="https://gabrielatomickova.cz">Gabriela Tomíčková</a>
+  <span class="links">
+    <a href="https://gabrielatomickova.cz/o-mne">O mně</a>
+    <a href="https://gabrielatomickova.cz#kontakt">Napište mi</a>
+  </span>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="category">Vedení lidí</span>
+    <h1>Křivka změny: proč lidi nejdřív nevěří&nbsp;&ndash; a jak to zlomit</h1>
+    <div class="byline">Gabriela Tomíčková &middot; Vedení lidí &middot; Publikováno 27. 10. 2026</div>
+    <a class="back-link" href="https://gabrielatomickova.cz/blog">&larr; Zpět na blog</a>
+  </div>
+</header>
+
+<div class="tldr">
+  <b>Rychle:</b> Křivka změny popisuje fáze, kterými lidé projdou, než novou věc přijmou &ndash; šok, odpor, zkoumání, přijetí. Zkrátit ji nejde přesvědčováním, ale důvěrou, kterou si musíte zasloužit v praxi.
+</div>
+
+<img class="hero-img" src="https://gabrielatomickova.cz/blog/krivka-zmeny-graf.png" alt="Graf křivky změny se čtyřmi fázemi – šok, odpor, zkoumání, přijetí">
+
+<article>
+
+  <h2>Co je křivka změny?</h2>
+
+  <p>Křivka změny popisuje fáze, kterými lidé procházejí, když se jim změní zavedený způsob práce.</p>
+
+  <p>Nejdřív přijde šok nebo popření, že je změna potřeba. Pak odpor, kdy lidé novou věc aktivně nechtějí. Pak zkoumání, kdy ji začnou zkoušet a hledat, k čemu je dobrá. A nakonec přijetí, kdy se stane normální součástí práce.</p>
+
+  <p>Není to jedna přímka nahoru. Je to křivka dolů a pak nahoru. Výkon i nálada týmu nejdřív klesnou, než se zase zvednou.</p>
+
+  <h2>Odkud se křivka změny vzala?</h2>
+
+  <p>Autorkou je Elisabeth Kübler-Rossová.</p>
+
+  <p>V roce 1969 popsala v knize <em>On Death and Dying</em> pět fází, kterými procházejí lidé vyrovnávající se s vlastní smrtelnou nemocí: popření, hněv, smlouvání, deprese, přijetí. (Zdroj: <a href="https://whatfix.com/blog/kubler-ross-change-curve/" target="_blank" rel="noopener">Kübler-Ross Change Curve, Whatfix</a>)</p>
+
+  <p>Firemní svět si tenhle model později vypůjčil. Upravil ho pro změny v práci &ndash; nové systémy, reorganizace, nové vedení. Název zůstal, obsah fází se trochu zjednodušil.</p>
+
+  <p>Základní myšlenka platí dál: změna není moment. Je to proces, kterým si člověk musí sám projít.</p>
+
+  <p>Dnes se v change managementu nejčastěji pracuje se zjednodušenou verzí o čtyřech fázích: šok/popření, odpor, zkoumání, přijetí.</p>
+
+  <h2>Jak se křivka změny projevuje v reálné firmě?</h2>
+
+  <p>V teorii to zní uhlazeně. V praxi je to vidět na konkrétních lidech, konkrétní den, na konkrétní směně.</p>
+
+  <h3>Takata: kdo dal důvěru, stal se sám zlepšovatelem</h3>
+
+  <p>Deset let jsem dělala KAIZEN specialistku v Takatě. A u každé jedné změny se stalo totéž.</p>
+
+  <p>Lidé se rozdělili na dvě skupiny &ndash; na ty, co mi věřili, a na ty, co ne.</p>
+
+  <p>Ti, co nevěřili, hledali důvod, proč to nemůže fungovat. A většinou ho našli.</p>
+
+  <p>Ale ti, co mi důvěru dali, se postupně sami stali zlepšovateli. Přestali čekat, až jim řeknu, co mají dělat. Začali za mnou sami nosit vlastní nápady.</p>
+
+  <p>Tohle většinou není problém lidí. Je to otázka důvěry. Kdo vám věří, je ochotný zkusit i něco, co mu nejdřív nedává smysl. Kdo nevěří, bude hledat důvod, proč to nemůže fungovat &ndash; a najde ho vždycky.</p>
+
+  <p>Odpor přitom nemusí mířit na vás ani na vaši autoritu. Někdy je to jen setrvačnost &ndash; věc se dělá určitým způsobem roky a nikdo se nezeptal proč. Takový případ jsem popsala v článku <a href="https://gabrielatomickova.cz/blog/jesterka-stala-vzadu.html">Ještěrka stála vzadu</a>, kde chlapi nakládali dodávky ručně hodinu a půl, přestože řešení bylo tři minuty cesty daleko. Tam odpor nebyl o nedůvěře ke mně, ale o tom, že to tak prostě vždycky chodilo.</p>
+
+  <h2>Co se stane, když vám lidi nevěří od začátku?</h2>
+
+  <p>Nejtěžší verze křivky změny nastává, když nedůvěra nemíří na změnu, ale na vás osobně.</p>
+
+  <h3>Qant: mladá, blond, a najednou má řídit sklad</h3>
+
+  <p>Nastoupila jsem do Qanta jako vedoucí skladu. Bylo mi asi třicet.</p>
+
+  <p>Mladá, blond, a najednou má řídit sklad, dvě směny, sedm aut.</p>
+
+  <p>Zaměstnanci do mě nevkládali moc nadějí. Moc se mnou nemluvili, mezi sebou si ze mě dělali legraci a cítila jsem, že se jim jako nová šéfka moc nezdám.</p>
+
+  <p>Nejvíc jsem tu nespolupráci cítila od řidičů, noční směna na tom nebyla o moc líp. Atmosféra byla napjatá.</p>
+
+  <h3>Co jsem našla, než jsem cokoliv změnila</h3>
+
+  <p>Nezačala jsem velkým proslovem ani změnou všeho najednou.</p>
+
+  <p>Hodně jsem je pozorovala, měla spoustu otázek a pár dní jsem byla někomu za zadkem s mobilem, papírem a tužkou.</p>
+
+  <p>Po několika dnech pozorování a měření jsem viděla, kde to nejvíc bolí &ndash; noční dvoufázové vychystávání zboží. Práci jsem si sama vyzkoušela a jednoznačně určila, že největší brzda je hledání položek ve druhé fázi chystání.</p>
+
+  <p>Vymyslela jsem systém, jak hledání vyřadit, a představila ho zaměstnancům.</p>
+
+  <p>První reakce nebyla příjemná.</p>
+
+  <p><em>&bdquo;To je blbost.&ldquo;</em></p>
+
+  <p><em>&bdquo;To nebude fungovat.&ldquo;</em></p>
+
+  <p><em>&bdquo;Proč se máme učit něco nového.&ldquo;</em></p>
+
+  <h3>Čísla, která jsem si naměřila sama</h3>
+
+  <p>Můj názor ale nevznikl náhodou. Vycházel z čísel, které jsem si sama naměřila.</p>
+
+  <p>Noční skladníci, co měli končit v šest ráno, odcházeli klidně i v jedenáct dopoledne. Řidiči místo toho, aby po příchodu naložili auta a vyjeli, museli nejdřív pomáhat dochystat zboží noční směně &ndash; a na trasu vyjížděli místo v sedm až v poledne.</p>
+
+  <p>Nebyla jiná cesta než nový postup prostě nařídit. Na čtrnáct dní, ať se ukáže, jestli to zabere.</p>
+
+  <h3>Tady přišel zlom</h3>
+
+  <p>Po týdnu noční směna odcházela nejpozději v osm ráno. A sama uznala, že to byl dobrý nápad.</p>
+
+  <p>Ta změna se cílila na noční směnu, ale posunula se celá navazující řada. Řidiči, co dřív museli pomáhat dochystat a vyjížděli v poledne místo v sedm, teď vyjížděli včas. A fakturantky, co na řidiče čekaly a kvůli tomu samy odcházely klidně až o půlnoci, mohly jít domů normálně.</p>
+
+  <p>Jedna změna, co měla vyřešit jeden problém na jednom místě, srovnala celý řetězec za sebou.</p>
+
+  <p>A přesně tohle je přesvědčilo, že vím, co dělám &ndash; ne moje slova, ale to, co se samo spustilo v návaznosti. Další změny v procesu už šly bez tak velkého odporu.</p>
+
+  <div class="stat-box">
+    <span class="number">30 %</span>
+    <span class="caption">stejná práce, stejný počet lidí, za čtyři roky o 30 % rychleji &ndash; ale přesvědčilo to až těch prvních čtrnáct dní, ne to číslo samo</span>
+  </div>
+
+  <h2>Jak zkrátit křivku změny v praxi?</h2>
+
+  <p>Křivku změny nejde přeskočit. Jde ji ale zkrátit &ndash; a to není o přesvědčování, je to o tom, co lidem ukážete.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Co nedělat</th><th>Co dělat místo toho</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Vysvětlovat změnu na poradě a čekat, že to stačí</td><td>Ukázat ji na jednom konkrétním místě, kde ji lidi vidí v akci</td></tr>
+      <tr><td>Tlačit změnu na všechny najednou</td><td>Najít pár lidí, co věří, a nechat je, ať to ukážou ostatním</td></tr>
+      <tr><td>Bránit se kritice</td><td>Ptát se těch, co to dělají denně, kde to vázne &ndash; oni to většinou vědí dřív než kdokoliv v kanceláři</td></tr>
+      <tr><td>Vyhodnotit změnu jako hotovou po zavedení</td><td>Vrátit se k ní po čase a ukázat, co reálně přinesla</td></tr>
+    </tbody>
+  </table>
+
+  <p>Neumím přesně říct, co bude fungovat vždycky a všude. Ale tohle mi v praxi fungovalo pokaždé: nebrat vlastní návrh jako definitivní, poslouchat, co říkají lidi, co to dělají denně, a konzultovat s nimi výsledky měření. Budovat důvěru. A když se něco povede, oslavit to s nimi, ne si to přivlastnit.</p>
+
+  <p>Pojďme to opravit jako tým &ndash; místo &bdquo;tohle je rozkaz a ty to uděláš&ldquo; &ndash; lidi přijímají mnohem líp. A i mně jako vedoucí jejich pohled a zkušenost často hodně napověděly.</p>
+
+  <p>Zároveň si ale stojím za svým a nabízím jednoduché &bdquo;nezkusíš, nevíš&ldquo; &ndash; ne jako příkaz shora, ale jako pozvánku vyzkoušet si to a pak soudit.</p>
+
+  <div class="cta-block">
+    <h3>Nevíte, kde ve vašem provozu nejvíc ztrácíte čas?</h3>
+    <p>Nepotřebujete přesvědčovat lidi slovy. Stačí jim ukázat čísla. Měřič plýtvání vám to spočítá zdarma, bez tabulek a bez hádání.</p>
+    <a class="cta-button" href="https://tokva.cz/">Chci to změřit zdarma</a>
+  </div>
+
+  <h2>Často se ptáte</h2>
+
+  <div class="faq">
+    <h3>Jak dlouho trvá, než lidé změnu přijmou?</h3>
+    <p>Záleží na velikosti změny a na tom, kolik důvěry už mezi vedoucím a týmem je. Malá změna může projít fázemi za pár dní, velká reorganizace klidně za měsíce.</p>
+
+    <h3>Je křivka změny totéž jako Kübler-Rossova křivka smutku?</h3>
+    <p>Vychází ze stejného modelu, ale ve firmách se používá upravená, zjednodušená verze zaměřená na práci, ne na smrt a nemoc.</p>
+
+    <h3>Dá se odpor ke změně úplně vyhnout?</h3>
+    <p>Ne. Odpor je přirozená součást procesu, ne znak, že něco děláte špatně. Jde ho jen zkrátit a nebrat osobně.</p>
+
+    <h3>Platí křivka změny i pro malé firmy, ne jen korporace?</h3>
+    <p>Platí stejně, jen se v menší firmě projevuje rychleji a je vidět na méně lidech &ndash; což ji dělá o to citelnější.</p>
+  </div>
+
+</article>
+
+<footer>
+  <a href="https://gabrielatomickova.cz">Zpět na web</a>
+  <a href="https://gabrielatomickova.cz#kontakt">Napište mi</a>
+  <a href="https://gdpr.gabrielatomickova.cz">Zásady ochrany osobních údajů</a>
+</footer>
+
+<div class="cookies-bar" id="cookies-bar" style="display:none;">
+  <p>Tento web používá analytické cookies (Google Analytics) pro měření návštěvnosti. <a href="https://gdpr.gabrielatomickova.cz">Zásady ochrany osobních údajů</a></p>
+  <div class="cookies-btns">
+    <button class="cookies-no" onclick="cookiesOdmitnout()">Odmítnout</button>
+    <button class="cookies-ok" onclick="cookiesSouhlasit()">Souhlasím</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var s = localStorage.getItem('cookies_souhlas');
+  if (s === 'ano') {
+    spustitGA();
+  } else if (s === null) {
+    document.getElementById('cookies-bar').style.display = 'flex';
+  }
+})();
+
+function spustitGA() {
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JBFDH4G4VP';
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-JBFDH4G4VP');
+}
+
+function cookiesSouhlasit() {
+  localStorage.setItem('cookies_souhlas', 'ano');
+  document.getElementById('cookies-bar').style.display = 'none';
+  spustitGA();
+}
+
+function cookiesOdmitnout() {
+  localStorage.setItem('cookies_souhlas', 'ne');
+  document.getElementById('cookies-bar').style.display = 'none';
+}
+</script>
+</body>
+</html>
