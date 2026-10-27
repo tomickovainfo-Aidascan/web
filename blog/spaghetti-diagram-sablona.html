@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spaghetti diagram šablona, co si pamatuje sama | Gabriela Tomíčková</title>
+<meta name="description" content="Spaghetti diagram ukáže, kudy se ve skladu nebo výrobě chodí zbytečně. Appka na Tokvě ho nakreslí, Pro verze si navíc pamatuje zastávky a poznámky.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Gabriela Tomíčková">
+<link rel="canonical" href="https://gabrielatomickova.cz/blog/spaghetti-diagram-sablona.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+<meta property="og:title" content="Spaghetti diagram šablona, co si pamatuje sama">
+<meta property="og:description" content="Papírová šablona spaghetti diagramu neudrží čáry, zastávky a poznámky najednou. Appka Tokva ano, Pro verze navíc hlídá i tohle.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://gabrielatomickova.cz/blog/spaghetti-diagram-rucni-sablona.jpg">
+<meta property="og:url" content="https://gabrielatomickova.cz/blog/spaghetti-diagram-sablona.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Spaghetti diagram šablona, co si pamatuje sama",
+      "description": "Spaghetti diagram ukáže, kudy se ve skladu nebo výrobě chodí zbytečně. Appka na Tokvě ho nakreslí, Pro verze si navíc pamatuje zastávky a poznámky.",
+      "image": "https://gabrielatomickova.cz/blog/spaghetti-diagram-rucni-sablona.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Gabriela Tomíčková",
+        "url": "https://gabrielatomickova.cz/o-mne"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Gabriela Tomíčková"
+      },
+      "datePublished": "2026-10-27",
+      "dateModified": "2026-10-27",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://gabrielatomickova.cz/blog/spaghetti-diagram-sablona.html"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Co je spaghetti diagram?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nákres, kudy se při jedné činnosti pohybuje jeden člověk v provozu. Ukazuje, které cesty se opakují a kde vzniká zbytečná chůze."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kde najdu spaghetti diagram šablonu zdarma?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Appka Spaghetti diagram na Tokvě nabízí appku i šablonu v jednom, zdarma, bez nutnosti kreslit ručně na papír."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jak dlouho má trvat měření pro spaghetti diagram?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stačí pár cyklů jedné činnosti, ne celá směna. Důležitější než délka je, aby se měřila stejná činnost opakovaně."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Musím znát metodiku Lean nebo Kaizen, abych appku použila?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ne. Appka vás provede krok za krokem, stejně jako byste postupovali s papírem a tužkou."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Co mám dělat s cestami, co appka ukáže jako nejčastější?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nejdřív se zeptejte, jestli cesta musí existovat vůbec. Teprve pak řešte, jak ji zkrátit."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --gold:#e9a91b;
+    --black:#000;
+    --paper:#f5f4f0;
+    --white:#fff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--black);
+    font-family:'DM Sans', sans-serif;
+    line-height:1.65;
+  }
+  h1,h2,h3{
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+  }
+  a{color:inherit;}
+  nav.site-nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    max-width:1040px;
+    margin:0 auto;
+    padding:22px 24px;
+    font-size:14px;
+  }
+  nav.site-nav .logo{font-weight:700; text-decoration:none;}
+  nav.site-nav .links a{margin-left:22px; text-decoration:none;}
+  .hero{
+    background:var(--black);
+    color:var(--white);
+    padding:44px 24px 56px;
+  }
+  .hero-inner{max-width:1040px; margin:0 auto;}
+  .category{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    font-size:13px;
+    font-weight:700;
+  }
+  .hero h1{
+    font-size:clamp(28px,4vw,40px);
+    line-height:1.28;
+    margin:18px 0 22px;
+  }
+  .byline{color:#cfcfcf; font-size:14px;}
+  .back-link{
+    display:inline-block;
+    margin-top:26px;
+    color:#cfcfcf;
+    font-size:14px;
+    text-decoration:none;
+  }
+  .tldr{
+    max-width:1040px;
+    margin:32px auto 0;
+    padding:22px 26px;
+    background:rgba(233,169,27,0.10);
+    border-left:4px solid var(--gold);
+    border-radius:4px;
+    font-size:16px;
+  }
+  .tldr b{font-family:'Poppins', sans-serif;}
+  img.hero-img{
+    width:100%;
+    max-width:1040px;
+    display:block;
+    margin:36px auto 0;
+    border-radius:6px;
+  }
+  article{
+    max-width:1040px;
+    margin:0 auto;
+    padding:30px 24px 10px;
+  }
+  article p{font-size:17px; margin:0 0 18px;}
+  article h2{font-size:27px; margin:52px 0 18px;}
+  article h3{font-size:19px; margin:26px 0 10px;}
+  em{color:#555;}
+  table.data-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:24px 0 30px;
+  }
+  table.data-table th, table.data-table td{
+    border:1px solid #ddd;
+    padding:12px 16px;
+    text-align:left;
+    font-size:15px;
+  }
+  table.data-table th{
+    background:var(--black);
+    color:var(--white);
+    font-family:'DM Sans', sans-serif;
+    font-weight:700;
+  }
+  table.data-table td.num{font-family:'DM Mono', monospace;}
+  .stat-box{
+    background:var(--black);
+    color:var(--white);
+    text-align:center;
+    padding:34px 24px;
+    border-radius:8px;
+    margin:34px 0;
+  }
+  .stat-box .number{
+    font-family:'DM Mono', monospace;
+    font-size:42px;
+    font-weight:700;
+    color:var(--gold);
+    display:block;
+  }
+  .stat-box .caption{color:#cfcfcf; font-size:14px; margin-top:8px;}
+  .cta-block{
+    background:var(--white);
+    border:2px solid var(--gold);
+    border-radius:8px;
+    padding:34px 28px;
+    text-align:center;
+    margin:44px 0;
+  }
+  .cta-block h3{margin-top:0;}
+  .cta-button{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--black);
+    padding:14px 30px;
+    border-radius:4px;
+    text-decoration:none;
+    font-weight:700;
+    margin-top:14px;
+  }
+  .cta-row{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:14px;}
+  .cta-button.secondary{background:var(--black); color:var(--white);}
+  .faq h3{color:var(--black);}
+  .faq p{color:#333;}
+  .author-box{
+    max-width:1040px;
+    margin:40px auto 0;
+    padding:20px 24px;
+    border-top:1px solid #ddd;
+    font-size:14px;
+    color:#555;
+  }
+  footer{
+    background:var(--black);
+    color:#cfcfcf;
+    text-align:center;
+    padding:36px 24px;
+    font-size:14px;
+    margin-top:40px;
+  }
+  footer a{color:var(--white); text-decoration:none; margin:0 12px;}
+
+.cookies-bar{position:fixed;bottom:0;left:0;right:0;background:#111;border-top:2px solid #e9a91b;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;z-index:9999;font-family:"DM Sans",sans-serif;}
+.cookies-bar p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.6;margin:0;flex:1;min-width:200px;}
+.cookies-bar a{color:#e9a91b;text-decoration:none;}
+.cookies-bar a:hover{text-decoration:underline;}
+.cookies-btns{display:flex;gap:8px;flex-shrink:0;}
+.cookies-ok{background:#e9a91b;color:#000;border:none;border-radius:4px;padding:8px 18px;font-family:"DM Sans",sans-serif;font-size:13px;font-weight:700;cursor:pointer;}
+.cookies-ok:hover{background:#c48e10;}
+.cookies-no{background:transparent;color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.15);border-radius:4px;padding:8px 14px;font-family:"DM Sans",sans-serif;font-size:13px;cursor:pointer;}
+.cookies-no:hover{color:rgba(255,255,255,.7);}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="logo" href="https://gabrielatomickova.cz">Gabriela Tomíčková</a>
+  <span class="links">
+    <a href="https://gabrielatomickova.cz/o-mne">O mně</a>
+    <a href="https://gabrielatomickova.cz#kontakt">Napište mi</a>
+  </span>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="category">Z praxe</span>
+    <h1>Spaghetti diagram šablona, co si čáry i poznámky pamatuje sama</h1>
+    <div class="byline">Gabriela Tomíčková &middot; Z praxe &middot; Publikováno 27. 10. 2026</div>
+    <a class="back-link" href="https://gabrielatomickova.cz/blog">&larr; Zpět na blog</a>
+  </div>
+</header>
+
+<div class="tldr">
+  <b>Rychle:</b> Spaghetti diagram je nákres, kudy se ve skladu nebo výrobě chodí, a většina lidí ho kreslí ručně na papír. Appka Spaghetti diagram na Tokvě zdarma nakreslí trasu a spočítá vzdálenost, i pro víc tras najednou. Pro verze navíc pamatuje zastávky a poznámky k místům, ukládá historii a dá se k ní kdykoliv vrátit.
+</div>
+
+<img class="hero-img" src="https://gabrielatomickova.cz/blog/spaghetti-diagram-rucni-sablona.jpg" alt="Ručně kreslený spaghetti diagram na papíře – zakreslené trasy mezi příjmem, regály, balicím stolem, tiskárnou a výdejem">
+
+<article>
+
+  <h2>Co je spaghetti diagram a jak ho nakreslit?</h2>
+
+  <p>Spaghetti diagram je hrubý náčrt provozu, do kterého zakreslíte, kudy chodí jeden člověk při jedné činnosti. Jmenuje se podle toho, jak to nakonec vypadá, jako talíř špaget.</p>
+
+  <p>Postup je jednoduchý.</p>
+
+  <p>Na papír načrtnete provoz. Regály, příjem, výdej, balicí stůl, tiskárnu, kancelář. Nemusí to být v měřítku.</p>
+
+  <p>Vyberete si jednoho člověka a jednu činnost. Na začátek stačí pár cyklů, ne celá směna.</p>
+
+  <p>Za ním kreslíte čáru. Každý přechod, i ten na dva metry k tiskárně. Čáru nezvedáte, dokud se člověk nezastaví.</p>
+
+  <p>Pak se podíváte, které cesty se opakují. Cesta, co je na papíře dvacetkrát, není problém člověka. Je to problém rozmístění.</p>
+
+  <h2>Jak poznat, které cesty jde zrušit a které jen zkrátit?</h2>
+
+  <p>U každé opakované cesty si napište jednu otázku, proč tam člověk vůbec jde. Odpovědi se rozdělí na dvě hromádky.</p>
+
+  <p>První hromádka jsou cesty, co jdou úplně zrušit. Jde pro nářadí, co by mohl mít u sebe. Tiskne štítky po jednom místo na celou objednávku. Jde se zeptat, protože informace nikde není napsaná. Tady nepomůže kratší cesta, pomůže, když cesta zmizí.</p>
+
+  <p>Druhá hromádka jsou cesty, co jsou nutné. Ty jde zkrátit, třeba přesunem nejžádanějších položek blíž k výdeji, nebo zjednodušit a snížit jejich počet, jedna cesta s vozíkem místo pěti s plnou náručí.</p>
+
+  <p>Na jedné montážní lince jsme takhle zkrátili cestu operátora na jeden cyklus z 45,5 metru na 23. Nikdo nezačal chodit rychleji, jen přestal chodit tam, kam nemusel.</p>
+
+  <p>Začněte první hromádkou. Zrušená cesta nestojí nic a ušetří nejvíc.</p>
+
+  <h2>Proč papírová šablona nestačí?</h2>
+
+  <p>Tady přichází ta část, co mě samotnou překvapila.</p>
+
+  <p>Kreslit čáry rukou je snadné. Problém nastane, když k tomu chcete ještě měřit čas a zapisovat poznámky, proč se člověk zastavil, co ho zdrželo, co by šlo udělat jinak.</p>
+
+  <p>Tři samostatná kola – nejdřív nakreslit trasu, pak měřit čas, pak zapisovat postřehy – by trvala příliš dlouho. Tak jsem to zkusila najednou. Jenže toho bylo moc.</p>
+
+  <p>Jednou jsem kvůli kreslení propásla chvíli, kdy jsem měla zmáčknout stopky. Jindy jsem zase zapomněla, co jsem si vlastně chtěla napsat. Postřeh mi proletěl hlavou, jenže jsem zrovna tahala čáru a ruku na psaní jsem neměla volnou.</p>
+
+  <p>Papírová šablona na tohle nestačí. Umí zachytit cestu, ale neumí zachytit kontext.</p>
+
+  <h2>Jak appka Spaghetti diagram dělá to samé, jen si to pamatuje sama?</h2>
+
+  <p>Z tohohle zjištění vznikla appka Spaghetti diagram na Tokvě.</p>
+
+  <p>Free verze funguje jako šablona, kterou znáte z papíru. Nakreslíte trasu, appka spočítá vzdálenost. Zvládne i víc tras v jedné mapě najednou, výsledek si stáhnete nebo vytisknete.</p>
+
+  <p>Pro verze jde dál. V appce si označíte zastávky, kde se pohyb přerušil, a u každého místa si rovnou můžete napsat poznámku, aniž byste museli přestat kreslit nebo měřit délku. Nákres se uloží, dá se exportovat, přiřadit k projektu a kdykoliv se k němu vrátit, otevřít starší verzi a pokračovat dalším návrhem.</p>
+
+  <img class="hero-img" src="https://gabrielatomickova.cz/blog/spaghetti-diagram-appka-trasy.jpg" alt="Appka Spaghetti diagram Pro se dvěma zakreslenými trasami, zastávkami a přehledem počtu bodů, délky trasy a celkové vzdálenosti">
+
+  <p>Všimněte si, že tady už nejsou desítky propletených čar jako na papíru. V ukázce totiž už řešíte další krok. První spaghetti diagram vám ukázal, kde je problém. Teď hledáte, jak ho vyřešit, a proto appka zobrazuje jen tu jednu trasu, kterou zrovna testujete nebo navrhujete jako řešení.</p>
+
+  <p>U každé zastávky si appka pamatuje i poznámku, včetně toho, co by řešení stálo.</p>
+
+  <img class="hero-img" src="https://gabrielatomickova.cz/blog/spaghetti-diagram-appka-poznamky.jpg" alt="Appka Spaghetti diagram Pro s poznámkami k místům a odhadovanou investicí na jejich vyřešení">
+
+  <p>Nic se neztratí, protože appka drží čáru, délku trasy i poznámku na jednom místě, ne na třech různých papírech.</p>
+
+  <h3>Co všechno appka Spaghetti diagram zvládne</h3>
+
+  <p>Appka se dá použít pro víc než jeden účel. V praxi se jí dá projít celý postup, od prvního náhledu až po vyhodnocení, které řešení je nejlepší.</p>
+
+  <ol>
+    <li><strong>Zakreslit spaghetti jako celek.</strong> Vidíte, kolik metrů člověk nachodil, kudy chodil a jak často se jednotlivé cesty opakují.</li>
+    <li><strong>Řešit konkrétní problém.</strong> Zakreslíte původní trasu, pak jednu nebo víc navrhovaných tras a porovnáte jejich délku.</li>
+    <li><strong>Vyhodnotit, kdo dělá danou práci efektivněji.</strong> Zakreslíte trasu dvou pracovníků, co dělají stejný úkon, a z toho lepšího uděláte standard pro všechny.</li>
+    <li><strong>Sledovat nejen lidi.</strong> Appka se dá použít i na cesty dílů, materiálu, dokumentů, a zjednodušeně i na cesty informací.</li>
+    <li><strong>Porovnat víc řešení najednou.</strong> Trasy si pojmenujete, třeba podle lidí (Franta, Martin) nebo podle verze (trasa 1, trasa 2), a u každé označíte, jestli jde o stávající stav nebo návrh. Appka pak označené trasy porovná mezi sebou. Takže ke stávající trase přidáte třeba pět návrhů, srovnáte přínos s investicí a vyberete, co si reálně můžete dovolit realizovat.</li>
+  </ol>
+
+  <p>A jedna věc, na kterou se často zapomíná: nejde jen o pár nejdelších tras. Stejně důležité je dívat se, které kratší cesty se opakují nejčastěji. Deset metrů, co jde člověk padesátkrát za směnu, dohromady udělá víc než jedna dlouhá cesta jednou denně.</p>
+
+  <div class="cta-block">
+    <h3>Vyzkoušejte si to na vlastním provozu</h3>
+    <p>Free appka nakreslí trasu a spočítá vzdálenost. Pro appka si navíc pamatuje zastávky a poznámky.</p>
+    <div class="cta-row">
+      <a class="cta-button" href="https://tokva.cz/nastroje/spaghetti-free/">Chci appku zdarma</a>
+      <a class="cta-button secondary" href="https://tokva.cz/nastroje/spaghetti-pro/">Chci appku Pro</a>
+    </div>
+  </div>
+
+  <h2>Časté otázky</h2>
+
+  <div class="faq">
+    <h3>Co je spaghetti diagram?</h3>
+    <p>Nákres, kudy se při jedné činnosti pohybuje jeden člověk v provozu. Ukazuje, které cesty se opakují a kde vzniká zbytečná chůze.</p>
+
+    <h3>Kde najdu spaghetti diagram šablonu zdarma?</h3>
+    <p>Appka Spaghetti diagram na Tokvě nabízí appku i šablonu v jednom, zdarma, bez nutnosti kreslit ručně na papír.</p>
+
+    <h3>Jak dlouho má trvat měření pro spaghetti diagram?</h3>
+    <p>Stačí pár cyklů jedné činnosti, ne celá směna. Důležitější než délka je, aby se měřila stejná činnost opakovaně.</p>
+
+    <h3>Musím znát metodiku Lean nebo Kaizen, abych appku použila?</h3>
+    <p>Ne. Appka vás provede krok za krokem, stejně jako byste postupovali s papírem a tužkou.</p>
+
+    <h3>Co mám dělat s cestami, co appka ukáže jako nejčastější?</h3>
+    <p>Nejdřív se zeptejte, jestli cesta musí existovat vůbec. Teprve pak řešte, jak ji zkrátit.</p>
+  </div>
+
+</article>
+
+<div class="author-box">
+  Gabriela Tomíčková &middot; 10 let KAIZEN specialistka ve výrobě, 6 let vedení skladu. Píše o tom, co sama zažila v provozu.
+</div>
+
+<footer>
+  <a href="https://gabrielatomickova.cz">Zpět na web</a>
+  <a href="https://gabrielatomickova.cz#kontakt">Napište mi</a>
+  <a href="https://gdpr.gabrielatomickova.cz">Zásady ochrany osobních údajů</a>
+</footer>
+
+<div class="cookies-bar" id="cookies-bar" style="display:none;">
+  <p>Tento web používá analytické cookies (Google Analytics) pro měření návštěvnosti. <a href="https://gdpr.gabrielatomickova.cz">Zásady ochrany osobních údajů</a></p>
+  <div class="cookies-btns">
+    <button class="cookies-no" onclick="cookiesOdmitnout()">Odmítnout</button>
+    <button class="cookies-ok" onclick="cookiesSouhlasit()">Souhlasím</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var s = localStorage.getItem('cookies_souhlas');
+  if (s === 'ano') {
+    spustitGA();
+  } else if (s === null) {
+    document.getElementById('cookies-bar').style.display = 'flex';
+  }
+})();
+
+function spustitGA() {
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JBFDH4G4VP';
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-JBFDH4G4VP');
+}
+
+function cookiesSouhlasit() {
+  localStorage.setItem('cookies_souhlas', 'ano');
+  document.getElementById('cookies-bar').style.display = 'none';
+  spustitGA();
+}
+
+function cookiesOdmitnout() {
+  localStorage.setItem('cookies_souhlas', 'ne');
+  document.getElementById('cookies-bar').style.display = 'none';
+}
+</script>
+</body>
+</html>

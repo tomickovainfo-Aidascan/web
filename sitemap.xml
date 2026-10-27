@@ -140,6 +140,12 @@
   </url>
 
   <url>
+    <loc>https://gabrielatomickova.cz/blog/spaghetti-diagram-sablona.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://gabrielatomickova.cz/blog/krivka-zmeny.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
