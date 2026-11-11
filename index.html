@@ -243,6 +243,19 @@ footer { background:#0a0a0a; padding:40px; display:flex; justify-content:space-b
 .faq-a { font-size:14px; color:var(--mid); line-height:1.75; margin-top:10px; display:none; }
 .faq-item.open .faq-a { display:block; }
 
+/* 11. 11. 2026: decentní pohyb - šipky, postupné zobrazení, čísla v hero */
+html.js-pohyb .arrow-icon.je-tu { animation:sipka-posun 2s ease-in-out infinite; }
+@keyframes sipka-posun { 0%,100% { transform:translateX(0); } 50% { transform:translateX(4px); } }
+html.js-pohyb .odhal { opacity:0; transform:translateY(16px); transition:opacity .5s ease, transform .5s ease; transition-delay:calc(var(--poradi,0) * .1s); }
+html.js-pohyb .odhal.je-tu { opacity:1; transform:none; }
+
+/* 11. 11. 2026: reference klienta (Jan Peterka, SALPO), styl podle tokva.cz */
+.reference { background:var(--white); border:1px solid var(--border); border-left:4px solid var(--gold); border-radius:10px; padding:20px 24px; margin-top:28px; }
+.reference-stitek { font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--gold-dark); margin:0 0 8px; }
+.reference blockquote { margin:0; font-size:15.5px; line-height:1.7; color:var(--dark); font-style:italic; }
+.reference figcaption { margin-top:10px; font-size:14px; color:var(--mid); }
+.reference figcaption b { color:var(--dark); font-style:normal; }
+
 </style>
 
 <style id="cookies-css">
@@ -293,17 +306,17 @@ footer { background:#0a0a0a; padding:40px; display:flex; justify-content:space-b
   <div class="container">
     <div class="about-grid">
       <div class="about-text">
-        <div class="section-label">O mně</div>
-        <h2 class="section-title">Nepracuju podle učebnice</h2>
+        <div class="section-label odhal" style="--poradi:0">O mně</div>
+        <h2 class="section-title odhal" style="--poradi:0">Nepracuju podle učebnice</h2>
         <p>Mám za sebou <strong>10 let jako KAIZEN specialista ve výrobě</strong> a pak <strong>6 let jako manažer velkoobchodního skladu</strong> 20 lidí, 2 směny, logistika 7 vozidel. Vím jak to chodí v provozu, kde se ztrácí čas a kde jsou peníze skryté v rutině.</p>
         <p>Věřím, že <strong>selský rozum a pár propočtů udělají víc než deset příruček</strong> jen vědět jak a kam koukat. Proto neprodávám obecné poradenství. Jdu přímo na věc a navrhuji změny, které se reálně zavedou do praxe.</p>
         <p>K tomu přidávám AI a automatizaci tam, kde to dává smysl ne jako módní doplněk, ale jako nástroj který ušetří hodiny rutiny každý týden.</p>
       </div>
       <div class="about-highlights">
-        <div class="highlight"><div class="highlight-icon"><span class="arrow-icon"></span></div><div class="highlight-text"><strong>10 let KAIZEN ve výrobě</strong><span>Optimalizace procesů, odstraňování plýtvání, zavádění standardů</span></div></div>
-        <div class="highlight"><div class="highlight-icon"><span class="arrow-icon"></span></div><div class="highlight-text"><strong>6 let manažer skladu</strong><span>20 lidí, logistika, o 30 % méně odpracovaných hodin na stejnou práci, bez tlaku na mzdy</span></div></div>
-        <div class="highlight"><div class="highlight-icon"><span class="arrow-icon"></span></div><div class="highlight-text"><strong>AI rekvalifikace & vlastní nástroje</strong><span>Vytvořila jsem několik užitečných aplikací pro hledání ztrát a AIDoklad Agent, 6 AI agentů pro zpracování faktur</span></div></div>
-        <div class="highlight"><div class="highlight-icon"><span class="arrow-icon"></span></div><div class="highlight-text"><strong>Pracuju přímo, bez korporátního žargonu</strong><span>Cílím na firmy kde moje pomoc má reálný a viditelný dopad</span></div></div>
+        <div class="highlight odhal" style="--poradi:0"><div class="highlight-icon"><span class="arrow-icon"></span></div><div class="highlight-text"><strong>10 let KAIZEN ve výrobě</strong><span>Optimalizace procesů, odstraňování plýtvání, zavádění standardů</span></div></div>
+        <div class="highlight odhal" style="--poradi:1"><div class="highlight-icon"><span class="arrow-icon"></span></div><div class="highlight-text"><strong>6 let manažer skladu</strong><span>20 lidí, logistika, o 30 % méně odpracovaných hodin na stejnou práci, bez tlaku na mzdy</span></div></div>
+        <div class="highlight odhal" style="--poradi:2"><div class="highlight-icon"><span class="arrow-icon"></span></div><div class="highlight-text"><strong>AI rekvalifikace & vlastní nástroje</strong><span>Vytvořila jsem několik užitečných aplikací pro hledání ztrát a AIDoklad Agent, 6 AI agentů pro zpracování faktur</span></div></div>
+        <div class="highlight odhal" style="--poradi:3"><div class="highlight-icon"><span class="arrow-icon"></span></div><div class="highlight-text"><strong>Pracuju přímo, bez korporátního žargonu</strong><span>Cílím na firmy kde moje pomoc má reálný a viditelný dopad</span></div></div>
       </div>
     </div>
   </div>
@@ -311,11 +324,11 @@ footer { background:#0a0a0a; padding:40px; display:flex; justify-content:space-b
 
 <section class="section services" id="nabidka">
   <div class="container">
-    <div class="section-label">Co nabízím</div>
-    <h2 class="section-title">Tři způsoby jak mohu pomoct</h2>
+    <div class="section-label odhal" style="--poradi:0">Co nabízím</div>
+    <h2 class="section-title odhal" style="--poradi:0">Tři způsoby jak mohu pomoct</h2>
     <p class="section-sub">Pracuju s menšími firmami z výroby a logistiky, kde je můj vliv přímý a výsledky viditelné. Žádné korporáty, žádné obecné prezentace.</p>
     <div class="services-grid">
-      <div class="service-card">
+      <div class="service-card odhal" style="--poradi:0">
         <div class="service-icon"><span class="arrow-icon"></span></div>
         <h3>Procesní audit</h3>
         <p>Přijdu, podívám se na provoz bez předsudků a řeknu vám přesně kde a proč vám utíká čas, kapacita a peníze.</p>
@@ -327,7 +340,7 @@ footer { background:#0a0a0a; padding:40px; display:flex; justify-content:space-b
         </ul>
         <p style="margin-top:14px;font-size:13px;color:var(--gold);font-weight:600;">Půlden v provozu od 6 900 Kč + cesta</p>
       </div>
-      <div class="service-card">
+      <div class="service-card odhal" style="--poradi:1">
         <div class="service-icon"><span class="arrow-icon"></span></div>
         <h3>Nastavení procesů</h3>
         <p>Staré postupy firmu brzdí, ale nikdo nemá čas je přenastavit. Tohle je přesně práce pro mě.</p>
@@ -338,7 +351,7 @@ footer { background:#0a0a0a; padding:40px; display:flex; justify-content:space-b
           <li>Školení a předání týmu</li>
         </ul>
       </div>
-      <div class="service-card">
+      <div class="service-card odhal" style="--poradi:2">
         <div class="service-icon"><span class="arrow-icon"></span></div>
         <h3>AI automatizace</h3>
         <p>Rutinní práce která jde automatizovat faktury, emaily, reporty, kontroly dat. Uvolníte lidi na práci s přidanou hodnotou.</p>
@@ -350,6 +363,11 @@ footer { background:#0a0a0a; padding:40px; display:flex; justify-content:space-b
         </ul>
       </div>
     </div>
+    <figure class="reference odhal">
+      <p class="reference-stitek">Nástroj na míru: automatizace cenových nabídek</p>
+      <blockquote>„Gábina si nejdřív prošla celý proces, jak cenové nabídky opravdu vznikají, a až potom navrhla řešení. Dřív mi jedna cenová nabídka zabrala 20 až 30 minut, s kalkulačkou a automatizací je to nejméně o polovinu kratší. Práce, kterou jsem dělal pořád dokola, každý večer, teď běží skoro sama.“</blockquote>
+      <figcaption><b>Jan Peterka</b>, majitel SALPO s.r.o. · rozbor procesu a automatizace cenových nabídek</figcaption>
+    </figure>
     <div style="margin-top:28px;padding:20px 24px;border:1px solid var(--gold);border-radius:12px;">
       <h3 style="margin:0 0 6px;">Chcete začít bez návštěvy? Rozbor výsledku online</h3>
       <p style="margin:0;">Jeden proces si změříte sami v bezplatné appce <a href="https://tokva.cz/">Tokva</a>. Pak spolu projdeme čísla, vybereme jednu změnu a domluvíme, jak ji ověřit. <b style="color:var(--gold);">1 990 Kč</b>, s ověřením po změně <b style="color:var(--gold);">2 990 Kč</b>.</p>
@@ -359,8 +377,8 @@ footer { background:#0a0a0a; padding:40px; display:flex; justify-content:space-b
 
 <section class="section projects" id="projekty">
   <div class="container">
-    <div class="section-label">Ukázky práce</div>
-    <h2 class="section-title">Nástroje pro sklad, výrobu i jiné provozy, které jsem vytvořila</h2>
+    <div class="section-label odhal" style="--poradi:0">Ukázky práce</div>
+    <h2 class="section-title odhal" style="--poradi:0">Nástroje pro sklad, výrobu i jiné provozy, které jsem vytvořila</h2>
     <p class="section-sub">Zadáte čísla ze svého provozu. Dostanete výsledek, který platí pro vás: ne obecný návod.</p>
 
     <div class="tokva-intro">
@@ -370,7 +388,7 @@ footer { background:#0a0a0a; padding:40px; display:flex; justify-content:space-b
     </div>
 
     <div class="projects-grid">
-      <a href="https://tokva.cz/nastroje/kalkulacka-ztrat/" target="_blank" class="project-card">
+      <a href="https://tokva.cz/nastroje/kalkulacka-ztrat/" target="_blank" class="project-card odhal" style="--poradi:0">
         <div class="project-header" style="background:#545454;">
           <div class="project-tag tag-zdarma">Zdarma</div>
           <h3>Kalkulačka neviditelných ztrát</h3>
@@ -381,7 +399,7 @@ footer { background:#0a0a0a; padding:40px; display:flex; justify-content:space-b
         </div>
       </a>
 
-      <a href="https://tokva.cz/nastroje/meric-plytvani-free/" target="_blank" class="project-card">
+      <a href="https://tokva.cz/nastroje/meric-plytvani-free/" target="_blank" class="project-card odhal" style="--poradi:1">
   <div class="project-header" style="background:#111;">
     <div class="project-tag tag-zdarma">Zdarma</div>
     <h3>Měřič plýtvání</h3>
@@ -392,7 +410,7 @@ footer { background:#0a0a0a; padding:40px; display:flex; justify-content:space-b
   </div>
 </a>
 
-      <a href="https://tokva.cz/nastroje/mini-audit-skladu/" target="_blank" class="project-card">
+      <a href="https://tokva.cz/nastroje/mini-audit-skladu/" target="_blank" class="project-card odhal" style="--poradi:2">
         <div class="project-header" style="background:#2a7a4f;">
           <div class="project-tag tag-zdarma">Zdarma</div>
           <h3>Mini audit skladu</h3>
@@ -403,7 +421,7 @@ footer { background:#0a0a0a; padding:40px; display:flex; justify-content:space-b
         </div>
       </a>
 
-      <a href="https://tokva.cz/nastroje/kviz-jak-znate-svuj-sklad/" target="_blank" class="project-card">
+      <a href="https://tokva.cz/nastroje/kviz-jak-znate-svuj-sklad/" target="_blank" class="project-card odhal" style="--poradi:3">
         <div class="project-header" style="background:#1a6aaa;">
           <div class="project-tag tag-zdarma">Zdarma</div>
           <h3>Jak dobře znáte svůj sklad?</h3>
@@ -414,7 +432,7 @@ footer { background:#0a0a0a; padding:40px; display:flex; justify-content:space-b
         </div>
       </a>
 
-      <a href="https://montaz.gabrielatomickova.cz" target="_blank" class="project-card">
+      <a href="https://montaz.gabrielatomickova.cz" target="_blank" class="project-card odhal" style="--poradi:4">
         <div class="project-header" style="background:#a8a6a6;">
           <div class="project-tag tag-zdarma">Zdarma</div>
           <h3>Montážní checklist před výjezdem</h3>
@@ -426,7 +444,7 @@ footer { background:#0a0a0a; padding:40px; display:flex; justify-content:space-b
       </a>
 
 
-      <a href="https://2f524664.sibforms.com/serve/MUIFACneqoY3FkdGXpAzJwVPKSQlu61-vI2Pjizlm9j5zO81UJ1T2nbmwTeTeG8ZtiDdhCXhQojZpgqv7bJFtVCd3DA9REfjS0egf8gApM--psmaD7HCVEGTO4lPSaKLkRqYbqtCnHI8JLWs0aOUpexKobvbIgtDqHV8bbPfUvJ6j1XxOqaMQGmOlw8RCJ1JQpyxmSJz63ONMeX-bg==" target="_blank" class="project-card">
+      <a href="https://2f524664.sibforms.com/serve/MUIFACneqoY3FkdGXpAzJwVPKSQlu61-vI2Pjizlm9j5zO81UJ1T2nbmwTeTeG8ZtiDdhCXhQojZpgqv7bJFtVCd3DA9REfjS0egf8gApM--psmaD7HCVEGTO4lPSaKLkRqYbqtCnHI8JLWs0aOUpexKobvbIgtDqHV8bbPfUvJ6j1XxOqaMQGmOlw8RCJ1JQpyxmSJz63ONMeX-bg==" target="_blank" class="project-card odhal" style="--poradi:5">
         <div class="project-header" style="background:#c48e10;">
           <div class="project-tag tag-zdarma">Zdarma</div>
           <h3>Automatické stahování faktur z emailu</h3>
@@ -442,8 +460,8 @@ footer { background:#0a0a0a; padding:40px; display:flex; justify-content:space-b
 
 <section class="section faq" id="faq" style="background:var(--paper);">
   <div class="container">
-    <div class="section-label">Časté otázky</div>
-    <h2 class="section-title">Co vás nejčastěji zajímá</h2>
+    <div class="section-label odhal" style="--poradi:0">Časté otázky</div>
+    <h2 class="section-title odhal" style="--poradi:0">Co vás nejčastěji zajímá</h2>
 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;">
 
@@ -759,6 +777,54 @@ function cookiesOdmitnout() {
   localStorage.setItem('cookies_souhlas', 'ne');
   document.getElementById('cookies-bar').style.display = 'none';
 }
+</script>
+
+<script>
+// 11. 11. 2026: decentní pohyb. Kdo má omezení animací nebo nemá
+// IntersectionObserver, vidí všechno hned a beze změny (třída "js-pohyb" se nepřidá).
+(function () {
+  if (!window.matchMedia || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('js-pohyb');
+
+  // B. Postupné zobrazení při posouvání, jen jednou.
+  var odhalPozorovatel = new IntersectionObserver(function (zaznamy) {
+    zaznamy.forEach(function (z) {
+      if (!z.isIntersecting) return;
+      z.target.classList.add('je-tu');
+      odhalPozorovatel.unobserve(z.target);
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.odhal').forEach(function (el) { odhalPozorovatel.observe(el); });
+
+  // A. Šipky se jemně hýbou jen dokud jsou vidět, s malým zpožděním po sobě.
+  var sipkaPozorovatel = new IntersectionObserver(function (zaznamy) {
+    zaznamy.forEach(function (z) { z.target.classList.toggle('je-tu', z.isIntersecting); });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.arrow-icon').forEach(function (el, i) {
+    el.style.animationDelay = (i % 3 * 0.3) + 's';
+    sipkaPozorovatel.observe(el);
+  });
+
+  // C. Čísla v hero (.stat-num) se při načtení napočítají od 0. Text v HTML
+  // se nemění (kvůli Googlu a čtečkám), JS ho jen během animace přepíše
+  // a na konci vrátí přesně původní text.
+  document.querySelectorAll('.stat-num').forEach(function (el) {
+    var puvodni = el.textContent;
+    var m = puvodni.match(/^[0-9]+([.,][0-9]+)?/);
+    if (!m) return;
+    var cil = parseFloat(m[0].replace(',', '.')), pripona = puvodni.slice(m[0].length);
+    var delka = 1000, start = null;
+    function krok(t) {
+      if (start === null) start = t;
+      var p = Math.min(1, (t - start) / delka), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(cil * e) + pripona;
+      if (p < 1) requestAnimationFrame(krok);
+      else el.textContent = puvodni;
+    }
+    setTimeout(function () { requestAnimationFrame(krok); }, 150);
+  });
+})();
 </script>
 </body>
 </html>
