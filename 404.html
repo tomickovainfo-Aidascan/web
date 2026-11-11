@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stránka nenalezena | Gabriela Tomíčková</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #e9a91b; --gold-dark: #c48e10; --gold-light: #fdf3d9;
+  --black: #000000; --dark: #111111; --mid: #545454; --silver: #a8a6a6;
+  --white: #ffffff; --paper: #fafaf8; --border: #e8e8e8;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'DM Sans',sans-serif; background:var(--paper); color:var(--dark); line-height:1.7; font-size:16px; }
+
+nav { background:var(--white); border-bottom:2px solid var(--gold); padding:14px 40px; display:flex; justify-content:space-between; align-items:center; }
+.nav-brand { font-family:'Poppins',sans-serif; font-size:15px; font-weight:800; color:var(--black); text-decoration:none; }
+.nav-brand span { color:var(--gold); }
+.nav-cta { background:var(--gold); color:var(--black); font-family:'DM Sans',sans-serif; font-size:13px; font-weight:600; padding:9px 22px; border-radius:4px; text-decoration:none; transition:background 0.2s; }
+.nav-cta:hover { background:var(--gold-dark); color:white; }
+.nav-link { font-family:'DM Sans',sans-serif; font-size:13px; font-weight:600; color:var(--black); text-decoration:none; padding:9px 16px; border-radius:4px; transition:color 0.2s; }
+.nav-link:hover { color:var(--gold); }
+
+.e404-hero { background:var(--black); color:var(--white); min-height:70vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:64px 24px; }
+.e404-inner { max-width:560px; }
+.e404-tag { display:inline-flex; align-items:center; gap:8px; background:rgba(233,169,27,0.15); border:1px solid rgba(233,169,27,0.3); color:var(--gold); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:6px 14px; border-radius:2px; margin-bottom:24px; }
+.e404-tag::before { content:'●'; font-size:6px; }
+.e404-hero h1 { font-family:'Poppins',sans-serif; font-size:clamp(28px,4vw,42px); font-weight:900; line-height:1.2; margin-bottom:18px; letter-spacing:-0.5px; }
+.e404-hero p { font-size:16px; font-weight:300; color:rgba(255,255,255,0.65); line-height:1.75; margin:0 auto 8px; max-width:460px; }
+
+.e404-diagram { width:100%; max-width:300px; height:auto; margin:28px auto 8px; display:block; }
+.e404-diagram .cara { fill:none; stroke:rgba(255,255,255,0.45); stroke-width:3; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:1000; stroke-dashoffset:1000; animation:kreslit-cestu 3s ease forwards; }
+.e404-diagram .sipka { fill:var(--gold); opacity:0; animation:objevit-sipku 0.3s ease forwards; animation-delay:2.75s; }
+@keyframes kreslit-cestu { to { stroke-dashoffset:0; } }
+@keyframes objevit-sipku { to { opacity:1; } }
+@media (prefers-reduced-motion: reduce) {
+  .e404-diagram .cara { animation:none; stroke-dashoffset:0; }
+  .e404-diagram .sipka { animation:none; opacity:1; }
+}
+
+.e404-pocitadlo { font-size:15px; color:rgba(255,255,255,0.55); margin-bottom:32px; }
+.e404-pocitadlo strong { color:var(--gold); font-weight:700; }
+
+.e404-btns { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
+.btn-gold, .btn-outline { font-family:'DM Sans',sans-serif; font-size:14px; font-weight:700; padding:12px 22px; min-height:44px; border-radius:4px; text-decoration:none; display:inline-flex; align-items:center; transition:all 0.2s; }
+.btn-gold { background:var(--gold); color:var(--black); }
+.btn-gold:hover { background:var(--gold-dark); color:white; }
+.btn-outline { background:transparent; color:rgba(255,255,255,0.75); border:1px solid rgba(255,255,255,0.2); }
+.btn-outline:hover { border-color:var(--gold); color:var(--gold); }
+
+.e404-cta { background:var(--white); border-top:1px solid var(--border); padding:32px 24px; text-align:center; }
+.e404-cta p { font-size:15px; color:var(--mid); }
+.e404-cta a { color:var(--gold-dark); font-weight:700; text-decoration:none; }
+.e404-cta a:hover { text-decoration:underline; }
+
+footer { background:#0a0a0a; padding:40px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+.footer-brand { font-family:'Poppins',sans-serif; font-size:14px; font-weight:700; color:rgba(255,255,255,0.5); }
+.footer-brand span { color:var(--gold); }
+.footer-links { display:flex; gap:24px; }
+.footer-links a { font-size:13px; color:rgba(255,255,255,0.35); text-decoration:none; transition:color 0.2s; }
+.footer-links a:hover { color:var(--gold); }
+
+@media (max-width:600px) {
+  nav { padding:12px 24px; }
+  .e404-btns { flex-direction:column; width:100%; }
+  .e404-btns a { width:100%; justify-content:center; }
+  footer { padding:28px 24px; flex-direction:column; text-align:center; }
+}
+</style>
+
+<style id="cookies-css">
+.cookies-bar{position:fixed;bottom:0;left:0;right:0;background:#111;border-top:2px solid #e9a91b;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;z-index:9999;font-family:"DM Sans",sans-serif;}
+.cookies-bar p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.6;margin:0;flex:1;min-width:200px;}
+.cookies-bar a{color:#e9a91b;text-decoration:none;}
+.cookies-bar a:hover{text-decoration:underline;}
+.cookies-btns{display:flex;gap:8px;flex-shrink:0;}
+.cookies-ok{background:#e9a91b;color:#000;border:none;border-radius:4px;padding:8px 18px;font-family:"DM Sans",sans-serif;font-size:13px;font-weight:700;cursor:pointer;}
+.cookies-ok:hover{background:#c48e10;}
+.cookies-no{background:transparent;color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.15);border-radius:4px;padding:8px 14px;font-family:"DM Sans",sans-serif;font-size:13px;cursor:pointer;}
+.cookies-no:hover{color:rgba(255,255,255,.7);}
+</style>
+
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-brand">Gabriela <span>Tomíčková</span></a>
+  <div style="display:flex;align-items:center;gap:8px;">
+    <a href="/o-mne" class="nav-link">O mně</a>
+    <a href="/blog/" class="nav-link">Blog</a>
+    <a href="/#projekty" class="nav-cta">Kde ztrácíte?</a>
+  </div>
+</nav>
+
+<section class="e404-hero">
+  <div class="e404-inner">
+    <div class="e404-tag">Chyba 404 · plýtvání hledáním</div>
+    <h1>Tady jste hledali zbytečně.</h1>
+    <p>Stránka, kterou hledáte, tu není. Hledání je jedno z plýtvání, které ve firmách měřím, tak ať vás nestojí ani minutu navíc.</p>
+
+    <svg class="e404-diagram" viewBox="0 0 320 150" aria-hidden="true">
+      <path class="cara" pathLength="1000" d="M20,120 C45,55 75,165 100,85 C115,35 60,10 68,55 C76,100 140,108 128,58 C118,10 182,0 192,46 C202,92 252,96 232,56 C218,26 262,16 282,42 L298,30" />
+      <polygon class="sipka" points="298,22 298,38 316,30" />
+    </svg>
+
+    <p class="e404-pocitadlo">Na hledání jste tu zatím strávili <strong id="pocitadlo">0:00</strong>.</p>
+
+    <div class="e404-btns">
+      <a href="/" class="btn-gold">Na úvod</a>
+      <a href="/blog/" class="btn-outline">Blog</a>
+      <a href="https://tokva.cz/" class="btn-outline">Nástroje v Tokvě</a>
+      <a href="/#kontakt" class="btn-outline">Kontakt</a>
+    </div>
+  </div>
+</section>
+
+<section class="e404-cta">
+  <p>Kolik času hledáním ztrácí váš provoz? <a href="https://tokva.cz/nastroje/meric-plytvani-free/?utm_source=web&amp;utm_campaign=404">Změřte to v Měřiči plýtvání →</a></p>
+</section>
+
+<footer>
+  <div class="footer-brand">Gabriela <span>Tomíčková</span> · AI & Procesní konzultant</div>
+  <div style="font-size:12px; color:rgba(255,255,255,0.25); text-align:center;">
+    Příčná 49, Vrchlabí &nbsp;·&nbsp; IČO: 75905311 &nbsp;·&nbsp; <a href="https://gdpr.gabrielatomickova.cz" style="color:rgba(255,255,255,0.35);text-decoration:none;" onmouseover="this.style.color='#e9a91b'" onmouseout="this.style.color='rgba(255,255,255,0.35)'">Zásady ochrany osobních údajů</a>
+  </div>
+  <div class="footer-links">
+    <a href="/blog/">Blog</a>
+    <a href="https://www.linkedin.com/in/gabriela-tom%C3%AD%C4%8Dkov%C3%A1/" target="_blank">LinkedIn</a>
+    <a href="tel:+420608221039">+420 608 221 039</a>
+    <a href="mailto:tomickova.info@gmail.com">Email</a>
+  </div>
+</footer>
+
+<div class="cookies-bar" id="cookies-bar" style="display:none;">
+  <p>Tento web používá analytické cookies (Google Analytics) pro měření návštěvnosti. <a href="https://gdpr.gabrielatomickova.cz">Zásady ochrany osobních údajů</a></p>
+  <div class="cookies-btns">
+    <button class="cookies-no" onclick="cookiesOdmitnout()">Odmítnout</button>
+    <button class="cookies-ok" onclick="cookiesSouhlasit()">Souhlasím</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var el = document.getElementById('pocitadlo');
+  if (!el) return;
+  var zacatek = Date.now();
+  function tik() {
+    var s = Math.floor((Date.now() - zacatek) / 1000);
+    var m = Math.floor(s / 60);
+    var ss = s % 60;
+    el.textContent = m + ':' + (ss < 10 ? '0' : '') + ss;
+  }
+  setInterval(tik, 1000);
+})();
+</script>
+
+<script>
+(function(){
+  var s = localStorage.getItem('cookies_souhlas');
+  if (s === 'ano') {
+    spustitGA();
+    odeslat404();
+  } else if (s === null) {
+    document.getElementById('cookies-bar').style.display = 'flex';
+  }
+})();
+
+function spustitGA() {
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JBFDH4G4VP';
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-JBFDH4G4VP');
+}
+
+function odeslat404() {
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', 'stranka_404', { cesta: window.location.pathname });
+  }
+}
+
+function cookiesSouhlasit() {
+  localStorage.setItem('cookies_souhlas', 'ano');
+  document.getElementById('cookies-bar').style.display = 'none';
+  spustitGA();
+  odeslat404();
+}
+
+function cookiesOdmitnout() {
+  localStorage.setItem('cookies_souhlas', 'ne');
+  document.getElementById('cookies-bar').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
