@@ -829,5 +829,23 @@ function cookiesOdmitnout() {
   });
 })();
 </script>
+
+<script>
+// 12. 11. 2026: skok na referenci SALPO z odkazu (#reference-salpo nebo ?kotva=reference-salpo),
+// nezávisle na postupném zobrazení výš - referenci rovnou ukážeme a doskočíme na ni.
+(function () {
+  function skocNaKotvu() {
+    var parametry = new URLSearchParams(window.location.search);
+    var chce = window.location.hash === '#reference-salpo' || parametry.get('kotva') === 'reference-salpo';
+    if (!chce) return;
+    var cil = document.getElementById('reference-salpo');
+    if (!cil) return;
+    cil.classList.add('je-tu');
+    cil.scrollIntoView({ behavior: 'auto' });
+  }
+  window.addEventListener('load', skocNaKotvu);
+  setTimeout(skocNaKotvu, 600);
+})();
+</script>
 </body>
 </html>
