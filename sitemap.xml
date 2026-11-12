@@ -169,4 +169,10 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://gabrielatomickova.cz/blog/ctyri-lide-na-lince-pak-tri.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
